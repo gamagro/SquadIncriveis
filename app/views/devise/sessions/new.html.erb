@@ -1,5 +1,6 @@
+<br />
 
-  <h2 class= "fonte-titulo"> Bem-vindo a Youse</h2>
+  <h2 class= "fonte-titulo"> Seja um Incrível!</h2>
 
     <h5 class = "fonte-h3"> Faça seu login para começar </h5>
 
@@ -42,10 +43,6 @@
   <% end %>
 </div>
 
-  <div class="actions">
-    <%= f.submit "Entrar" %>
-    <input type="reset" name="" value="Cancelar">
-  </div>
 </div>
 
 </div>
@@ -59,14 +56,6 @@
       <input type="reset" value="CANCELAR" class = "btn btn-warning botao" >
     </div>
 
-<% end %>
-
-<%- if devise_mapping.registerable? && controller_name != 'Registrar' %>
-  <%= link_to "Cadastrar-se", new_registration_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.recoverable? && controller_name != 'Senha' && controller_name != 'Registrar' %>
-  <%= link_to "Esqueceu sua senha?", new_password_path(resource_name) %><br />
 <% end %>
 
 <%= render "devise/shared/links" %>
