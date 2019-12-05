@@ -60,3 +60,7 @@
   color: #624197;
   text-decoration: underline;
 }
+.link:hover{
+  background-color: white;
+  color: #624197;
+}
