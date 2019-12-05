@@ -1,90 +1,127 @@
-<br>
-
-<h2>Registrar</h2>
+<h2>Seja um Incrível</h2>
 
 <br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "devise/shared/error_messages", resource: resource %>
 
-  <br/>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<br />
+<div class="field">
+  <%= f.label :Email %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
 
-  <br/>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em><br/>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+<br />
+<div class="field">
+  <%= f.label :Senha %>
+  <% if @minimum_password_length %>
+  <em>(No minímo <%= @minimum_password_length %> caracteres)</em><br />
+  <% end %>
+  <%= f.password_field :password, autocomplete: "new-password" %>
+</div>
 
-  <br/>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<br />
+<div class="field">
+  <%= f.label :Confirmação_de_senha %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+</div>
 
-  <br/>
-  <div>
-    <%= f.label :Pessoa_Física_ou_Jurídica %>
-    <%= f.select :pf_pj, pfpj %>
-  </div>
-  
-  <br/>
-  <div>
-     <%= f.label :Nome_completo %>
-     <%= f.text_field :fullname, autofocus: true %>
-  </div>
+<br />
+<div>
+  <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica %>
+  <%= f.select :pf_pj, pfpj %>
+</div>
 
-  <br/>
-  <div>
-  <%= f.label :cpf %>
+<br />
+<div>
+  <%= f.label :Nome_completo %>
+  <%= f.text_field :fullname, autofocus: true %>
+</div>
+
+<br />
+<div>
+  <%= f.label :CPF %>
   <%= f.text_field :cpf, autofocus: true %>
-  </div>
+</div>
 
-  <br/>
-  <div>
-  <%= f.label :cnpj %>
+<br />
+<div>
+  <%= f.label :CNPJ %>
   <%= f.text_field :cnpj, autofocus: true %>
-  </div>
+</div>
 
-  <br/>
-  <div>
-  <%= f.label :cep %>
+<br />
+<div>
+  <%= f.label :Razão_social %>
+  <%= f.text_field :razaosocial, autofocus: true %>
+</div>
+
+<br />
+<div>
+  <%= f.label :CEP %>
   <%= f.text_field :cep, autofocus: true %>
-  </div>
+</div>
 
-  <br/>
-  <div>
-    <%= f.label :estado %>
-    <%= f.select :estado, states %>
-  </div>
+<br />
+<div>
+  <%= f.label :Estado %>
+  <%= f.select :estado, states %>
+</div>
 
-  <br/>
-  <div>
-  <%= f.label :rua %>
-  <%= f.text_field :rua, autofocus: true %> 
-  </div>
+<br />
+<div>
+  <%= f.label :Rua %>
+  <%= f.text_field :rua, autofocus: true %>
+</div>
 
-  <br/>
-  <div>
-  <%= f.label :bairro %>
+<br />
+<div>
+  <%= f.label :Bairro %>
   <%= f.text_field :bairro, autofocus: true %>
-  </div>
+</div>
 
-  <br/>
-  <div>
-  <%= f.label :cidade %>
+<br />
+<div>
+  <%= f.label :Cidade %>
   <%= f.text_field :cidade, autofocus: true %>
-  </div>
+</div>
 
-  <br/>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %><br />
+<br />
+<div class="actions">
+  <%= f.submit "Registrar" %>
+</div>
+<% end %>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    $("#user_cep").focusout(function () {
+      //Início do Comando AJAX
+      $.ajax({
+        //O campo URL diz o caminho de onde virá os dados
+        //É importante concatenar o valor digitado no CEP
+        url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+        //Aqui você deve preencher o tipo de dados que será lido,
+        //no caso, estamos lendo JSON.
+        dataType: 'json',
+        //SUCESS é referente a função que será executada caso
+        //ele consiga ler a fonte de dados com sucesso.
+        //O parâmetro dentro da função se refere ao nome da variável
+        //que você vai dar para ler esse objeto.
+        success: function (resposta) {
+          //Agora basta definir os valores que você deseja preencher
+          //automaticamente nos campos acima.
+          $("#user_rua").val(resposta.logradouro);
+          $("#complemento").val(resposta.complemento);
+          $("#user_bairro").val(resposta.bairro);
+          $("#user_cidade").val(resposta.localidade);
+          $("#user_estado").val(resposta.uf);
+          //Vamos incluir para que o Número seja focado automaticamente
+          //melhorando a experiência do usuário
+          //$("#numero").focus();
+        }
+      });
+    });
+  });
+</script>
 
 <%= render "devise/shared/links" %>

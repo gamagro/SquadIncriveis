@@ -67,6 +67,8 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    brazilian_documents (0.1.5)
+      digit_checksum (~> 0.2.3)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -93,6 +95,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    digit_checksum (0.2.3)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.11.3)
@@ -234,6 +237,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap-sass
+  brazilian_documents (~> 0.1.4)
   byebug
   capybara (>= 2.15)
   carrierwave
