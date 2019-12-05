@@ -22,7 +22,7 @@ class IncriveisValidator < ActiveModel::Validator
             end
             if record.cep == ""
                 record.errors[:cep] << "O campo 'CEP' não pode ser nulo."
-            end
+            end 
         end
         if !record.password.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W+).*$/)
             record.errors[:password] << "A senha de ve conter um caractere especial, uma letra maiúscula, uma letra minúscula e um número."
