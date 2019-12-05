@@ -3,6 +3,7 @@
 
 <head>
   <title>Os incriveis</title>
+
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -12,30 +13,23 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand" href="/">The Idea App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/info">Info</a>
-          </li>
-        </ul>
-        <p class="navbar-text float-right">
-          <% if user_signed_in? %>
+  <nav class= "navbar navbar-ligh menu">
+  <a class="navbar-brand navbar1" href="#">
+    <img src="/app/assets/images/simb.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Os incríveis
+  </a>
+        <p class="navbar-text float-right menu">
+          <% if user_signed_in?%>
           Logado como: <strong><%= current_user.email %></strong>.
-          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link menu' %> |
+          <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link '  %>
           <% else %>
           <%= link_to "Registrar-se", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
           <% end %>
-      </div>
-    </div>
+
   </nav>
+
   <div class="container">
     <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
@@ -47,7 +41,9 @@
   </div>
   <footer>
     <div class="container">
+
       Os incríveis <<img src="" alt=""> <%= Time.now.year %>
+
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

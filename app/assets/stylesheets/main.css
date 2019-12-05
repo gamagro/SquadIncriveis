@@ -1,10 +1,10 @@
   .os-incriveis{
-    width = 263px;
-    heidth = 463px;
+    width: 263px;
+    heidth: 463px;
   }
 
   .fonte-titulo{
-    color: #4F4F4F;
+    color: black;
     font-style: normal;
     font-family: futura;
     font-size: 40px;
@@ -14,14 +14,41 @@
   }
 
   .fonte-label{
-    color: #ff9c2a;
+    height: 0px;
+    color: #696969;
     font-size: 15px;
     font-weight: bold;
     font-family: arial;
   }
+
   .menu{
-    color: #4B0082;
+    background-color: #B22222;;
+    color: black;
+    font-family: arial;
   }
+  .navbar1{
+  color: black;
+  }
+
+  .navbar1:hover{
+    background-color: black;
+    color: #B22222;;
+  }
+
+  .borda-caixa-texto{
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #696969;
+  }
+
+  .caixa-de-texto{
+  height: 45px;
+  width: 300px;
+  font-family: arial;
+  font-size: : 100px;
+  }
+
+
   .container-login{
     width: 500px;
   }
@@ -36,22 +63,19 @@
   height: 40px;
   font-family: arial;
   font-size: 13px;
-  background-color: #ff9c2a;
-  color: white;
+  background-color: #ff8800;
+  color: black;
+
 
   }
 
   .botao:hover {
-    background-color: #ffaf0f;
-    border-color: #ffaf0f;
-    color: white;
+    background-color: #c42727;
+    border-color: #B22222;
+    color: #ff970f;
   }
-  .caixa-de-texto{
-  height: 45px;
-  width: 300px;
-  font-family: arial;
-  font-size: : 100px;
-  }
+
+
 
 .formulario {
   box-align: center;
@@ -59,8 +83,9 @@
 .link{
   color: #624197;
   text-decoration: underline;
+
 }
 .link:hover{
   background-color: white;
-  color: #624197;
+  color: #ff970f;
 }

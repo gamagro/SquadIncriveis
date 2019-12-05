@@ -1,48 +1,52 @@
+</br>
 
-  <h2 class= "fonte-titulo"> Bem-vindo a Youse</h2>
-
-    <h5 class = "fonte-h3"> Faça seu login para começar </h5>
-
-
+  <h2 class= "fonte-titulo"> Bem-vindo aos Incríveis </h2>
+    <h5 class = "fonte-h3"> Faça seu login para começar ;) </h5>
+</br>
     <head>
       <link href= "css/application.css"  rel= "stylesheet" type= "text/CSS"
     </head>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-
-
-<div class="container bg-white container-login">
-<div class="row">
-  <div class="col-sm field">
-    <%= f.label :email, :class => "fonte-label", :style => "margin-top: 28px"%><br />
-  </div>
-  <div class="col-sm field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto", :style => "margin-top: 17px" %>
-  </div>
+<div class="container bg-white container-login justify-content-center">
+<div class="row" style = "margin-left: 10px">
+    <%= f.label :email, values = "Email:", :class => "fonte-label", :style => "margin-top: 28px"%><br />
 </div>
+  <div class="row" style = "margin-left: 10px">
+    <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto floating-label borda-caixa-texto", :style => "margin-top: 17px", :placeholder => "Email"%>
+
+  </div>
+  </br>
+  </br>
 </div>
 
-<div class="container bg-white container-login">
-<div class="row">
-  <div class="col-sm field">
-    <%= f.label :password, value = "Senha", :class => "fonte-label" %> <br/>
-  </div>
-  <div class="col-sm field">
-    <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto" %>
+
+
+<div class="container bg-white container-login justify-content-center ">
+<div class="row" style = "margin-left: 10px">
+    <%= f.label :password, value = "Senha:", :class => "fonte-label" %> <br/>
+</div>
+<div class="row" style = "margin-left: 10px">
+    <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" %>
+</div>
+</br>
+</br>
 </div>
 
 <div class="container bg-white container-login">
 <div class="row">
 <div class="col-sm field">
   <% if devise_mapping.rememberable?%>
-  <%= f.check_box :remember_me, :class => "margem"%>
+  <%= f.check_box :remember_me, :style => "margin-left:100px"%>
   </div>
   <div class="col-sm field">
-  <%= f.label :remember_me, :class => "fonte-label"%>
+  <%= f.label :remember_me, :class => "fonte-label", :style => "margin-right:120px"%>
   <% end %>
 </div>
 
 </div>
+</br>
 
 </div>
 
@@ -52,8 +56,9 @@
       <%= f.submit "ENTRAR", :class => "btn botao"%>
     </div>
     <div class="col-sm field">
-      <input type="reset" value="CANCELAR" class = "btn btn-warning botao" >
+      <input type="reset" value="CANCELAR" class = "btn botao" >
     </div>
+
 
 <% end %>
 
