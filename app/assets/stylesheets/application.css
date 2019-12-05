@@ -17,8 +17,9 @@
  table, td, th { vertical-align: middle; border: none; }
  th { border-bottom: 1px solid #DDD; }
 
-require jquery
-require jquery_ujs
-require bootstrap-sprockets
+// = require jquery
+// = require jquery_ujs
+// = require bootstrap-sprockets
+
 
   
