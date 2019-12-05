@@ -1,0 +1,68 @@
+  .os-incriveis{
+    width: 263px;
+    height: 463px;
+  }
+
+  
+
+  .fonte-titulo{
+    color: #4F4F4F;
+    font-style: normal;
+    font-family: futura;
+    font-size: 40px;
+  }
+  .fonte-h3{
+  color: #696969;
+  }
+
+  .fonte-label{
+    color: #ff9c2a;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: arial;
+  }
+  .menu{
+    color: #4B0082;
+  }
+  .container-login{
+    width: 500px;
+  }
+  .margem{
+    grid-column: left;
+  }
+
+.botao{
+  border-radius: 25px;
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+  font-family: arial;
+  font-size: 13px;
+  background-color: #ff9c2a;
+  color: white;
+
+  }
+
+  .botao:hover {
+    background-color: #ffaf0f;
+    border-color: #ffaf0f;
+    color: white;
+  }
+  .caixa-de-texto{
+  height: 45px;
+  width: 300px;
+  font-family: arial;
+  font-size: : 100px;
+  }
+
+.formulario {
+  box-align: center;
+}
+.link{
+  color: #624197;
+  text-decoration: underline;
+}
+.link:hover{
+  background-color: white;
+  color: #624197;
+}

@@ -1,23 +1,47 @@
 <br />
-<h2>Faça seu login !</h2>
 
+  <h2 class= "fonte-titulo"> Bem-vindo a Youse</h2>
+
+    <h5 class = "fonte-h3"> Faça seu login para começar </h5>
+
+
+    <head>
+      <link href= "css/application.css"  rel= "stylesheet" type= "text/CSS"
+    </head>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "Senha" %>
-  </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+
+<div class="container bg-white container-login">
+<div class="row">
+  <div class="col-sm field">
+    <%= f.label :email, :class => "fonte-label", :style => "margin-top: 28px"%><br />
+  </div>
+  <div class="col-sm field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto", :style => "margin-top: 17px" %>
+  </div>
+</div>
+</div>
+
+<div class="container bg-white container-login">
+<div class="row">
+  <div class="col-sm field">
+    <%= f.label :password, value = "Senha", :class => "fonte-label" %> <br/>
+  </div>
+  <div class="col-sm field">
+    <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto" %>
+</div>
+
+<div class="container bg-white container-login">
+<div class="row">
+<div class="col-sm field">
+  <% if devise_mapping.rememberable?%>
+  <%= f.check_box :remember_me, :class => "margem"%>
+  </div>
+  <div class="col-sm field">
+  <%= f.label :remember_me, :class => "fonte-label"%>
   <% end %>
+</div>
 
   <div class="actions">
     <%= f.submit "Entrar" %>
