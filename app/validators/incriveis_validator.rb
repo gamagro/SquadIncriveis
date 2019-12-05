@@ -20,6 +20,9 @@ class IncriveisValidator < ActiveModel::Validator
             if record.razaosocial == ""
                 record.errors[:razaosocial] << "O campo 'Razão social' não pode ser nulo."
             end
+            if record.cep == ""
+                record.errors[:cep] << "O campo 'CEP' não pode ser nulo."
+            end
         end
         if !record.password.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W+).*$/)
             record.errors[:password] << "A senha de ve conter um caractere especial, uma letra maiúscula, uma letra minúscula e um número."
