@@ -4,11 +4,15 @@
   }
 
   .fonte-titulo{
-    color: #1C1C1C;
+    color: #4F4F4F;
     font-style: normal;
     font-family: futura;
     font-size: 40px;
   }
+  .fonte-h3{
+  color: #696969;
+  }
+
   .fonte-label{
     color: #ff9c2a;
     font-size: 15px;
@@ -22,7 +26,7 @@
     width: 500px;
   }
   .margem{
-    grid-column: left; 
+    grid-column: left;
   }
 
 .botao{
@@ -37,8 +41,10 @@
 
   }
 
-  .botao:hover{
-    background-color: #ffac4f;
+  .botao:hover {
+    background-color: #ffaf0f;
+    border-color: #ffaf0f;
+    color: white;
   }
   .caixa-de-texto{
   height: 45px;
