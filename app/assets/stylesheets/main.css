@@ -1,12 +1,35 @@
   .os-incriveis{
     width: 263px;
-    heidth: 463px;
+    height: 463px;
   }
+  .menu{
+    background-color: black;
+    color: futura;
+    display: block;
+    color: #b22222 !important;
+
+  }
+  IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
+  .navbar1{
+  color: #B22222 !important;
+  font-family: futura;
+  }
+
+  .navbar1:hover{
+    background-color: black;
+    color: #b22222;
+  }
+
 
   .fonte-titulo{
     color: black;
     font-style: normal;
     font-family: futura;
+    margin-top: 100px;
     font-size: 40px;
   }
   .fonte-h3{
@@ -14,37 +37,31 @@
   }
 
   .fonte-label{
-    height: 0px;
-    color: #696969;
-    font-size: 15px;
+    color: #B22222;
+    font-size: 18px;
     font-weight: bold;
-    font-family: arial;
+    font-family: futura;
+  }
+  .checkbox-pequena{
+    color: #B22222;
+    font-size: 13px;
+    font-family: futura;
+    font-weight: bold;
+
   }
 
-  .menu{
-    background-color: #B22222;;
-    color: black;
-    font-family: arial;
-  }
-  .navbar1{
-  color: black;
-  }
-
-  .navbar1:hover{
-    background-color: black;
-    color: #B22222;;
-  }
 
   .borda-caixa-texto{
   outline: 0;
   border-width: 0 0 1px;
-  border-color: #696969;
+  border-color: #b22222;
   }
 
   .caixa-de-texto{
   height: 45px;
   width: 300px;
-  font-family: arial;
+  font-size: 15px;
+  font-family: futura;
   font-size: : 100px;
   }
 
@@ -61,10 +78,10 @@
   font-weight: bold;
   width: 150px;
   height: 40px;
-  font-family: arial;
+  font-family: futura;
   font-size: 13px;
-  background-color: #ff8800;
-  color: black;
+  background-color: #b22222;
+  color: #fcdd4b;
 
 
   }
@@ -81,11 +98,11 @@
   box-align: center;
 }
 .link{
-  color: #624197;
+  color: #B22222 !important;
   text-decoration: underline;
 
 }
 .link:hover{
   background-color: white;
-  color: #ff970f;
+  color: #b22222;
 }
