@@ -10,14 +10,15 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="container bg-white container-login justify-content-center">
-  <div class="row" style = "margin-left: 10px">
+  <div class="row">
+  <div class="col-sm field">
 
-        <%= f.label :email, values = "Email:", :class => "fonte-label", :style => "margin-top: 28px"%>
+        <%= f.label :email, values = "Email:", :class => "fonte-label"%>
 
 </div>
-
-  <div class="row" style = "margin-left: 10px">
-    <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto floating-label borda-caixa-texto", :style => "margin-top: 10px", :placeholder => "exemplo@youse.com.br"%>
+  <div class="row">
+  <div class="col-sm field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto floating-label borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
 
   </div>
 
@@ -25,17 +26,23 @@
   </br>
 
 </div>
+</div>
 
 
-<div class="container bg-white container-login justify-content-center ">
-<div class="row" style = "margin-left: 10px">
+
+  <div class="container bg-white container-login justify-content-center ">
+<div class="row">
+  <div class="col-sm field">
     <%= f.label :password, value = "Senha:", :class => "fonte-label" %> <br/>
 </div>
-<div class="row" style = "margin-left: 10px">
-    <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :style => "margin-top: 10px", :placeholder => "Senha"%>
+
+<div class="row">
+  <div class="col-sm field">
+    <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Senha"%>
 </div>
 </br>
 </br>
+</div>
 </div>
 
 <div class="container bg-white container-login">
