@@ -1,189 +1,217 @@
-
-<h2 class= fonte-titulo> Opa, ficamos feliz que você chegou até aqui, </br> agora venha se Cadastrar! </h2>
+<h2 class=fonte-titulo> Opa, ficamos feliz que você chegou até aqui, </br> agora venha se Cadastrar! </h2>
 
 <br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
 
-<br/>
+<br />
 <div class="container bg-white container-login justify-content-center">
-</br>
-</br>
+  </br>
+  </br>
 
-<div class="row">
-  <div class="col-sm field">
-  
-    <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
-  
+  <div class="row">
     <div class="col-sm field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
 
-   
+      <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
 
-    </br>
-    </br>
+      <div class="col-sm field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
+
+
+
+        </br>
+        </br>
+      </div>
+    </div>
   </div>
-</div>
+
+
+
+  <div class="row">
+    <div class="col-sm field">
+      <%= f.label :password , value = "Senha", :class => "fonte-label" , :style => "margin-right: 250px"%>
+
+
+      <div class="col-sm field">
+        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Digite sua Senha"%>
+        <small id="emailHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
+          </br>  Minúscula, 
+        Caracter especial e Número</small>
+      </div>
+      </br>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm field">
+      <%= f.label :Confirmação_de_senha, value = "Confirmação de senha", :class => "fonte-label" , :style => "margin-right: 90px"%>
+
+      <div class="col-sm field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
+
+      </div>
+      </br>
+
+    </div>
   </div>
 
 
+  <div class="row">
+    <div class="col-sm field">
+      <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica, value = "Tipo de Cadastro" ,:class => "fonte-label" , :style => "margin-right: 130px"%>
 
-      <div class="row">
+      </br>
+      <div class="col-sm field">
+        <%= f.select :pf_pj, pfpj%>
+
+
+      </div>
+      </br>
+      </br>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm field">
+      <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 145px"%>
+
+      <div class="col-sm field">
+        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Youser da Silva Morais"%>
+
+      </div>
+      </br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm field">
+      <%= f.label :CPF, value = "CPF" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
+
+      <div class="col-sm field">
+        <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "000.000.000-00"%>
+
+      </div>
+      </br>
+    </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-sm field">
+          <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
+  
         <div class="col-sm field">
-          <%= f.label :password , value = "Senha", :class => "fonte-label" , :style => "margin-right: 250px"%>
-        <% if @minimum_password_length%>
-        <em>(No minímo <%= @minimum_password_length %> caracteres)</em><br />
-          <% end %>
-       
+            <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
+  
+        </div>
+        </br>
+      </div>
+    </div>
+ 
+  <div class="row">
+      <div class="col-sm field">
+          <%= f.label :Razão_social , value = "Razão Social" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
+  
+        <div class="col-sm field">
+            <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => ""%>
+  
+        </div>
+        </br>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm field">
+            <%= f.label :CEP, value = "CEP" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
+    
           <div class="col-sm field">
-            <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Digite sua Senha"%>
-            <small id="emailHelp" class="form-text text-muted">A senha deve conter: letra Maiúscula e Minúscula, Caracter especial e Número</small>
+              <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00000-000"%>
+    
           </div>
           </br>
-          
         </div>
       </div>
-
-<div class="row">
-  <div class="col-sm field">
-    <%= f.label :Confirmação_de_senha, value = "Confirmação de senha", :class => "fonte-label" , :style => "margin-right: 90px"%>
-  </br>
-    <div class="col-sm field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
-    
-    </div>
-    </br>
-    
-  </div>
+  <div>
+   
+    <%= f.text_field :cep, autofocus: true %>
   </div>
 
-
-<div class="row">
-    <div class="col-sm field">
-        <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica, value = "Tipo de Cadastro" ,:class => "fonte-label" , :style => "margin-right: 130px"%>
-    </br>
-  </br>
-      <div class="col-sm field">
-          <%= f.select :pf_pj, pfpj"%>
-          
-        
-      </div>
-      </br>
-      </br>
-    </div>
+  <br />
+  <div>
+    <%= f.label :Estado %>
+    <%= f.select :estado, states %>
   </div>
 
-
-<div class="row">
-    <div class="col-sm field">
-        <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 130px"%>
-    </br>
-      <div class="col-sm field">
-          <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Nome e Sobrenome"%>
-        
-      </div>
-      </br>
-    </div>
+  <br />
+  <div>
+    <%= f.label :Cidade %>
+    <%= f.text_field :cidade, autofocus: true %>
   </div>
 
-<br />
-<div>
-  <%= f.label :CPF %>
-  <%= f.text_field :cpf, autofocus: true %>
-</div>
+  <br />
+  <div>
+    <%= f.label :Bairro %>
+    <%= f.text_field :bairro, autofocus: true %>
+  </div>
 
-<br />
-<div>
-  <%= f.label :CNPJ %>
-  <%= f.text_field :cnpj, autofocus: true %>
-</div>
+  <br />
+  <div>
+    <%= f.label :Rua %>
+    <%= f.text_field :rua, autofocus: true %>
+  </div>
 
-<br />
-<div>
-  <%= f.label :Razão_social %>
-  <%= f.text_field :razaosocial, autofocus: true %>
-</div>
+  <br />
+  <div>
+    <%= f.label :Número %>
+    <%= f.text_field :numero, autofocus: true %>
+  </div>
 
-<br />
-<div>
-  <%= f.label :CEP %>
-  <%= f.text_field :cep, autofocus: true %>
-</div>
+  <br />
+  <div class="actions">
+    <%= f.submit "Registrar" %>
+  </div>
+  <% end %>
 
-<br />
-<div>
-  <%= f.label :Estado %>
-  <%= f.select :estado, states %>
-</div>
+  <script type="text/javascript">
 
-<br />
-<div>
-  <%= f.label :Cidade %>
-  <%= f.text_field :cidade, autofocus: true %>
-</div>
-
-<br />
-<div>
-  <%= f.label :Bairro %>
-  <%= f.text_field :bairro, autofocus: true %>
-</div>
-
-<br />
-<div>
-  <%= f.label :Rua %>
-  <%= f.text_field :rua, autofocus: true %>
-</div>
-
-<br />
-<div>
-  <%= f.label :Número %>
-  <%= f.text_field :numero, autofocus: true %>
-</div>
-
-<br />
-<div class="actions">
-  <%= f.submit "Registrar" %>
-</div>
-<% end %>
-
-<script type="text/javascript">
-
-  $(document).ready(function () {
-    $("#user_cep").focusout(function () {
-      //Início do Comando AJAX
-      $.ajax({
-        //O campo URL diz o caminho de onde virá os dados
-        //É importante concatenar o valor digitado no CEP
-        url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
-        //Aqui você deve preencher o tipo de dados que será lido,
-        //no caso, estamos lendo JSON.
-        dataType: 'json',
-        //SUCESS é referente a função que será executada caso
-        //ele consiga ler a fonte de dados com sucesso.
-        //O parâmetro dentro da função se refere ao nome da variável
-        //que você vai dar para ler esse objeto.
-        success: function (resposta) {
-          //Agora basta definir os valores que você deseja preencher
-          //automaticamente nos campos acima.
-          $("#user_rua").val(resposta.logradouro);
-          $("#complemento").val(resposta.complemento);
-          $("#user_bairro").val(resposta.bairro);
-          $("#user_cidade").val(resposta.localidade);
-          $("#user_estado").val(resposta.uf);
-          //Vamos incluir para que o Número seja focado automaticamente
-          //melhorando a experiência do usuário
-          //$("#numero").focus();
-        }
+    $(document).ready(function () {
+      $("#user_cep").focusout(function () {
+        //Início do Comando AJAX
+        $.ajax({
+          //O campo URL diz o caminho de onde virá os dados
+          //É importante concatenar o valor digitado no CEP
+          url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+          //Aqui você deve preencher o tipo de dados que será lido,
+          //no caso, estamos lendo JSON.
+          dataType: 'json',
+          //SUCESS é referente a função que será executada caso
+          //ele consiga ler a fonte de dados com sucesso.
+          //O parâmetro dentro da função se refere ao nome da variável
+          //que você vai dar para ler esse objeto.
+          success: function (resposta) {
+            //Agora basta definir os valores que você deseja preencher
+            //automaticamente nos campos acima.
+            $("#user_rua").val(resposta.logradouro);
+            $("#complemento").val(resposta.complemento);
+            $("#user_bairro").val(resposta.bairro);
+            $("#user_cidade").val(resposta.localidade);
+            $("#user_estado").val(resposta.uf);
+            //Vamos incluir para que o Número seja focado automaticamente
+            //melhorando a experiência do usuário
+            //$("#numero").focus();
+          }
+        });
       });
     });
-  });
-  $(document).ready(function(){
+    $(document).ready(function () {
       $('#user_cpf').mask('000.000.000-00');
       $('#user_cep').mask('00000-000');
       $('#user_cnpj').mask('00.000.000/0000-00');
-  });
-  
-</script>
+    });
 
-<%= render "devise/shared/links" %>
+  </script>
+
+  <%= render "devise/shared/links" %>
 </div>
