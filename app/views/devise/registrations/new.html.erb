@@ -1,3 +1,7 @@
+<head>
+  <title>Os incriveis</title>
+</head>
+
 <h2>Seja um Incrível</h2>
 
 <br>
@@ -97,6 +101,8 @@
 </div>
 <% end %>
 
+
+
 <script type="text/javascript">
 
   $(document).ready(function () {
@@ -128,6 +134,10 @@
       });
     });
   });
-</script>
+  $(document).ready(function () {
+    $('#user_cpf').mask('000.000.000-00');
+    $('#user_cep').mask('00000-000');
+    $('#user_cnpj').mask('00.000.000/0000-00');
+  });
 
-<%= render "devise/shared/links" %>
+</script>
