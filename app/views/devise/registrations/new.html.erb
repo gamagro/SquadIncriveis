@@ -33,7 +33,7 @@
 
 
       <div class="col-sm field">
-        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Digite sua Senha"%>
+        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Ex: @Youser123"%>
         <small id="emailHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
           </br>  Minúscula, 
         Caracter especial e Número</small>
@@ -59,16 +59,15 @@
 
   <div class="row">
     <div class="col-sm field">
-      <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica, value = "Tipo de Cadastro" ,:class => "fonte-label" , :style => "margin-right: 130px"%>
+      <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica, value = "Tipo de Cadastro" ,:class => "fonte-label" , :style => "margin-right: 140px"%>
 
       </br>
       <div class="col-sm field">
         <%= f.select :pf_pj, pfpj%>
 
-
       </div>
       </br>
-      </br>
+      
     </div>
   </div>
 
@@ -78,7 +77,7 @@
       <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 145px"%>
 
       <div class="col-sm field">
-        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Youser da Silva Morais"%>
+        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
 
       </div>
       </br>
@@ -99,7 +98,7 @@
   
   <div class="row">
       <div class="col-sm field">
-          <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
+          <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 250px"%>
   
         <div class="col-sm field">
             <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
@@ -111,10 +110,10 @@
  
   <div class="row">
       <div class="col-sm field">
-          <%= f.label :Razão_social , value = "Razão Social" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
+          <%= f.label :Razão_social , value = "Razão Social" ,:class => "fonte-label" , :style => "margin-right: 180px"%>
   
         <div class="col-sm field">
-            <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => ""%>
+            <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
   
         </div>
         </br>
@@ -127,51 +126,82 @@
             <%= f.label :CEP, value = "CEP" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
     
           <div class="col-sm field">
-              <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00000-000"%>
+              <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00000-000"%>
     
           </div>
           </br>
         </div>
       </div>
-  <div>
-   
-    <%= f.text_field :cep, autofocus: true %>
-  </div>
 
-  <br />
-  <div>
-    <%= f.label :Estado %>
-    <%= f.select :estado, states %>
-  </div>
 
-  <br />
-  <div>
-    <%= f.label :Cidade %>
-    <%= f.text_field :cidade, autofocus: true %>
-  </div>
+      <div class="row">
+          <div class="col-sm field">
+              <%= f.label :Estado, value = "Estado" ,:class => "fonte-label" , :style => "margin-right: 240px"%>
+          </br>
+            <div class="col-sm field">
+                <%= f.select :estado, states, autofocus: true, :class => "caixa-de-texto borda-caixa-texto"%>
+      
+            </div>
+            </br>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm field">
+                <%= f.label :Cidade, value = "Cidade",:class => "fonte-label" , :style => "margin-right: 230px"%>
+           
+              <div class="col-sm field">
+                  <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
+        
+              </div>
+              </br>
+            </div>
+          </div>
+ 
+          <div class="row">
+              <div class="col-sm field">
+                  <%= f.label :Bairro, value = "Bairro",:class => "fonte-label" , :style => "margin-right: 240px"%>
+             
+                <div class="col-sm field">
+                    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
+          
+                </div>
+                </br>
+              </div>
+            </div>
+ 
 
-  <br />
-  <div>
-    <%= f.label :Bairro %>
-    <%= f.text_field :bairro, autofocus: true %>
-  </div>
+            <div class="row">
+                <div class="col-sm field">
+                    <%= f.label :Rua, value = "Rua",:class => "fonte-label" , :style => "margin-right: 265px"%>
+               
+                  <div class="col-sm field">
+                      <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
+            
+                  </div>
+                  </br>
+                </div>
+              </div>
 
-  <br />
-  <div>
-    <%= f.label :Rua %>
-    <%= f.text_field :rua, autofocus: true %>
-  </div>
+              <div class="row">
+                  <div class="col-sm field">
+                      <%= f.label :Número , value = "Número",:class => "fonte-label" , :style => "margin-left: -220px"%>
+                 
+                    <div class="col-sm field">
+                        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: 4285"%>
+              
+                    </div>
+                    </br>
+                  </div>
+                </div>
 
-  <br />
-  <div>
-    <%= f.label :Número %>
-    <%= f.text_field :numero, autofocus: true %>
-  </div>
 
-  <br />
-  <div class="actions">
-    <%= f.submit "Registrar" %>
-  </div>
+        <div class="row">
+          <div class="col-sm field justify-content-center">
+            <%= f.submit "FINALIZAR", :class => "btn botao"%>
+          </div>
+        </div>
+        </br>
+      
   <% end %>
 
   <script type="text/javascript">
@@ -213,5 +243,6 @@
 
   </script>
 
-  <%= render "devise/shared/links" %>
+<%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
+</br>
 </div>
