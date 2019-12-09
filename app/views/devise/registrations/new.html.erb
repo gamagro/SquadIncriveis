@@ -63,15 +63,17 @@
 
       </br>
       <div class="col-sm field">
-        <%= f.select :pf_pj, pfpj%>
-
+          <select id="pf_pj" name="pf_pj">
+              <option value="PF">Pessoa Física</option>
+              <option value="PJ">Pessoa Jurídica</option>
+          </select>
       </div>
       </br>
       
     </div>
   </div>
 
-
+ <div id="esc_nomec" style="display:none;">
   <div class="row">
     <div class="col-sm field">
       <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 145px"%>
@@ -83,7 +85,9 @@
       </br>
     </div>
   </div>
+</div>
 
+<div id="esc_cpf" style="display:none;">
   <div class="row">
     <div class="col-sm field">
       <%= f.label :CPF, value = "CPF" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
@@ -95,30 +99,36 @@
       </br>
     </div>
   </div>
-  
-  <div class="row">
-      <div class="col-sm field">
-          <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 250px"%>
-  
+</div>
+
+<div id="esc_razao" style="display:none;">
+    <div class="row">
         <div class="col-sm field">
-            <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
-  
+            <%= f.label :Razão_social , value = "Razão Social" ,:class => "fonte-label" , :style => "margin-right: 180px"%>
+    
+          <div class="col-sm field">
+              <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
+    
+          </div>
+          </br>
         </div>
-        </br>
       </div>
     </div>
- 
-  <div class="row">
-      <div class="col-sm field">
-          <%= f.label :Razão_social , value = "Razão Social" ,:class => "fonte-label" , :style => "margin-right: 180px"%>
   
+  <div id="esc_cnpj" style="display:none;">
+    <div class="row">
         <div class="col-sm field">
-            <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
-  
+            <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 250px"%>
+    
+          <div class="col-sm field">
+              <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
+    
+          </div>
+          </br>
         </div>
-        </br>
       </div>
     </div>
+
 
 
     <div class="row">
@@ -182,6 +192,7 @@
                 </div>
               </div>
 
+
               <div class="row">
                   <div class="col-sm field">
                       <%= f.label :Número , value = "Número",:class => "fonte-label" , :style => "margin-left: -220px"%>
@@ -241,7 +252,22 @@
       $('#user_cnpj').mask('00.000.000/0000-00');
     });
 
-  </script>
+  $(document).ready(function (){
+      $("#pf_pj").change(function() {
+          if ($(this).val() === "PF") {
+              $("#esc_razao").hide();
+              $("#esc_cnpj").hide();
+              $("#esc_nomec").show();
+              $("#esc_cpf").show();
+          } else {
+              $("#esc_razao").show();
+              $("#esc_cnpj").show();
+              $("#esc_nomec").hide();
+              $("#esc_cpf").hide();
+          } 
+      });
+  });
+</script>
 
 <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
 </br>
