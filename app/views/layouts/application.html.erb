@@ -18,20 +18,18 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-ligh menu">
-    <a class="navbar-brand navbar1" href="#">
-      <img src="/app/assets/images/simb.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      Os incríveis
-    </a>
-    <p class="navbar-text float-right menu">
-      <% if user_signed_in?%>
-      Logado como: <strong><%= current_user.email %></strong>.
-      <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link menu' %> |
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link '  %>
-      <% else %>
-      <%= link_to "Registrar-se", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
+  <nav class= "navbar navbar-ligh fixed-top menu">
+  <a class="navbar-brand navbar1" href="/users/sign_in">
+    <img src= "<%= image_url('youse.png') %> "style =  "width="160" height="50"  class="d-inline-block align-top" >
+  </a>
+
+        <p class="navbar-text float-right menu navbar1">
+          <% if user_signed_in?%>
+          Logado como: <strong><%= current_user.email %></strong>.
+          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link '  %>
+          <% else %>
+          <% end %>
 
   </nav>
 
@@ -42,14 +40,14 @@
     <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    <%= render "layouts/error_modal" %>
     <%= yield %>
   </div>
+
+
+
   <footer>
-    <div class="container">
 
-      Os incríveis <<img src="" alt=""> <%= Time.now.year %>
-
-    </div>
   </footer>
 
 </body>
