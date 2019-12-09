@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
 
+<html>
 <head>
   <title>Os incriveis</title>
 
@@ -20,7 +20,7 @@
 <body>
   <nav class= "navbar navbar-ligh fixed-top menu">
   <a class="navbar-brand navbar1" href="/users/sign_in">
-    <img src= "<%= image_url('nome.png') %>" style = "" width="160" height="50" class="d-inline-block align-top" >
+    <img src= "<%= image_url('youse.png') %> "style =  "width="160" height="50"  class="d-inline-block align-top" >
   </a>
 
         <p class="navbar-text float-right menu navbar1">
@@ -30,7 +30,6 @@
           <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link '  %>
           <% else %>
           <% end %>
-
   </nav>
 
 <div class="container">
@@ -40,7 +39,6 @@
 
     <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
-    
     <% end %>
 </div>
 
@@ -48,9 +46,9 @@
 <%= yield %>
 
 
-  <footer>
+<footer>
 
-  </footer>
+</footer>
 
 </body>
 

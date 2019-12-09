@@ -1,41 +1,90 @@
-<h2>Seja um Incrível</h2>
+
+<h2 class= fonte-titulo> Opa, ficamos feliz que você chegou até aqui, </br> agora venha se Cadastrar! </h2>
 
 <br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
 
-<br />
-<div class="field">
-  <%= f.label :Email %>
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-</div>
+<br/>
+<div class="container bg-white container-login justify-content-center">
+</br>
+</br>
 
-<br />
-<div class="field">
-  <%= f.label :Senha %>
-  <% if @minimum_password_length %>
-  <em>(No minímo <%= @minimum_password_length %> caracteres)</em><br />
-  <% end %>
-  <%= f.password_field :password, autocomplete: "new-password" %>
-</div>
+<div class="row">
+  <div class="col-sm field">
+  
+    <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
+  
+    <div class="col-sm field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
 
-<br />
-<div class="field">
-  <%= f.label :Confirmação_de_senha %>
-  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-</div>
+   
 
-<br />
-<div>
-  <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica %>
-  <%= f.select :pf_pj, pfpj %>
+    </br>
+    </br>
+  </div>
 </div>
+  </div>
 
-<br />
-<div>
-  <%= f.label :Nome_completo %>
-  <%= f.text_field :fullname, autofocus: true %>
-</div>
+
+
+      <div class="row">
+        <div class="col-sm field">
+          <%= f.label :password , value = "Senha", :class => "fonte-label" , :style => "margin-right: 250px"%>
+        <% if @minimum_password_length%>
+        <em>(No minímo <%= @minimum_password_length %> caracteres)</em><br />
+          <% end %>
+       
+          <div class="col-sm field">
+            <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Digite sua Senha"%>
+            <small id="emailHelp" class="form-text text-muted">A senha deve conter: letra Maiúscula e Minúscula, Caracter especial e Número</small>
+          </div>
+          </br>
+          
+        </div>
+      </div>
+
+<div class="row">
+  <div class="col-sm field">
+    <%= f.label :Confirmação_de_senha, value = "Confirmação de senha", :class => "fonte-label" , :style => "margin-right: 90px"%>
+  </br>
+    <div class="col-sm field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
+    
+    </div>
+    </br>
+    
+  </div>
+  </div>
+
+
+<div class="row">
+    <div class="col-sm field">
+        <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica, value = "Tipo de Cadastro" ,:class => "fonte-label" , :style => "margin-right: 130px"%>
+    </br>
+  </br>
+      <div class="col-sm field">
+          <%= f.select :pf_pj, pfpj%>
+          
+        
+      </div>
+      </br>
+      </br>
+    </div>
+  </div>
+
+
+<div class="row">
+    <div class="col-sm field">
+        <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 130px"%>
+    </br>
+      <div class="col-sm field">
+          <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Nome e Sobrenome"%>
+        
+      </div>
+      </br>
+    </div>
+  </div>
 
 <br />
 <div>
@@ -122,16 +171,9 @@
       $('#user_cep').mask('00000-000');
       $('#user_cnpj').mask('00.000.000/0000-00');
   });
-
-
-  <% if alert %>
-    $('#modalExemplo').on('shown.bs.modal', function (evt) {
-      $('#cartMessage').modal('focus')
-      evt.preventDefault();
-    })
-<% end %>
-
   
 </script>
 
 <%= render "devise/shared/links" %>
+
+</div>

@@ -3,47 +3,52 @@
     height: 463px;
   }
   .menu{
-    background-color: black;
-    color: futura;
+    background-color: rgb(132, 46, 176);
+    font-family: futura;
     display: block;
-    color: #b22222 !important;
 
   }
-  IMG.displayed {
+  img.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto
   }
+  img.alerta{
+    position: fixed;
+    top: 45%;
+    right: 0;
+   
+   }
   .navbar1{
-  color: #B22222 !important;
+  color: rgb(132, 46, 176)!important;
   font-family: futura;
   }
 
   .navbar1:hover{
-    background-color: black;
-    color: #b22222;
+    background-color: rgb(132, 46, 176);
   }
 
 
   .fonte-titulo{
-    color: black;
+    color: #1C1C1C;
     font-style: normal;
     font-family: futura;
     margin-top: 100px;
     font-size: 40px;
   }
   .fonte-h3{
+  font-family: futura;
   color: #696969;
   }
 
   .fonte-label{
-    color: #B22222;
+    color: rgb(132, 46, 176);
     font-size: 18px;
     font-weight: bold;
     font-family: futura;
   }
   .checkbox-pequena{
-    color: #B22222;
+    color: rgb(132, 46, 176);
     font-size: 13px;
     font-family: futura;
     font-weight: bold;
@@ -54,7 +59,7 @@
   .borda-caixa-texto{
   outline: 0;
   border-width: 0 0 1px;
-  border-color: #b22222;
+  border-color: rgb(132, 46, 176);
   }
 
   .caixa-de-texto{
@@ -80,29 +85,25 @@
   height: 40px;
   font-family: futura;
   font-size: 13px;
-  background-color: #b22222;
-  color: #fcdd4b;
+  background-color: #ff9c2a;
+  color: white;
 
 
   }
 
   .botao:hover {
-    background-color: #c42727;
-    border-color: #B22222;
-    color: #ff970f;
+    background-color: #ffaf0f;
+    border-color: #ffaf0f;
+    color: white;
   }
 
-
-
-.formulario {
-  box-align: center;
-}
 .link{
-  color: #B22222 !important;
+  color: rgb(132, 46, 176) !important;
   text-decoration: underline;
 
 }
 .link:hover{
   background-color: white;
-  color: #b22222;
+  color: rgb(132, 46, 176);
 }
+
