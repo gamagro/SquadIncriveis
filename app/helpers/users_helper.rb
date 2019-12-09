@@ -1,6 +1,6 @@
 module UsersHelper
     def pfpj
-        [["Pessoa Física", "PF"], ["Pessoa jurídica", "PJ"]] 
+        [["Selecione",""], ["Pessoa Física", "PF"], ["Pessoa jurídica", "PJ"]] 
     end
 
     def states

@@ -2,10 +2,8 @@
 <h5 class="fonte-h3"> Faça seu login para começar ;) </h5>
 </br>
 
-<body>
+<%= render "devise/shared/error_messages", resource: resource %>
 
-  <head>
-    <link href="css/application.css" rel="stylesheet" type="text/CSS" </head> </head>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
 
       <div class="container bg-white container-login justify-content-center">
@@ -87,5 +85,3 @@
       alt="logo os incriveis">
     <img src="<%= image_url('icon2.png') %>" width="400" height="400" class="d-inline-block align-top alerta"
       alt="logo os incriveis">
-
-</body>

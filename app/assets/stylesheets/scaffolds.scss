@@ -22,8 +22,7 @@ a:visited {
   color: #666; }
 
 a:hover {
-  color: #fff;
-  background-color: #000; }
+  color: #fff; }
 
 th {
   padding-bottom: 5px; }
@@ -34,6 +33,10 @@ td {
 div.field,
 div.actions {
   margin-bottom: 10px; }
+
+.navbar {
+  font-size: 12px;
+}
 
 #notice {
   color: green; }
