@@ -30,6 +30,9 @@ class IncriveisValidator < ActiveModel::Validator
         if !record.email.match(/\A[^@\s]+@youse.com.br/)
             record.errors[:email] << "O seu email deve ser no formato 'fulano@youse.com.br'."
         end
+        if record.pf_pj == ""
+            record.errors[:pf_pj] << "Selecione o tipo de pessoa"
+        end
     end 
 end 
 

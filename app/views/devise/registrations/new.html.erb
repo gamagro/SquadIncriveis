@@ -95,15 +95,10 @@
             <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "000.000.000-00"%>
 
       </br>
-      <div class="col-sm field">
-          <select id="pf_pj" name="pf_pj">
-              <option value="PF">Pessoa Física</option>
-              <option value="PJ">Pessoa Jurídica</option>
-          </select>
-          </div>
           </br>
         </div>
       </div>
+    </div>
     </div>
 
     <div id="esc_razao" style = " display:none;">
@@ -124,11 +119,6 @@
       <div class="row">
         <div class="col-sm field">
           <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 250px"%>
-
- <div id="esc_nomec" style="display:none;">
-  <div class="row">
-    <div class="col-sm field">
-      <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 145px"%>
           <div class="col-sm field">
             <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
 
@@ -163,6 +153,7 @@
         </br>
       </div>
     </div>
+    
     <div class="row">
       <div class="col-sm field">
         <%= f.label :Cidade, value = "Cidade",:class => "fonte-label" , :style => "margin-right: 230px"%>
