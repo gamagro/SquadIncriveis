@@ -20,6 +20,7 @@
   </div>
 </div>
 
+
 <%= render "devise/shared/error_messages", resource: resource %>
 
 
@@ -62,32 +63,17 @@
   </div>
 </div>
 
-<div class="container bg-white container-login">
-  <div class="row">
-    <div class="col-sm field .col-6 .col-md-4">
-      <% if devise_mapping.rememberable?%>
-      <%= f.check_box :remember_me, :style => "margin-left:180px"%>
-    </div>
-    <div class="col-sm field .col-12 .col-md-8">
-      <%= f.label :remember_me, value = "Lembre-me", :class => "checkbox-pequena", :style => "margin-right:100px"%>
-      <% end %>
-    </div>
+    <div class="container bg-white container-login">
+      <div class="row">
+        <div class="col-sm field">
+          <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:60px", :id => "idbotao"%>
+        </div>
+        <div class="col-sm field">
+          <input type="reset" value="CANCELAR" class="btn botao" , style="margin-right:50px">
+        </div>
 
   </div>
   </br>
-  </br>
-</div>
-
-<div class="container bg-white container-login">
-  <div class="row">
-    <div class="col-sm field">
-      <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:60px"%>
-    </div>
-    <div class="col-sm field">
-      <input type="reset" value="CANCELAR" class="btn botao" , style="margin-right:50px">
-    </div>
-
-  </div>
   </br>
 </div>
 
@@ -103,10 +89,12 @@
   alt="logo os incriveis">
 
 
+
 <script>
-  <% if alert %>
-  $(document).ready(function () {
-    $('#myModal').modal('show');
-  });
-  <% end %>
+    <% if alert %>
+      $(document).ready(function(){
+        $('#myModal').modal('show')
+        console.log('eae')
+       });
+    <% end %>
 </script>

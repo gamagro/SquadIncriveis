@@ -64,8 +64,7 @@
 
         </br>
         <div class="col-sm field">
-          <%= f.select :pf_pj, pfpj%>
-
+          <%= f.select :pf_pj, pfpj %>
         </div>
         </br>
 
@@ -215,7 +214,8 @@
     <script type="text/javascript">
 
       $(document).ready(function () {
-        $("#user_cep").focusout(function () {
+        $("#user_cep").keyup(function () {
+          if ($(this).val().length == 9) {
           //Início do Comando AJAX
           $.ajax({
             //O campo URL diz o caminho de onde virá os dados
@@ -241,6 +241,7 @@
               //$("#numero").focus();
             }
           });
+          }
         });
       });
       $(document).ready(function () {
@@ -265,8 +266,12 @@ $(document).ready(function (){
           }
       });
   });
-    </script>
 
+  $(document).ready(function(){
+    $("#lanaerror_exption").appendTo("#erros_modal");
+  })
 
+  </script>
+  
     <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
-    </br>
+  </br>
