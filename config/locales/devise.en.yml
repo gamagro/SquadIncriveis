@@ -61,5 +61,22 @@ en:
       not_found: "not found"
       not_locked: "was not locked"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} Erro(s) na preenchimento do seu cadastro!"
+        one: "1 erro no preenchimento do seu cadastro"
+        other: "%{count} Erro(s) no preenchimento do seu cadastro!"
+      models:
+      
+en:
+  activerecord:
+    errors:
+        models:
+          user:
+            attributes:
+              email:
+                blank: "Campo email em branco"
+                taken: "Email já sendo utilizado."
+              password:
+                blank: "Campo senha em branco"
+                confirmation: "Senha e sua confirmação não combinam."
+              password_confirmation:
+                blank: "Campo confirmaCão de senha em branco"
+

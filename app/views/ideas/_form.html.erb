@@ -1,7 +1,7 @@
 <%= form_for(idea, html: {multipart: true}) do |form| %>
   <% if idea.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+      <h2><%= pluralize(idea.errors.count, "Erro(s)") %> o proibem de realizar o cadastro</h2>
 
       <ul>
         <% idea.errors.full_messages.each do |message| %>

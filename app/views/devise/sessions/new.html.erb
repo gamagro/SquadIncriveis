@@ -20,6 +20,7 @@
   </div>
 </div>
 
+
 <%= render "devise/shared/error_messages", resource: resource %>
 
 
@@ -80,7 +81,7 @@
     <div class="container bg-white container-login">
       <div class="row">
         <div class="col-sm field">
-          <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:60px"%>
+          <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:60px", :id => "idbotao"%>
         </div>
         <div class="col-sm field">
           <input type="reset" value="CANCELAR" class="btn botao" , style="margin-right:50px">
@@ -103,10 +104,12 @@
     <img src="<%= image_url('icon2.png') %>" width="400" height="400" class="d-inline-block align-top alerta"
       alt="logo os incriveis">
 
+
 <script>
-  <% if alert %>
-    $(document).ready(function(){
-      $('#myModal').modal('show')
-    });
-  <% end %>
+    <% if alert %>
+      $(document).ready(function(){
+        $('#myModal').modal('show')
+        console.log('eae')
+       });
+    <% end %>
 </script>
