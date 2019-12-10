@@ -2,16 +2,22 @@
 <h5 class="fonte-h3"> Faça seu login para começar ;) </h5>
 </br>
 
-<div class="container">
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-
-  <%= yield %>
-</div>
+<div class="modal" tabindex="-1" role="dialog" id="erlogin-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">            
+                <p class="alert alert"><%= alert %></p>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>  
 
 <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -87,11 +93,18 @@
 
 <%= render "devise/shared/links" %>
 
-
-
 </br>
 
 <img src="<%= image_url('simb.png') %>" width="100" height="80" class="d-inline-block align-top displayed"
   alt="logo os incriveis">
 <img src="<%= image_url('icon2.png') %>" width="400" height="400" class="d-inline-block align-top alerta"
   alt="logo os incriveis">
+
+
+<script>
+  <% if alert %>
+  $(document).ready(function () {
+    $('#erlogin-modal').modal('show');
+  });
+  <% end %>
+</script>
