@@ -2,26 +2,28 @@
 <h5 class="fonte-h3"> Faça seu login para começar ;) </h5>
 </br>
 
-<div class="modal" tabindex="-1" role="dialog" id="erlogin-modal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="container">            
-                <p class="alert alert"><%= alert %></p>
-              </div>
-        </div>
-      </div>
+<div class=“container”>
+  <% if notice %>
+  <p class=“alert alert-success”><%= notice %></p>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </br>
+    <p class=“alert alert-danger”><%= alert %></p>
     </div>
-  </div>  
+  </div>
+</div>
 
 <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
 
 <div class="container bg-white container-login justify-content-center">
   </br>
@@ -104,7 +106,7 @@
 <script>
   <% if alert %>
   $(document).ready(function () {
-    $('#erlogin-modal').modal('show');
+    $('#myModal').modal('show');
   });
   <% end %>
 </script>
