@@ -1,222 +1,236 @@
-<h2 class=fonte-cadastro> Opa, ficamos feliz que você chegou até aqui, </br> agora venha se Cadastrar! </h2>
-
-<br>
+<img src="<%= image_url('icon-chat.png')%>" widht="204" height="155" class="cadastrar" alt="chat1"
+  style="margin-top: 100px">
+</br>
+<h2 class=fonte-titulo-cadastro> Especialista em ser uma incrível</h2>
+<br />
+<br />
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
 
-  <br />
-  <div class="container bg-white container-login justify-content-center">
-    </br>
-    </br>
 
-    <div class="row">
-      <div class="col-sm field">
+<div class="container bg-green container-cad justify-content-center">
 
-        <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
-
-        <div class="col-sm field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
-
-
-          </br>
-          </br>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="row">
-      <div class="col-sm field">
-        <%= f.label :password , value = "Senha", :class => "fonte-label" , :style => "margin-right: 250px"%>
-
-
-        <div class="col-sm field">
-          <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Ex: @Youser123"%>
-          <small id="emailHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
-            </br> Minúscula,
-            Caracter especial e Número</small>
-        </div>
-        </br>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm field">
-        <%= f.label :Confirmação_de_senha, value = "Confirmação de senha", :class => "fonte-label" , :style => "margin-right: 90px"%>
-
-        <div class="col-sm field">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
-
-        </div>
-        </br>
-
-      </div>
-    </div>
-
-
-
-    <div class="row">
-
-      <div class="col-sm field">
-        <%= f.label :Pessoa_Física_ou_Pessoa_Jurídica, value = "Tipo de Cadastro" ,:class => "fonte-label" , :style => "margin-right: 140px"%>
-
-        </br>
-        <div class="col-sm field">
-          <%= f.select :pf_pj, pfpj %>
-        </div>
-        </br>
-
-      </div>
-    </div>
-
-    <div id="esc_nomec" style = "display:none;">
-      <div class="row">
-        <div class="col-sm field">
-          <%= f.label :Nome_completo, value = "Nome Completo" ,:class => "fonte-label" , :style => "margin-right: 145px"%>
-
-          <div class="col-sm field">
-            <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
-
-          </div>
-          </br>
-        </div>
-      </div>
-    </div>
-
-    <div id="esc_cpf" style = " display:none;">
-      <div class="row">
-        <div class="col-sm field">
-          <%= f.label :CPF, value = "CPF" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
-
-          <div class="col-sm field">
-            <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "000.000.000-00"%>
-
+  <div class="row">
+    <img src="<%= image_url('chat1.png')%>" class="cadastrar" alt="chat1">
+  </div>
+  <div class="row">
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 620px;">
       </br>
-          </br>
-        </div>
-      </div>
+      </br>
+      <%= f.select :pf_pj, pfpj%>
+
     </div>
+    <div class="col-sm field" align="right">
+      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
     </div>
 
-    <div id="esc_razao" style = " display:none;">
-        <div class="row">
-          <div class="col-sm field">
-            <%= f.label :Razão_social , value = "Razão Social" ,:class => "fonte-label" , :style => "margin-right: 180px"%>
-  
-            <div class="col-sm field">
-              <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
-  
-            </div>
-            </br>
-          </div>
-        </div>
+  </div>
+
+
+  <div id="esc_nomec" style="display:none;">
+    <div class="row">
+      <img src="<%= image_url('chat2.png')%>" class="cadastrar" alt="chat2">
+    </div>
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+
+        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
+
       </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="esc_cpf" style="display:none;">
+    <div class="row">
+      <img src="<%= image_url('chat3.png')%>" class="cadastrar" alt="chat3">
+    </div>
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+
+        <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00"%>
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="esc_razao" style=" display:none;">
+    <div class="row">
+      <img src="<%= image_url('cha4t.png')%>" class="cadastrar" alt="chat3">
+    </div>
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+        <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="esc_cnpj" style=" display:none;">
+    <div class="row">
+      <img src="<%= image_url('chat5.png')%>" class="cadastrar" alt="chat3">
+    </div>
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+        <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
+
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+
+    </div>
+  </div>
+  <div id="esc_email" style="display:none;">
+    <div class="row">
+      <img src="<%= image_url('chat8.png')%>" class="cadastrar" alt="chat8" align="left">
+    </div>
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
+        </br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+    </div>
+  </div>
+  
+  <div id="esc_senha" style="display:none;">
+    <div class="row">
+      <img src="<%= image_url('chat9.png')%>" class="cadastrar" alt="chat9" align="left">
+    </div>
+  
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Ex: @Youser123"%>
+        <small id="emailHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
+          </br> Minúscula,
+          Caracter especial e Número</small>
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+    </div>
+  </div>
+  
+  <div id="esc_conf" style="display:none;">
+    <div class="row">
+      <img src="<%= image_url('chat10.png')%>" class="cadastrar" alt="chat10" align="left">
+    </div>
+    <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
+      </div>
+      <div class="col-sm field" align="right">
+          <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+        </div>
       
-    <div id="esc_cnpj" style = " display:none;">
-      <div class="row">
-        <div class="col-sm field">
-          <%= f.label :CNPJ, value = "CNPJ" ,:class => "fonte-label" , :style => "margin-right: 250px"%>
-          <div class="col-sm field">
-            <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
-
-          </div>
-          </br>
-        </div>
-      </div>
     </div>
+  </div>
+  
+  <div id="esc_cep" style="display:none;">
+  <div class="row">
+    <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat6">
+  </div>
+  <div class="row">
 
- 
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+      </br>
+      <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
 
+    </div>
+    <div class="col-sm field" align="right">
+      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+    </div>
+  </div>
+</div>
+
+<div id="esc_est" style="display:none;">
+  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
+    </br>
+    <%= f.select :estado, states, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto"%>
+  </div>
+  </div>
+
+  <div id="esc_cid" style="display:none;">
+  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+    </br>
+
+    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
+
+  </div>
+  </div>
+  </br>
+
+  <div id="esc_bairro" style="display:none;">
+  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
+
+  </div>
+  </div>
+  </br>
+
+  <div id="esc_rua" style="display:none;">
+  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
+
+  </div>
+  </div>
+  </br>
+
+  <div id="esc_num" style="display:none;">
     <div class="row">
-      <div class="col-sm field">
-        <%= f.label :CEP, value = "CEP" ,:class => "fonte-label" , :style => "margin-right: 270px"%>
-
-        <div class="col-sm field">
-          <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "00000-000"%>
-
-        </div>
-        </br>
-      </div>
+      <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
 
+  <div class="row">
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
+      <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
+
+    </div>
+    <div class="col-sm field" align="right">
+      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+    </div>
+  </div>
+
+  <div id="esc_botao" style="display:none;">
     <div class="row">
-      <div class="col-sm field">
-        <%= f.label :Estado, value = "Estado" ,:class => "fonte-label" , :style => "margin-right: 240px"%>
-        </br>
-        <div class="col-sm field">
-          <%= f.select :estado, states, autofocus: true, :class => "caixa-de-texto borda-caixa-texto"%>
-
-        </div>
-        </br>
+        <img src="<%= image_url('chat11.png')%>" class="cadastrar" alt="chat11" align="left">
       </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm field">
-        <%= f.label :Cidade, value = "Cidade",:class => "fonte-label" , :style => "margin-right: 230px"%>
-
-        <div class="col-sm field">
-          <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm field">
-        <%= f.label :Bairro, value = "Bairro",:class => "fonte-label" , :style => "margin-right: 240px"%>
-
-        <div class="col-sm field">
-          <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
-
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="row">
-      <div class="col-sm field">
-        <%= f.label :Rua, value = "Rua",:class => "fonte-label" , :style => "margin-right: 265px"%>
-
-        <div class="col-sm field">
-          <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
-
-        </div>
-        </br>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm field">
-        <%= f.label :Número , value = "Número",:class => "fonte-label" , :style => "margin-left: -220px"%>
-
-        <div class="col-sm field">
-          <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto borda-caixa-texto", :placeholder => "Ex: 4285"%>
-
-        </div>
-        </br>
-      </div>
-    </div>
-
-
+    </br>
     <div class="row">
       <div class="col-sm field justify-content-center">
         <%= f.submit "FINALIZAR", :class => "btn botao"%>
       </div>
     </div>
-    </br>
+  </div>
 
-    <% end %>
+</div>
 
-    <script type="text/javascript">
+  <% end %>
 
-      $(document).ready(function () {
-        $("#user_cep").keyup(function () {
-          if ($(this).val().length == 9) {
-          //Início do Comando AJAX
+  <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#user_cep").keyup(function () {
+        if ($(this).val().length == 9) {
           $.ajax({
             //O campo URL diz o caminho de onde virá os dados
             //É importante concatenar o valor digitado no CEP
@@ -241,37 +255,90 @@
               //$("#numero").focus();
             }
           });
-          }
-        });
-      });
-      $(document).ready(function () {
-        $('#user_cpf').mask('000.000.000-00');
-        $('#user_cep').mask('00000-000');
-        $('#user_cnpj').mask('00.000.000/0000-00');
+        }
       });
 
-  
-$(document).ready(function (){
-      $("#user_pf_pj").change(function() {
-          if ($(this).val() === "PF") {
-              $("#esc_razao").hide();
-              $("#esc_cnpj").hide();
-              $("#esc_nomec").show();
-              $("#esc_cpf").show();
-          } else {
-              $("#esc_razao").show();
-              $("#esc_cnpj").show();
-              $("#esc_nomec").hide();
-              $("#esc_cpf").hide();
-          }
-      });
-  });
+      $('#user_cpf').mask('000.000.000-00');
+      $('#user_cep').mask('00000-000');
+      $('#user_cnpj').mask('00.000.000/0000-00');
 
-  $(document).ready(function(){
-    $("#lanaerror_exption").appendTo("#errors_modal");
-  })
+      $("#user_pf_pj").change(function () {
+        if ($(this).val() === "PF") {
+          $("#esc_razao").hide();
+          $("#esc_cnpj").hide();
+          $("#esc_nomec").show();
+          $("#esc_cpf").show();
+
+          $("#user_razaosocial").val('');
+          $("#user_cnpj").val('');
+
+        } else {
+          $("#esc_razao").show();
+          $("#esc_cnpj").show();
+          $("#esc_nomec").hide();
+          $("#esc_cpf").hide();
+
+          $("#user_fullname").val('');
+          $("#user_cpf").val('');
+        }
+      });
+
+      $("#user_cpf").keyup(function () {
+        if ($(this).val().length === 14) {
+          $("#esc_email").show();
+          $("#esc_senha").show();
+          $("#esc_conf").show();
+        } 
+      });
+
+      $("#user_cnpj").keyup(function () {
+        if ($(this).val().length === 18) {
+          $("#esc_email").show();
+          $("#esc_senha").show();
+          $("#esc_conf").show();
+        } 
+      });
+      
+      $("#user_password_confirmation").keyup(function () {
+        if ($(this).val().length > 0) {
+          $("#esc_cep").show();
+          $("#esc_est").show();
+          $("#esc_cidade").show();
+          $("#esc_bairro").show();
+          $("#esc_rua").show();
+          $("#esc_num").show();
+          $("#esc_botao").show();
+        } 
+      });
+
+      if ($('#lanaerror_explanation').length > 0) {
+        var cnpjCpf = $("#user_pf_pj").val();
+
+        $("#esc_cep").show();
+        $("#esc_est").show();
+        $("#esc_cidade").show();
+        $("#esc_bairro").show();
+        $("#esc_rua").show();
+        $("#esc_num").show();
+        $("#esc_botao").show();
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+
+        if (cnpjCpf == 'PF') {
+          $("#esc_nomec").show();
+          $("#esc_cpf").show();
+        } else {
+          $("#esc_razao").show();
+          $("#esc_cnpj").show();
+        } 
+      }
+    });
+
+$(document).ready(function(){
+  $("#lanaerror_explanation").appendTo("#errors_modal");
+})
 
   </script>
-  
-    <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
-  </br>
+
+</div>
