@@ -1,6 +1,7 @@
  .container-login1{
+   opacity: 0.9;
    width: 400px;
-   height: 500px;
+   height: 450px;
  }
  .container-cad{
   width: 900px;
@@ -9,8 +10,9 @@
 img.cadastrar{
   width: 100x;
   height: 80px;
-
+  
 }
+
 img.you{
   width: 100x;
   height: 80px;
@@ -82,15 +84,55 @@ img.you{
   .caixa-de-texto-login{
   height: 45px;
   width: 300px;
-  font-size: 15px;
-  font-family: futura;
+  color: #ff9c2a;
+  font-size: 16px;
+  font-family: Arial;
   
   }
+  .place{
+
+  }
+
+select {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: rgb(132, 46, 176);
+  font-size: 14px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  -webkit-appearance: menulist;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: rgb(132, 46, 176);
+  background-color: rgb(248, 248, 248);
+  cursor: default;
+  margin: 0em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgb(166, 166, 166);
+ 
+}
+
+.modal{
+  color: rgb(132, 46, 176);
+  font-family: futura;
+
+}
+
   .caixa-de-texto-cad{
     height: 45px;
     width: 300px;
-    font-size: 15px;
-    font-family: futura;
+    font-size: 16px;
+    font-family: arial;
+    color: #ff9c2a;
     background-color: #f7f7f7;
     
     }

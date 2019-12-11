@@ -14,24 +14,22 @@
     <div class="col-sm field">
      
       <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
-
+    
       <div class="col-sm field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
 
       </div>
     </div>
   </div>
 
-
+</br>
   <div class="row">
     <div class="col-sm field">
       <%= f.label :password, value = "Senha", :class => "fonte-label" , :style => "margin-right: 250px"%>
-
-      <div class="col-sm field">
-        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto borda-caixa-texto" , :placeholder => "Senha"%>
-      </div>
     
-   
+      <div class="col-sm field">
+        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-login borda-caixa-texto" , :placeholder => "Senha"%>
+      </div>
     </div>
   </div>
 
@@ -67,5 +65,5 @@
 
 </div>
 <img src="<%= image_url('icon2.png') %>" width="400" height="400" class="d-inline-block align-top alerta"
-  alt="logo-youse">
+  alt="logo-youse" style="z-index:-10">
 
