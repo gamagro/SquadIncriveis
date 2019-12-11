@@ -8,6 +8,17 @@ class ApplicationController < ActionController::Base
   #          validates_presence_of :email, message: 'não pode ser deixado em branco'
   #          validates_presence_of :password, message: 'não pode ser deixado em branco'
   #    
+
+  def create
+    # save post
+    flash[:notice] = "Post successfully created"
+    redirect_to @post
+  end
+
+  def show
+    # doesn't need to assign the flash notice to the template, that's done automatically
+  end
+  
   protected
   
   def configure_permitted_parameters
@@ -15,5 +26,6 @@ class ApplicationController < ActionController::Base
     
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password_confirmation, :password, :current_password, :fullname, :razaosocial, :pf_pj, :cpf, :cnpj, :rua, :cep, :bairro, :cidade, :estado, :numero)}
   end
+  
   
 end
