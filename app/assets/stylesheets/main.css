@@ -35,12 +35,23 @@ img.you{
    
    }
   .navbar1{
-  color: rgb(132, 46, 176)!important;
+  color: white!important;
   font-family: futura;
   }
 
   .navbar1:hover{
     background-color: rgb(132, 46, 176);
+  }
+
+  .actions1{
+    border-radius: 25px;
+    font-weight: bold;
+    width: 130px;
+    height: 40px;
+    font-family: futura;
+    font-size: 13px;
+    background-color: #ff9c2a;
+    color: white;
   }
 
   .fonte-titulo-cadastro{
@@ -170,6 +181,7 @@ select {
   background-color: white;
   color: rgb(132, 46, 176);
 }
+
 
 #lanaerror_explanation {
   color: rgb(132, 46, 176);

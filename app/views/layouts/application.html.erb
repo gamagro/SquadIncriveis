@@ -22,14 +22,15 @@
 <body>
   <nav class= "navbar navbar-ligh fixed-top menu">
   <a class="navbar-brand navbar1">
-    <img src= "<%= image_url('0.png') %> "style =  "width="160" height="50"  class="d-inline-block align-top" >
+    <img src= "<%= image_url('0.png') %> "style= "width="160" height="50"  class="d-inline-block align-top" >
   </a>
 
         <p class="navbar-text float-right menu navbar1">
           <% if user_signed_in?%>
           Logado como: <strong><%= current_user.email %></strong>.
-          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link '  %>
+          <br>
+          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link navbar1' %> |
+          <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link navbar1'  %>
           <% else %>
           <% end %>
   </nav>
@@ -41,7 +42,6 @@
       <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-
     <%= yield %>
   </div>
 

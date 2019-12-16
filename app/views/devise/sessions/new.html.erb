@@ -1,21 +1,23 @@
 <h2 class="fonte-titulo"> Bem-vindo aos Incríveis </h2>
 <h5 class="fonte-h3"> Faça seu login para começar ;) </h5>
+
 <br>
 
 <div class=“container”>
   <% if notice %>
   <p class=“alert alert-success”><%= notice %></p>
   <% end %>
-
   <%= yield %>
 </div>
 
 <div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <br>
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
+      <br>
     <button type="button" class="close" data-dismiss="modal">&times;</button>
     <br>
-    <p class=“alert alert-danger”><%= alert %></p>
+    <p class=“alert alert-danger” ><%= alert %></p>
     </div>
   </div>
 </div>
@@ -25,7 +27,6 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="container bg-white container-login1 justify-content-center">
-  <br>
   <br>
 
   <div class="row">
@@ -86,5 +87,4 @@
         $('#myModal').modal('show')
        });
     <% end %>
-        
 </script>
