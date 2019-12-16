@@ -268,6 +268,9 @@
     $('#user_cpf').mask('000.000.000-00');
     $('#user_cep').mask('00000-000');
     $('#user_cnpj').mask('00.000.000/0000-00');
+    jQuery('#user_fullname').keyup(function () { 
+   this.value = this.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g,'');
+ });
     $("#user_pf_pj").change(function () {
       if ($(this).val() === "PF") {
         $("#esc_razao").hide();
@@ -354,6 +357,17 @@
       }
       else {
         $(this).css("border-color", "green");
+      }
+    })
+    $("#user_cep").keyup(function() {
+      if ($(this).val().length > 0 && $(this).val().length < 9){
+        $(this).css("border-color", "red");
+      }
+      else if ($(this).val().length  == 9){
+        $(this).css("border-color", "green");
+      }
+      else {
+        $(this).css("border-color", "orange");
       }
     })
     $(this).scrollTop(0);
