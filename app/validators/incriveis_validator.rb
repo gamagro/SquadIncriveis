@@ -28,7 +28,7 @@ class IncriveisValidator < ActiveModel::Validator
             record.errors[:password] << "A senha de ve conter um caractere especial, uma letra maiúscula, uma letra minúscula e um número."
         end
         if !record.email.match(/\A[^@\s]+@youse.com.br/)
-            record.errors[:email] << "O seu email deve ser no formato 'fulano@youse.com.br'."
+            record.errors[:email] << ": Deve ser no formato 'fulano@youse.com.br'."
         end
         if record.pf_pj == ""
             record.errors[:pf_pj] << "Selecione o tipo de pessoa"

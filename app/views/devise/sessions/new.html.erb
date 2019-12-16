@@ -1,14 +1,32 @@
 <h2 class="fonte-titulo"> Bem-vindo aos Incríveis </h2>
 <h5 class="fonte-h3"> Faça seu login para começar ;) </h5>
-</br>
+<br>
+
+<div class=“container”>
+  <% if notice %>
+  <p class=“alert alert-success”><%= notice %></p>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <br>
+    <p class=“alert alert-danger”><%= alert %></p>
+    </div>
+  </div>
+</div>
 
 <%= render "devise/shared/error_messages", resource: resource %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="container bg-white container-login1 justify-content-center">
-  </br>
-  </br>
+  <br>
+  <br>
 
   <div class="row">
     <div class="col-sm field">
@@ -18,11 +36,10 @@
       <div class="col-sm field">
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
 
-      </div>
     </div>
   </div>
+</div>
 
-</br>
   <div class="row">
     <div class="col-sm field">
       <%= f.label :password, value = "Senha", :class => "fonte-label" , :style => "margin-right: 250px"%>
@@ -30,6 +47,7 @@
       <div class="col-sm field">
         <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-login borda-caixa-texto" , :placeholder => "Senha"%>
       </div>
+    
     </div>
   </div>
 
@@ -44,7 +62,7 @@
     </div>
 
   </div>
-  </br>
+  <br>
 
   <div class="row">
     <div class="col-sm field">
@@ -53,17 +71,23 @@
     <div class="col-sm field">
       <input type="reset" value="CANCELAR" class="btn botao" , style="margin-right:40px">
     </div>
-
   </div>
-  </br>
+  <br>
 <% end %>
 
 <%= render "devise/shared/links" %>
 
 <img src="<%= image_url('simb.png') %>" width="100" height="80" class="d-inline-block align-top displayed"
   alt="logo os incriveis">
+<img src="<%= image_url('icon2.png') %>" width="400" height="400" class="d-inline-block align-top alerta"
+  alt="icone youse">
 
 </div>
-<img src="<%= image_url('icon2.png') %>" width="400" height="400" class="d-inline-block align-top alerta"
-  alt="logo-youse" style="z-index:-10">
 
+<script>
+    <% if alert %>
+      $(document).ready(function(){
+        $('#myModal').modal('show')
+       });
+    <% end %>
+</script>

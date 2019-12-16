@@ -26,16 +26,14 @@
   </div>
 
 
-  <div id="esc_nomec" style="display:none;">
+  <div id="esc_nomec" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat2.png')%>" class="cadastrar tracking-in-contract-bck-bottom" alt="chat2">
+      <img src="<%= image_url('chat2.png')%>" class="cadastrar" alt="chat2">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-
         <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
-
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -44,7 +42,7 @@
     </div>
   </div>
 
-  <div id="esc_cpf" style="display:none;">
+  <div id="esc_cpf" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
       <img src="<%= image_url('chat3.png')%>" class="cadastrar" alt="chat3">
     </div>
@@ -58,10 +56,8 @@
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
 
-
     </div>
   </div>
-
 
   <div id="esc_razao" style=" display:none;">
     <div class="row">
@@ -78,7 +74,6 @@
 
     </div>
   </div>
-
 
   <div id="esc_cnpj" style=" display:none;">
     <div class="row">
@@ -110,13 +105,12 @@
       </div>
     </div>
   </div>
-  
-  
+
   <div id="esc_senha" style="display:none;">
     <div class="row">
       <img src="<%= image_url('chat9.png')%>" class="cadastrar" alt="chat9" align="left">
     </div>
-  
+
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
@@ -130,8 +124,7 @@
       </div>
     </div>
   </div>
-  
-  
+
   <div id="esc_conf" style="display:none;">
     <div class="row">
       <img src="<%= image_url('chat10.png')%>" class="cadastrar" alt="chat10" align="left">
@@ -142,59 +135,59 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
       </div>
       <div class="col-sm field" align="right">
-          <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
-        </div>
-      
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+
     </div>
   </div>
-  
+
   <div id="esc_cep" style="display:none;">
-  <div class="row">
-    <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat6">
-  </div>
-  <div class="row">
+    <div class="row">
+      <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat6">
+    </div>
+    <div class="row">
 
-    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+        <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
+
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+    </div>
+  </div>
+
+  <div id="esc_est" style="display:none;">
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
       </br>
-      <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
-
+      <%= f.select :estado, states, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto"%>
     </div>
-    <div class="col-sm field" align="right">
-      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
-    </div>
-  </div>
-</div>
-
-<div id="esc_est" style="display:none;">
-  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
-    </br>
-    <%= f.select :estado, states, autofocus: true%>
-  </div>
   </div>
 
   <div id="esc_cid" style="display:none;">
-  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    </br>
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+      </br>
 
-    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
+      <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
 
-  </div>
+    </div>
   </div>
   </br>
 
   <div id="esc_bairro" style="display:none;">
-  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+      <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
 
-  </div>
+    </div>
   </div>
   </br>
 
   <div id="esc_rua" style="display:none;">
-  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+      <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av. Brg.Faria Lima"%>
 
-  </div>
+    </div>
   </div>
   </br>
 
@@ -202,33 +195,35 @@
     <div class="row">
       <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
-
-  <div class="row">
-    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
-      <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
-
-    </div>
-    <div class="col-sm field" align="right">
-      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
-    </div>
-  </div>
-
-  <div id="esc_botao" style="display:none;">
+  </br>
     <div class="row">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
+        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
+
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+    </div>
+
+    <div id="esc_botao" style="display:none;">
+      <div class="row">
         <img src="<%= image_url('chat11.png')%>" class="cadastrar" alt="chat11" align="left">
       </div>
-    </br>
-    <div class="row">
-      <div class="col-sm field justify-content-center">
-        <%= f.submit "FINALIZAR", :class => "btn botao"%>
+      </br>
+      <div class="row">
+        <div class="col-sm field justify-content-center">
+          <%= f.submit "FINALIZAR", :class => "btn botao"%>
+        </div>
       </div>
     </div>
   </div>
 
-
-</div>
+  
 
   <% end %>
+
+  <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
 
   <script type="text/javascript">
     $(document).ready(function () {
@@ -291,7 +286,7 @@
           $("#esc_email").show();
           $("#esc_senha").show();
           $("#esc_conf").show();
-        } 
+        }
       });
 
       $("#user_cnpj").keyup(function () {
@@ -299,9 +294,9 @@
           $("#esc_email").show();
           $("#esc_senha").show();
           $("#esc_conf").show();
-        } 
+        }
       });
-      
+
       $("#user_password_confirmation").keyup(function () {
         if ($(this).val().length > 0) {
           $("#esc_cep").show();
@@ -311,10 +306,10 @@
           $("#esc_rua").show();
           $("#esc_num").show();
           $("#esc_botao").show();
-        } 
+        }
       });
 
-      if ($('#error_explanation').length > 0) {
+      if ($('#lanaerror_explanation').length > 0) {
         var cnpjCpf = $("#user_pf_pj").val();
 
         $("#esc_cep").show();
@@ -334,11 +329,14 @@
         } else {
           $("#esc_razao").show();
           $("#esc_cnpj").show();
-        } 
+        }
       }
     });
+
+    $(document).ready(function () {
+      $("#lanaerror_explanation").appendTo("#errors_modal");
+    })
+
   </script>
-
-  <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
-
+</br>
 </div>
