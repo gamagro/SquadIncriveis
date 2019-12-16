@@ -3,12 +3,7 @@ class ApplicationController < ActionController::Base
   
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  #
-  #          validates_presence_of :name, message: 'não pode ser deixado em branco'
-  #          validates_presence_of :email, message: 'não pode ser deixado em branco'
-  #          validates_presence_of :password, message: 'não pode ser deixado em branco'
-  #    
-
+  
   def create
     # save post
     flash[:notice] = "Post successfully created"
