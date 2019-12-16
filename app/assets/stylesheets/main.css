@@ -170,3 +170,7 @@ select {
   background-color: white;
   color: rgb(132, 46, 176);
 }
+
+#lanaerror_explanation {
+  color: rgb(132, 46, 176);
+}
