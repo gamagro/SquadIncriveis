@@ -9,14 +9,14 @@
 
 <div class="container bg-green container-cad justify-content-center">
 
-  <div class="row ">
+  <div class="row " id="esc_geral">
     <img src="<%= image_url('chat1.png')%>" class="cadastrar" alt="chat1">
   </div>
   <div class="row">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 620px;">
       </br>
     </br>
-      <%= f.select :pf_pj, pfpj, :class => "form__select"%>
+      <%= f.select :pf_pj, pfpj, :class => "form__select"%> 
 
     </div>
     <div class="col-sm field" align="right">
@@ -35,7 +35,9 @@
         </br>
 
         <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
-
+        <small id="fullnameHelp" class="form-text text-muted">Seu nome deve conter no máximo 50 caractéres
+        </br> e apenas Letras e Espaços são permitidos ;)</small>
+      </br>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -232,6 +234,7 @@
 
 <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
 
+</br> 
 <% end %>
 
 <script type="text/javascript">
@@ -239,29 +242,38 @@
     $("#user_cep").keyup(function () {
       if ($(this).val().length == 9) {
         $.ajax({
-          //O campo URL diz o caminho de onde virá os dados
-          //É importante concatenar o valor digitado no CEP
           url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
-          //Aqui você deve preencher o tipo de dados que será lido,
-          //no caso, estamos lendo JSON.
           dataType: 'json',
-          //SUCESS é referente a função que será executada caso
-          //ele consiga ler a fonte de dados com sucesso.
-          //O parâmetro dentro da função se refere ao nome da variável
-          //que você vai dar para ler esse objeto.
           success: function (resposta) {
-            //Agora basta definir os valores que você deseja preencher
-            //automaticamente nos campos acima.
             $("#user_rua").val(resposta.logradouro);
             $("#complemento").val(resposta.complemento);
             $("#user_bairro").val(resposta.bairro);
             $("#user_cidade").val(resposta.localidade);
             $("#user_estado").val(resposta.uf);
-            //Vamos incluir para que o Número seja focado automaticamente
-            //melhorando a experiência do usuário
-            //$("#numero").focus();
+            if (resposta.erro !== true ){
+              $("#user_cep").css("border-color", "green");
+            }
+            else {
+              $("#user_cep").css("border-color", "red");
+            }
           }
         });
+      }
+      else if ($(this).val().length > 0){
+        $("#user_cep").css("border-color", "orange");
+        $("#user_rua").val("");
+            $("#complemento").val("");
+            $("#user_bairro").val("");
+            $("#user_cidade").val("");
+            $("#user_estado").val("");
+      }
+      else{
+            $("#user_cep").css("border-color", "rgb(132, 46, 176)");
+            $("#user_rua").val("");
+            $("#complemento").val("");
+            $("#user_bairro").val("");
+            $("#user_cidade").val("");
+            $("#user_estado").val("");
       }
     });
     $('#user_cpf').mask('000.000.000-00');
@@ -288,14 +300,34 @@
       }
     });
     $("#user_cpf").keyup(function () {
-      if ($(this).val().length === 14) {
+      if ($(this).val().length === 14 && $('#user_fullname').val().length > 0) {
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+      }
+    });
+    $("#user_fullname").keyup(function () {
+      if ($(this).val().length > 0){
+        $(this).css("border-color", "green");
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
+      if ($(this).val().length > 0 && $('#user_cpf').val().length === 14) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
       }
     });
     $("#user_cnpj").keyup(function () {
-      if ($(this).val().length === 18) {
+      if ($(this).val().length === 18 && $('#user_razaosocial').val().length > 0) {
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+      }
+    });
+    $("#user_razaosocial").keyup(function () {
+      if ($(this).val().length > 0 && $('#user_cnpj').val().length === 18) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
@@ -350,26 +382,62 @@
         $("#bairroHelp").show();
       }
     })
+
+    $(this).scrollTop(0);
+
+    jQuery(function () {
+      var cont = 0;
+      var email = 0;
+      var senha = 0;
+      var confirma_senha = 0;
+    $("#user_email").keyup(function () {
+        var VAL = this.value;
+
+        var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
+
+        if (email.test(VAL)) {
+          $(this).css("border-color", "green");
+          email = 1;
+        }
+        else {
+          $(this).css("border-color", "red");
+          email = 0;
+        }
+    });
+    $("#user_password").keyup(function () {
+        var VAL = this.value;
+
+        var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
+
+        if (password.test(VAL)) {
+          $(this).css("border-color", "green");
+          senha = 1;
+        }
+        else {
+          $(this).css("border-color", "red");
+          senha = 0;
+        }
+        if ($(this).val() !== $("#user_password_confirmation").val() ) {
+        $("#user_password_confirmation").css("border-color", "red");
+        confirma_senha = 0;
+      }
+      else {
+        $("#user_password_confirmation").css("border-color", "green");
+        confirma_senha = 1;
+      }
+    });
     $("#user_password_confirmation").keyup(function() {
       if ($(this).val() !== $("#user_password").val() ) {
         $(this).css("border-color", "red");
+        confirma_senha = 0;
       }
       else {
         $(this).css("border-color", "green");
+        confirma_senha = 1;
       }
     })
-    $("#user_cep").keyup(function() {
-      if ($(this).val().length > 0 && $(this).val().length < 9){
-        $(this).css("border-color", "red");
-      }
-      else if ($(this).val().length  == 9){
-        $(this).css("border-color", "green");
-      }
-      else {
-        $(this).css("border-color", "orange");
-      }
-    })
-    $(this).scrollTop(0);
+});
+
   });
 
 </script>
