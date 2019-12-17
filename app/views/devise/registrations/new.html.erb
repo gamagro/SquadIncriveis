@@ -386,10 +386,6 @@
     $(this).scrollTop(0);
 
     jQuery(function () {
-      var cont = 0;
-      var email = 0;
-      var senha = 0;
-      var confirma_senha = 0;
     $("#user_email").keyup(function () {
         var VAL = this.value;
 
@@ -397,11 +393,9 @@
 
         if (email.test(VAL)) {
           $(this).css("border-color", "green");
-          email = 1;
         }
         else {
           $(this).css("border-color", "red");
-          email = 0;
         }
     });
     $("#user_password").keyup(function () {
@@ -411,32 +405,26 @@
 
         if (password.test(VAL)) {
           $(this).css("border-color", "green");
-          senha = 1;
         }
         else {
           $(this).css("border-color", "red");
-          senha = 0;
         }
         if ($(this).val() !== $("#user_password_confirmation").val() ) {
         $("#user_password_confirmation").css("border-color", "red");
-        confirma_senha = 0;
       }
       else {
         $("#user_password_confirmation").css("border-color", "green");
-        confirma_senha = 1;
       }
     });
     $("#user_password_confirmation").keyup(function() {
       if ($(this).val() !== $("#user_password").val() ) {
         $(this).css("border-color", "red");
-        confirma_senha = 0;
       }
       else {
         $(this).css("border-color", "green");
-        confirma_senha = 1;
-      }
-    })
-});
+       }
+     })
+    });
 
   });
 
