@@ -1,4 +1,4 @@
-<img src="<%= image_url('icon-chat.png')%>" widht="204" height="155" class="cadastrar" alt="chat1"
+<img src="<%= image_url('icon-chat.png')%>" widht="204" height="155" class="cadastrar" alt="chat0"
   style="margin-top: 100px">
 </br>
 <h2 class=fonte-titulo-cadastro> Especialista em ser uma incrível</h2>
@@ -16,7 +16,7 @@
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 620px;">
       </br>
       </br>
-      <%= f.select :pf_pj, pfpj, :class => "form__select"%>
+      <%= f.select :pf_pj, pfpj %>
 
     </div>
     <div class="col-sm field" align="right">
@@ -61,7 +61,7 @@
 
   <div id="esc_razao" style=" display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('cha4t.png')%>" class="cadastrar" alt="chat3">
+      <img src="<%= image_url('chat4.png')%>" class="cadastrar" alt="chat3">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
@@ -93,7 +93,7 @@
   </div>
   <div id="esc_email" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat8.png')%>" class="cadastrar" alt="chat8" align="left">
+      <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
@@ -108,14 +108,14 @@
 
   <div id="esc_senha" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat9.png')%>" class="cadastrar" alt="chat9" align="left">
+      <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat9" align="left">
     </div>
 
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
         <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Ex: @Youser123"%>
-        <small id="emailHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
+        <small id="senhaHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
           </br> Minúscula,
           Caracter especial e Número</small>
       </div>
@@ -127,7 +127,7 @@
 
   <div id="esc_conf" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat10.png')%>" class="cadastrar" alt="chat10" align="left">
+      <img src="<%= image_url('chat8.png')%>" class="cadastrar" alt="chat10" align="left">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
@@ -143,7 +143,7 @@
 
   <div id="esc_cep" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat6">
+      <img src="<%= image_url('chat9.png')%>" class="cadastrar" alt="chat6">
     </div>
     <div class="row">
 
@@ -161,47 +161,47 @@
   <div id="esc_est" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
       </br>
-      <%= f.select :estado, states, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto"%>
+      <%= f.select :estado, states, autofocus: true %>
     </div>
   </div>
 
-  <div id="esc_cid" style="display:none;">
+  <div id="esc_cid" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
       </br>
 
-      <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
-
-    </div>
+    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
+    <small id="cidHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+  </div>
   </div>
   </br>
 
   <div id="esc_bairro" style="display:none;" class="tracking-in-expand-fwd-bottom">
-    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-      <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
-
-    </div>
+  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
+    <small id="bairroHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+  </div>
   </div>
   </br>
 
   <div id="esc_rua" style="display:none;" class="tracking-in-expand-fwd-bottom">
-    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-      <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av. Brg.Faria Lima"%>
-
-    </div>
+  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
+    <small id="ruaHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+  </div>
   </div>
   </br>
 
   <div id="esc_num" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat8" align="left">
+      <img src="<%= image_url('chat10.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     </br>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
         <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
-
+        <small id="numHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
       </div>
-      <div class="col-sm field" align="right" class="tracking-in-expand-fwd-bottom">
+      <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
     </div>
@@ -219,99 +219,87 @@
     </div>
   </div>
 
+<%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %><br />
 
+<% end %>
 
-  <% end %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#user_cep").keyup(function () {
+      if ($(this).val().length == 9) {
+        $.ajax({
+          //O campo URL diz o caminho de onde virá os dados
+          //É importante concatenar o valor digitado no CEP
+          url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+          //Aqui você deve preencher o tipo de dados que será lido,
+          //no caso, estamos lendo JSON.
+          dataType: 'json',
+          //SUCESS é referente a função que será executada caso
+          //ele consiga ler a fonte de dados com sucesso.
+          //O parâmetro dentro da função se refere ao nome da variável
+          //que você vai dar para ler esse objeto.
+          success: function (resposta) {
+            //Agora basta definir os valores que você deseja preencher
+            //automaticamente nos campos acima.
+            $("#user_rua").val(resposta.logradouro);
+            $("#complemento").val(resposta.complemento);
+            $("#user_bairro").val(resposta.bairro);
+            $("#user_cidade").val(resposta.localidade);
+            $("#user_estado").val(resposta.uf);
+            //Vamos incluir para que o Número seja focado automaticamente
+            //melhorando a experiência do usuário
+            //$("#numero").focus();
+          }
+        });
+      }
+    });
+    $('#user_cpf').mask('000.000.000-00');
+    $('#user_cep').mask('00000-000');
+    $('#user_cnpj').mask('00.000.000/0000-00');
+    jQuery('#user_fullname').keyup(function () { 
+   this.value = this.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g,'');
+ });
+    
+    $("#user_pf_pj").change(function () {
+      $('.back-link').hide();
 
-  <%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("#user_cep").keyup(function () {
-        if ($(this).val().length == 9) {
-          $.ajax({
-            //O campo URL diz o caminho de onde virá os dados
-            //É importante concatenar o valor digitado no CEP
-            url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
-            //Aqui você deve preencher o tipo de dados que será lido,
-            //no caso, estamos lendo JSON.
-            dataType: 'json',
-            //SUCESS é referente a função que será executada caso
-            //ele consiga ler a fonte de dados com sucesso.
-            //O parâmetro dentro da função se refere ao nome da variável
-            //que você vai dar para ler esse objeto.
-            success: function (resposta) {
-              //Agora basta definir os valores que você deseja preencher
-              //automaticamente nos campos acima.
-              $("#user_rua").val(resposta.logradouro);
-              $("#complemento").val(resposta.complemento);
-              $("#user_bairro").val(resposta.bairro);
-              $("#user_cidade").val(resposta.localidade);
-              $("#user_estado").val(resposta.uf);
-              //Vamos incluir para que o Número seja focado automaticamente
-              //melhorando a experiência do usuário
-              //$("#numero").focus();
-            }
-          });
-        }
-      });
-
-      $('#user_cpf').mask('000.000.000-00');
-      $('#user_cep').mask('00000-000');
-      $('#user_cnpj').mask('00.000.000/0000-00');
-
-      $("#user_pf_pj").change(function () {
-        if ($(this).val() === "PF") {
-          $("#esc_razao").hide();
-          $("#esc_cnpj").hide();
-          $("#esc_nomec").show();
-          $("#esc_cpf").show();
-
-          $("#user_razaosocial").val('');
-          $("#user_cnpj").val('');
-
-        } else {
-          $("#esc_razao").show();
-          $("#esc_cnpj").show();
-          $("#esc_nomec").hide();
-          $("#esc_cpf").hide();
-
-          $("#user_fullname").val('');
-          $("#user_cpf").val('');
-        }
-      });
-
-      $("#user_cpf").keyup(function () {
-        if ($(this).val().length === 14) {
-          $("#esc_email").show();
-          $("#esc_senha").show();
-          $("#esc_conf").show();
-        }
-      });
-
-      $("#user_cnpj").keyup(function () {
-        if ($(this).val().length === 18) {
-          $("#esc_email").show();
-          $("#esc_senha").show();
-          $("#esc_conf").show();
-        }
-      });
-
-      $("#user_password_confirmation").keyup(function () {
-        if ($(this).val().length > 0) {
-          $("#esc_cep").show();
-          $("#esc_est").show();
-          $("#esc_cidade").show();
-          $("#esc_bairro").show();
-          $("#esc_rua").show();
-          $("#esc_num").show();
-          $("#esc_botao").show();
-        }
-      });
-
-      if ($('#lanaerror_explanation').length > 0) {
-        var cnpjCpf = $("#user_pf_pj").val();
-
+      if ($(this).val() === "PF") {
+        $("#esc_razao").hide();
+        $("#esc_cnpj").hide();
+        $("#esc_nomec").show();
+        $("#esc_cpf").show();
+        $("#user_razaosocial").val('');
+        $("#user_cnpj").val('');
+      } else {
+        $("#esc_razao").show();
+        $("#esc_cnpj").show();
+        $("#esc_nomec").hide();
+        $("#esc_cpf").hide();
+        $("#user_fullname").val('');
+        $("#user_cpf").val('');
+      }
+      
+      setTimeout(function() { 
+        $('.back-link').show();
+      }, 1000);
+    });
+    
+    $("#user_cpf").keyup(function () {
+      if ($(this).val().length === 14) {
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+      }
+    });
+    $("#user_cnpj").keyup(function () {
+      if ($(this).val().length === 18) {
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+      }
+    });
+    $("#user_password_confirmation").keyup(function () {
+      if ($(this).val().length > 7) {
         $("#esc_cep").show();
         $("#esc_est").show();
         $("#esc_cidade").show();
@@ -319,24 +307,79 @@
         $("#esc_rua").show();
         $("#esc_num").show();
         $("#esc_botao").show();
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-
-        if (cnpjCpf == 'PF') {
-          $("#esc_nomec").show();
-          $("#esc_cpf").show();
-        } else {
-          $("#esc_razao").show();
-          $("#esc_cnpj").show();
-        }
       }
     });
-
-    $(document).ready(function () {
-      $("#lanaerror_explanation").appendTo("#errors_modal");
+    if ($('#lanaerror_explanation').length > 0) {
+      var cnpjCpf = $("#user_pf_pj").val();
+      $("#esc_cep").show();
+      $("#esc_est").show();
+      $("#esc_cidade").show();
+      $("#esc_bairro").show();
+      $("#esc_rua").show();
+      $("#esc_num").show();
+      $("#esc_botao").show();
+      $("#esc_email").show();
+      $("#esc_senha").show();
+      $("#esc_conf").show();
+      if (cnpjCpf == 'PF') {
+        $("#esc_nomec").show();
+        $("#esc_cpf").show();
+      } else {
+        $("#esc_razao").show();
+        $("#esc_cnpj").show();
+      }
+    }
+    $("#user_pf_pj").change(function () {
+      if ($(this).val() === 'PF') {
+        $("#cepHelp").show();
+        $("#estHelp").show();
+        $("#cidHelp").show();
+        $("#bairroHelp").show();
+        $("#ruaHelp").show();
+        $("#numHelp").show();
+      }
+      else {
+        $("#cepHelp").hide();
+        $("#ruaHelp").show();
+        $("#numHelp").show();
+        $("#estHelp").show();
+        $("#cidHelp").show();
+        $("#bairroHelp").show();
+      }
     })
+    
+    $("#user_password_confirmation").keyup(function() {
+      if ($(this).val() !== $("#user_password").val() ) {
+        $(this).css("border-color", "red");
+      }
+      else {
+        $(this).css("border-color", "green");
+      }
+    })
+    $("#user_cep").keyup(function() {
+      if ($(this).val().length > 0 && $(this).val().length < 9){
+        $(this).css("border-color", "red");
+      }
+      else if ($(this).val().length  == 9){
+        $(this).css("border-color", "green");
+      }
+      else {
+        $(this).css("border-color", "orange");
+      }
+    })
+    $(this).scrollTop(0);
+  });
 
-  </script>
-  </br>
+</script>
+
 </div>
+
+
+
+
+
+
+
+
+
+

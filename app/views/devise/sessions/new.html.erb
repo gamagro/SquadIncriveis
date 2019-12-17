@@ -66,10 +66,10 @@
 
   <div class="row">
     <div class="col-sm field">
-      <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:40px"%>
+      <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:40px", :id => "botao"%>
     </div>
     <div class="col-sm field">
-      <input type="reset" value="CANCELAR" class="btn botao" , style="margin-right:40px">
+      <input type="reset" value="CANCELAR" class="btn botao", style="margin-right:40px">
     </div>
   </div>
   <br>
@@ -85,9 +85,11 @@
 </div>
 
 <script>
+
     <% if alert %>
       $(document).ready(function(){
         $('#myModal').modal('show')
        });
     <% end %>
+
 </script>

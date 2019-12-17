@@ -12,7 +12,6 @@
 
  .container-cad{
   width: 900px;
-  height: 1500px;
 }
 
 img.cadastrar{
@@ -47,6 +46,7 @@ img.you{
   color: rgb(132, 46, 176)!important;
   font-family: futura;
   }
+  
 
   .navbar1:hover{
     background-color: rgb(132, 46, 176);
@@ -93,7 +93,6 @@ img.you{
   .caixa-de-texto-login{
   height: 45px;
   width: 300px;
-  border-radius: 10px;
   color: #ff9c2a;
   font-size: 16px;
   font-family: Arial;
@@ -102,7 +101,6 @@ img.you{
   .caixa-de-texto-cad{
     height: 45px;
     width: 300px;
-    border-radius: 5px;
     font-size: 16px;
     font-family: arial;
     color: #ff9c2a;
@@ -139,7 +137,7 @@ select {
  
 }
 
-.modal{
+.modal-titulo{
   color: rgb(132, 46, 176);
   font-family: futura;
 

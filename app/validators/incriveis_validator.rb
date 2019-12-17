@@ -13,6 +13,8 @@ class IncriveisValidator < ActiveModel::Validator
             if !record.fullname.match(/\A[[:alpha:][:blank:]]+\z/)
                 record.errors[:fullname] << "O campo 'Nome completo' deve conter apenas letras e espaços."
             end
+            record.cnpj = nil
+            record.razaosocial = nil
         elsif record.pf_pj == "PJ"
             if !BRDocuments::CNPJ.valid?(record.cnpj)
                 record.errors[:cnpj] << "CNPJ Inválido"
@@ -23,12 +25,14 @@ class IncriveisValidator < ActiveModel::Validator
             if record.cep == ""
                 record.errors[:cep] << "O campo 'CEP' não pode ser nulo."
             end 
+            record.cpf = nil
+            record.fullname = nil
         end
         if !record.password.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W+).*$/)
             record.errors[:password] << "A senha de ve conter um caractere especial, uma letra maiúscula, uma letra minúscula e um número."
         end
-        if !record.email.match(/\A[^@\s]+@youse.com.br/)
-            record.errors[:email] << ": Deve ser no formato 'fulano@youse.com.br'."
+        if !record.email.match(/\A[^@\s]+@youse.com.br/);
+            record.errors[:email] << "O seu email deve ser no formato 'fulano@youse.com.br'."
         end
         if record.pf_pj == ""
             record.errors[:pf_pj] << "Selecione o tipo de pessoa"
