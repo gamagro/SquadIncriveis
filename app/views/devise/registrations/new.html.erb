@@ -1,4 +1,4 @@
-<img src="<%= image_url('icon-chat.png')%>" widht="204" height="155" class="cadastrar" alt="chat1"
+<img src="<%= image_url('icon-chat.png')%>" widht="204" height="155" class="cadastrar" alt="chat0"
   style="margin-top: 100px">
 </br>
 <h2 class=fonte-titulo-cadastro> Especialista em ser uma incrível</h2>
@@ -15,8 +15,8 @@
   <div class="row">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 620px;">
       </br>
-    </br>
-      <%= f.select :pf_pj, pfpj, :class => "form__select"%> 
+      </br>
+      <%= f.select :pf_pj, pfpj %>
 
     </div>
     <div class="col-sm field" align="right">
@@ -26,14 +26,13 @@
   </div>
 
 
-  <div id="esc_nomec" style="display:none;">
+  <div id="esc_nomec" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat2.png')%>" class="cadastrar tracking-in-contract-bck-bottom" alt="chat2">
+      <img src="<%= image_url('chat2.png')%>" class="cadastrar" alt="chat2">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-
         <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
         <small id="fullnameHelp" class="form-text text-muted">Seu nome deve conter no máximo 50 caractéres
         </br> e apenas Letras e Espaços são permitidos ;)</small>
@@ -46,7 +45,7 @@
     </div>
   </div>
 
-  <div id="esc_cpf" style="display:none;">
+  <div id="esc_cpf" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
       <img src="<%= image_url('chat3.png')%>" class="cadastrar" alt="chat3">
     </div>
@@ -60,15 +59,12 @@
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
 
-
     </div>
   </div>
 
-        </br>
-
-  <div id="esc_razao" style=" display:none;">
+  <div id="esc_razao" style=" display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('cha4t.png')%>" class="cadastrar" alt="chat3">
+      <img src="<%= image_url('chat4.png')%>" class="cadastrar" alt="chat3">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
@@ -82,8 +78,7 @@
     </div>
   </div>
 
-
-  <div id="esc_cnpj" style=" display:none;">
+  <div id="esc_cnpj" style=" display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
       <img src="<%= image_url('chat5.png')%>" class="cadastrar" alt="chat3">
     </div>
@@ -99,9 +94,9 @@
 
     </div>
   </div>
-  <div id="esc_email" style="display:none;">
+  <div id="esc_email" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat8.png')%>" class="cadastrar" alt="chat8" align="left">
+      <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
@@ -113,13 +108,12 @@
       </div>
     </div>
   </div>
-  
-  
-  <div id="esc_senha" style="display:none;">
+
+  <div id="esc_senha" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat10.png')%>" class="cadastrar" alt="chat9" align="left">
+      <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat9" align="left">
     </div>
-  
+
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
@@ -133,11 +127,10 @@
       </div>
     </div>
   </div>
-  
-  
-  <div id="esc_conf" style="display:none;">
+
+  <div id="esc_conf" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat9.png')%>" class="cadastrar" alt="chat10" align="left">
+      <img src="<%= image_url('chat8.png')%>" class="cadastrar" alt="chat10" align="left">
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
@@ -145,40 +138,40 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
       </div>
       <div class="col-sm field" align="right">
-          <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
-        </div>
-      
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+
     </div>
   </div>
-  
-  <div id="esc_cep" style="display:none;">
-  <div class="row">
-    <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat6">
-  </div>
-  <div class="row">
 
-    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+  <div id="esc_cep" style="display:none;" class="tracking-in-expand-fwd-bottom">
+    <div class="row">
+      <img src="<%= image_url('chat9.png')%>" class="cadastrar" alt="chat6">
+    </div>
+    <div class="row">
+
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
+        </br>
+        <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
+        <small id="cepHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+    </div>
+  </div>
+
+  <div id="esc_est" style="display:none;" class="tracking-in-expand-fwd-bottom">
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
       </br>
-      <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
-      <small id="cepHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
-    </div>
-    <div class="col-sm field" align="right">
-      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      <%= f.select :estado, states, autofocus: true %>
+      <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
     </div>
   </div>
-</div>
 
-<div id="esc_est" style="display:none;">
-  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
-    </br>
-    <%= f.select :estado, states, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto"%>
-    <small id="estHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
-  </div>
-  </div>
-
-  <div id="esc_cid" style="display:none;">
-  <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    </br>
+  <div id="esc_cid" style="display:none;" class="tracking-in-expand-fwd-bottom">
+    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
+      </br>
 
     <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
     <small id="cidHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
@@ -186,7 +179,7 @@
   </div>
   </br>
 
-  <div id="esc_bairro" style="display:none;">
+  <div id="esc_bairro" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
     <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
     <small id="bairroHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
@@ -194,7 +187,7 @@
   </div>
   </br>
 
-  <div id="esc_rua" style="display:none;">
+  <div id="esc_rua" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
     <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
     <small id="ruaHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
@@ -202,42 +195,46 @@
   </div>
   </br>
 
-  <div id="esc_num" style="display:none;">
+  <div id="esc_num" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
-      <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat8" align="left">
+      <img src="<%= image_url('chat10.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
-
-  <div class="row">
-    <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
-      <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
-      <small id="numHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
-    </div>
-    <div class="col-sm field" align="right">
-      <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
-    </div>
-  </div>
-
-  <div id="esc_botao" style="display:none;">
-    <div class="row">
-        <img src="<%= image_url('chat11.png')%>" class="cadastrar" alt="chat11" align="left">
-      </div>
     </br>
     <div class="row">
-      <div class="col-sm field justify-content-center">
-        <%= f.submit "FINALIZAR", :class => "btn botao"%>
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
+        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
+        <small id="numHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+      </div>
+      <div class="col-sm field" align="right">
+        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+      </div>
+    </div>
+
+    <div id="esc_botao" style="display:none;" class="tracking-in-expand-fwd-bottom">
+      <div class="row">
+        <img src="<%= image_url('chat11.png')%>" class="cadastrar" alt="chat11" align="left">
+      </div>
+      </br>
+      <div class="row">
+        <div class="col-sm field justify-content-center">
+          <%= f.submit "FINALIZAR", :class => "btn botao"%>
+        </div>
       </div>
     </div>
   </div>
 
-
-</div>
-
-<%= link_to "Voltar", new_session_path(resource_name), :class => "link"%><br />
+</br>
+<%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %><br />
 
 </br> 
 <% end %>
 
 <script type="text/javascript">
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
   $(document).ready(function () {
     $("#user_cep").keyup(function () {
       if ($(this).val().length == 9) {
@@ -282,7 +279,10 @@
     jQuery('#user_fullname').keyup(function () { 
    this.value = this.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g,'');
  });
+    
     $("#user_pf_pj").change(function () {
+      $('.back-link').hide();
+
       if ($(this).val() === "PF") {
         $("#esc_razao").hide();
         $("#esc_cnpj").hide();
@@ -298,8 +298,22 @@
         $("#user_fullname").val('');
         $("#user_cpf").val('');
       }
+      
+      setTimeout(function() { 
+        $('.back-link').show();
+      }, 1000);
     });
+    
     $("#user_cpf").keyup(function () {
+      if ($(this).val().length === 14){
+        $(this).css("border-color", "green");
+      }
+      else if($(this).val().length >0){
+        $(this).css("border-color", "orange");
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
       if ($(this).val().length === 14 && $('#user_fullname').val().length > 0) {
         $("#esc_email").show();
         $("#esc_senha").show();
@@ -320,6 +334,15 @@
       }
     });
     $("#user_cnpj").keyup(function () {
+      if ($(this).val().length === 18){
+        $(this).css("border-color", "green");
+      }
+      else if($(this).val().length >0){
+        $(this).css("border-color", "orange");
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
       if ($(this).val().length === 18 && $('#user_razaosocial').val().length > 0) {
         $("#esc_email").show();
         $("#esc_senha").show();
@@ -327,6 +350,12 @@
       }
     });
     $("#user_razaosocial").keyup(function () {
+      if ($(this).val().length > 0) {
+        $(this).css("border-color","green");
+      }
+      else{
+        $(this).css("border-color","rgb(132, 46, 176)");
+      }
       if ($(this).val().length > 0 && $('#user_cnpj').val().length === 18) {
         $("#esc_email").show();
         $("#esc_senha").show();
