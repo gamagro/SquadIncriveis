@@ -1,13 +1,28 @@
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>">
-    <a href="#" data-dismiss="alert" class="close">×</a>
-    <ul>
-      <li>
-        <%= value %>
-      </li>
-    </ul>
+<% if flash.present? %>
+<div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        <br>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <ul>
+            <%= value %>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>
+
+</br>
+
 <h1>Produtos !</h1>
 
 <table>
@@ -22,3 +37,8 @@
 
 <br>
 
+<script>
+  $(document).ready(function () {
+    $('#modal').modal('show')
+  });
+</script>

@@ -59,6 +59,7 @@
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
 
+
     </div>
   </div>
 
@@ -113,7 +114,7 @@
     <div class="row">
       <img src="<%= image_url('chat7.png')%>" class="cadastrar" alt="chat9" align="left">
     </div>
-
+  
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
@@ -138,9 +139,9 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
       </div>
       <div class="col-sm field" align="right">
-        <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
-      </div>
-
+          <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
+        </div>
+      
     </div>
   </div>
 
@@ -160,6 +161,7 @@
       </div>
     </div>
   </div>
+
 
   <div id="esc_est" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
@@ -209,16 +211,16 @@
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
     </div>
+  </div>
 
     <div id="esc_botao" style="display:none;" class="tracking-in-expand-fwd-bottom">
       <div class="row">
         <img src="<%= image_url('chat11.png')%>" class="cadastrar" alt="chat11" align="left">
       </div>
-      </br>
-      <div class="row">
-        <div class="col-sm field justify-content-center">
-          <%= f.submit "FINALIZAR", :class => "btn botao"%>
-        </div>
+    </br>
+    <div class="row">
+      <div class="col-sm field justify-content-center">
+        <%= f.submit "FINALIZAR", :class => "btn botao"%>
       </div>
     </div>
   </div>
