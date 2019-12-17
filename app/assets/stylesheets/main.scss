@@ -34,6 +34,8 @@ img.you{
     right: 0;
    
    }
+
+   
   .navbar1{
   color: white!important;
   font-family: futura;
@@ -185,4 +187,13 @@ select {
 
 #lanaerror_explanation {
   color: rgb(132, 46, 176);
+}
+
+.brasil {
+  list-style: none;
+  color: red;
+  
+  li {
+    padding: 4px 0;
+  }
 }
