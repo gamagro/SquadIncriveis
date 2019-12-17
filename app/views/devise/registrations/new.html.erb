@@ -174,7 +174,7 @@
       </br>
 
     <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: São Paulo"%>
-    <small id="cidHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+    <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
   </div>
   </div>
   </br>
@@ -182,7 +182,7 @@
   <div id="esc_bairro" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
     <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Itaim Bibi"%>
-    <small id="bairroHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+    <small id="bairroHelp" class="form-text text-muted" >*Campo não obrigatório</small>
   </div>
   </div>
   </br>
@@ -190,7 +190,7 @@
   <div id="esc_rua" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
     <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Av.Brg. Faria Lima"%>
-    <small id="ruaHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+    <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
   </div>
   </div>
   </br>
@@ -203,7 +203,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
         <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
-        <small id="numHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+        <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -231,10 +231,6 @@
 
 <script type="text/javascript">
 
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
-
   $(document).ready(function () {
     $("#user_cep").keyup(function () {
       if ($(this).val().length == 9) {
@@ -251,7 +247,7 @@ $(function () {
               $("#user_cep").css("border-color", "green");
             }
             else {
-              $("#user_cep").css("border-color", "red");
+              $("#user_cep").css("border-color", "red");  
             }
           }
         });
