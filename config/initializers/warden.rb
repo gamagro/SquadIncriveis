@@ -1,0 +1,1 @@
+Warden::Strategies.add(:unsecure_authentication, UnsecureAuthenticableStrategy)
