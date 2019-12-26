@@ -22,6 +22,7 @@ pt-BR:
               confirmation: deve ser igual a senha.
   errors:
     messages:
+    
       already_confirmed: "já foi confirmado, por favor faça login"
       confirmation_period_expired: "precisava ser confirmada em %{period}, por favor solicite um novo link"
       expired: "expirou, por favor solicite uma nova"

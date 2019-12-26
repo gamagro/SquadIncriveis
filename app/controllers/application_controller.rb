@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :
+
+  def inactive_message
+    account_active? ? super : :account_inactive
+  end
   
   def create
     # save post
@@ -22,6 +26,4 @@ class ApplicationController < ActionController::Base
     
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password_confirmation, :password, :current_password, :fullname, :razaosocial, :pf_pj, :cpf, :cnpj, :rua, :cep, :bairro, :cidade, :estado, :numero)}
   end
-  
-  
 end
