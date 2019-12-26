@@ -1,11 +1,9 @@
  .container-login1{
-   opacity: 0.9;
    width: 400px;
-   height: 500px;
+   height: 450px;
  }
 
  .container-senha{
-  opacity: 0.9;
   width: 500px;
   height: 250px;
  }
@@ -244,4 +242,9 @@ select {
   li {
     padding: 4px 0;
   }
+}
+
+.popover{
+  color: rgb(132, 46, 176);
+  font-family: futura;
 }

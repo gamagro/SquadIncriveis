@@ -5,7 +5,7 @@ module UsersHelper
 
     def states
         [
-    ["Selecione", ""],
+    ["Estado", ""],
     ["Acre", "AC"],
     ["Alagoas", "AL"],  
     ["Amapá", "AP"],

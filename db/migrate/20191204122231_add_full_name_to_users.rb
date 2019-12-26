@@ -3,7 +3,7 @@ class AddFullNameToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :fullname, :string
     add_column :users, :razaosocial, :string
     add_column :users, :pf_pj, :string
-    add_column :users, :cpf, :string
+    add_column :users, :cpf, :string, unique: true
     add_column :users, :cnpj, :string
     add_column :users, :rua, :string
     add_column :users, :cep, :string
