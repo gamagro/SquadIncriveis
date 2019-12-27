@@ -1,0 +1,33 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        password: Senha
+        email: E-mail
+        fullname: Nome completo
+        password_confirmation: Confirmação de senha
+        cpf: CPF
+        cnpj: CNPJ
+        razaosocial: Razão Social
+        cep: CEP
+    errors:
+      messages:
+        blank: não pode ficar em branco.
+        taken: ja esta em uso.
+        invalid: não é valido
+      models:
+        user:
+          attributes: 
+            password_confirmation:
+              confirmation: deve ser igual a senha.
+  errors:
+    messages:
+      already_confirmed: "já foi confirmado, por favor faça login"
+      confirmation_period_expired: "precisava ser confirmada em %{period}, por favor solicite um novo link"
+      expired: "expirou, por favor solicite uma nova"
+      not_found: "não encontrado"
+      not_locked: "não está bloqueada"
+      not_saved:
+        one: "1 erro impediu que %{resource} fosse salvo(a):"
+        other: "%{count} erros no preenchimento do seu cadastro:"
+
