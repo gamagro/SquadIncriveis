@@ -11,5 +11,6 @@ class AddFullNameToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :cidade, :string
     add_column :users, :estado, :string
     add_column :users, :numero, :string
+    add_column :users, :adm, :boolean, default: false
   end
 end
