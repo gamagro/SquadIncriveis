@@ -1,0 +1,66 @@
+<br>
+<br>
+<br>
+<br>
+
+<h1>Lista de Usuários</h1>
+
+<% @users = User.all %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Razao Social</th>
+      <th scope="col">CPF</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Email</th>
+      <th scope="col">ADM</th>
+    </tr>
+  </thead>
+  
+<% @users.each do |user| %>
+
+  <tbody>
+    <tr>
+      <td><% if user.fullname.nil? %>
+       -
+      <% else %>
+      <%= user.fullname %>
+      <% end %>
+      </td>
+      
+      <td><% if user.razaosocial.nil? %>
+       -
+      <% else %>
+      <%= user.razaosocial %>
+      <% end %>
+      </td>
+
+      <td><% if user.cpf.nil? %>
+       -
+      <% else %>
+      <%= user.cpf %>
+      <% end %>
+      </td>
+
+      <td><% if user.cnpj.nil? %>
+       -
+      <% else %>
+      <%= user.cnpj %>
+      <% end %>
+      </td>
+
+      <td><%= user.email %></td>
+
+      <td><% if user.adm  %>
+      ADM
+      <% else %>
+      Usuário
+      <% end %>
+      </td>
+    </tr>
+  </tbody>
+
+  <% end %>
+</table>
