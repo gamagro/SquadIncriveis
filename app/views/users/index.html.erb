@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<h1>Lista de Usuários</h1>
+<h2>Lista de Usuários</h2>
 
 <% @users = User.all %>
 
@@ -64,3 +64,5 @@
 
   <% end %>
 </table>
+
+<%= link_to 'Voltar', ideas_path, :class => "link" %>
