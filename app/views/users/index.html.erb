@@ -4,89 +4,79 @@
 <br>
 
 <head>
-
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-  <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 </head>
 
 <h1>Lista de Usuários</h1>
 
-<% @users = User.all %>
-
-<table class="table table-striped" id ="mytable">
+<table class="table table-striped" id="mytable">
   <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Razao Social</th>
-      <th scope="col">CPF</th>
-      <th scope="col">CNPJ</th>
-      <th scope="col">Email</th>
-      <th scope="col">ADM</th>
-    </tr>
+    <th scope="col">Nome</th>
+    <th scope="col">Razao Social</th>
+    <th scope="col">CPF</th>
+    <th scope="col">CNPJ</th>
+    <th scope="col">Email</th>
+    <th scope="col">ADM</th>
   </thead>
-  
-<% @users.each do |user| %>
 
   <tbody>
-    <tr>
-      <td><% if user.fullname.nil? %>
-       -
-      <% else %>
-      <%= user.fullname %>
-      <% end %>
-      </td>
-      
-      <td><% if user.razaosocial.nil? %>
-       -
-      <% else %>
-      <%= user.razaosocial %>
-      <% end %>
-      </td>
+    <% @users.each do |user| %>
+      <tr>
+        <td><% if user.fullname.nil? %>
+          -
+          <% else %>
+          <%= user.fullname %>
+          <% end %>
+        </td>
 
-      <td><% if user.cpf.nil? %>
-       -
-      <% else %>
-      <%= user.cpf %>
-      <% end %>
-      </td>
+        <td><% if user.razaosocial.nil? %>
+          -
+          <% else %>
+          <%= user.razaosocial %>
+          <% end %>
+        </td>
 
-      <td><% if user.cnpj.nil? %>
-       -
-      <% else %>
-      <%= user.cnpj %>
-      <% end %>
-      </td>
+        <td><% if user.cpf.nil? %>
+          -
+          <% else %>
+          <%= user.cpf %>
+          <% end %>
+        </td>
 
-      <td><%= user.email %></td>
+        <td><% if user.cnpj.nil? %>
+          -
+          <% else %>
+          <%= user.cnpj %>
+          <% end %>
+        </td>
 
-      <td><% if user.adm  %>
-      ADM
-      <% else %>
-      Usuário
-      <% end %>
-      </td>
-    </tr>
+        <td><%= user.email %></td>
+
+        <td><% if user.adm  %>
+          ADM
+          <% else %>
+          Usuário
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
-
-  <script type="text/javascript">
-
-  $.fn.dataTable.ext.type.order['salary-grade-pre'] = function ( d ) {
-    switch ( d ) {
-        case 'Low':    return 1;
-        case 'Medium': return 2;
-        case 'High':   return 3;
-    }
-    return 0;
-  };
-
-  $(document).ready(function() {
-    $('#mytable').DataTable( {
-        "order": [[ 3, "desc" ]]
-    } );
-  } );
-  </script>
-
-  <% end %>
 </table>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    $('#mytable').DataTable({
+      "paging":false,
+      "bInfo" : false,
+      "oLanguage": {
+        "sEmptyTable":     "Nenhum registro encontrado na tabela",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "Pesquisar: "
+      }
+    });
+  });
+
+</script>
