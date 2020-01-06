@@ -186,10 +186,6 @@ select {
 
 }
 
-.op1 {
-  color: white;
-}
-
 .link:hover{
   background-color: white;
   color: rgb(132, 46, 176);
@@ -255,11 +251,22 @@ select {
     padding: 4px 0;
   }
 }
-
 .popover{
   color: rgb(132, 46, 176);
   font-family: futura;
-
- 
 }
+
+.borderless td, .borderless th {
+  border: none;
+}
+
+.table {
+  font-family: futura;  
+  border: none; 
+}
+
+tr:nth-child(even) {
+  background-color: orange;
+}
+
 
