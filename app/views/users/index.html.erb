@@ -3,66 +3,80 @@
   <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 </head>
-<h2 class="fonte-titulo">Lista de Usuários</h2>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered borderless" id="mytable">
-    <thead>
-      <th scope="col">Nome</th>
-      <th scope="col">Razao Social</th>
-      <th scope="col">CPF</th>
-      <th scope="col">CNPJ</th>
-      <th scope="col">Email</th>
-      <th scope="col">ADM</th>
-    </thead>
-    <tbody class= "table1">
-      <% @users.each do |user| %>
-      <tr>
-        <td><% if user.fullname.nil? %>
-          -
-          <% else %>
-          <%= user.fullname %>
-          <% end %>
-        </td>
-        <td><% if user.razaosocial.nil? %>
-          -
-          <% else %>
-          <%= user.razaosocial %>
-          <% end %>
-        </td>
-        <td><% if user.cpf.nil? %>
-          -
-          <% else %>
-          <%= user.cpf %>
-          <% end %>
-        </td>
-        <td><% if user.cnpj.nil? %>
-          -
-          <% else %>
-          <%= user.cnpj %>
-          <% end %>
-        </td>
-        <td><%= user.email %></td>
-        <td><% if user.adm  %>
-          ADM
-          <% else %>
-          Usuário
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
+<h2 class="lista">Lista de Usuários</h2>
+<body>
+  <p class="search" align="left">
+    <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquise Aqui !">
+  </p>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered borderless" id="mytable">
+      <thead class="menubarra">
+        <th scope="col">Nome</th>
+        <th scope="col">Razao Social</th>
+        <th scope="col">CPF</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">Email</th>
+        <th scope="col">ADM</th>
+      </thead>
+      <tbody class="table1">
+        <% @users.each do |user| %>
+        <tr>
+          <td><% if user.fullname.nil? %>
+            -
+            <% else %>
+            <%= user.fullname %>
+            <% end %>
+          </td>
+          <td><% if user.razaosocial.nil? %>
+            -
+            <% else %>
+            <%= user.razaosocial %>
+            <% end %>
+          </td>
+          <td><% if user.cpf.nil? %>
+            -
+            <% else %>
+            <%= user.cpf %>
+            <% end %>
+          </td>
+          <td><% if user.cnpj.nil? %>
+            -
+            <% else %>
+            <%= user.cnpj %>
+            <% end %>
+          </td>
+          <td><%= user.email %></td>
+          <td><% if user.adm  %>
+            ADM
+            <% else %>
+            Usuário
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</body>
 <br>
-<%= link_to "Voltar", :ideas, :class => "op1" %>
-    
+
+<%= link_to "Voltar", :ideas, :class => "op2" %>
+
 <script type="text/javascript">
   $(document).ready(function () {
-    $('#mytable').DataTable({
+    var table = $('#mytable').DataTable({
+      "dom": '<"top"i>rt<"bottom"><"clear">',
       "paging": false,
-      "bInfo": false
+      "bInfo": false,
+      "oLanguage": {
+        "sEmptyTable": "Nenhum registro encontrado na tabela",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "Pesquisar: "
+      }
     });
+    $('#mySearchText').keyup(function () {
+      table.search($('#mySearchText').val()).draw();
+    })
   });
 </script>

@@ -46,7 +46,19 @@ img.you{
   }
   
   .logim .op1{
-    color: white;
+    color: rgb(255, 255, 255);
+  }
+
+  .op1 {
+    color: rgb(132, 46, 176);
+  }
+
+  .op2 {
+    color: rgb(132, 46, 176) !important;
+  }
+
+  .op1:hover {
+    background-color: rgb(132, 46, 176);
   }
 
   .navbar1:hover{
@@ -263,10 +275,61 @@ select {
 .table {
   font-family: futura;  
   border: none; 
+  
 }
 
-tr:nth-child(even) {
-  background-color: orange;
+.table-responsive {
+  border: none; 
+  margin-top: 20px;
 }
 
+th {
+  background-color: #ff9c2a;
+}
 
+.search {
+  font-family: futura;
+  margin: 0;
+  padding: 0;
+  color: #333 ;
+  left: 50;
+  right: 30;
+}
+
+.search1 {
+  border-radius: 25px;
+  font-weight: bold;
+  width: 90px;
+  height: 30px;
+  font-family: futura;
+  font-size: 12px;
+  background-color: #ff9c2a;
+  color: white;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #f8ebdc; // Choose your own color here
+ }
+
+// .table-striped>tbody>tr:nth-child(even)>td, 
+// .table-striped>tbody>tr:nth-child(even)>th {
+//    background-color: #f8ebdc; // Choose your own color here
+//  }
+
+.container.full-width {
+  max-width: 100%;
+  margin: 0;
+}
+
+.lista {
+  color: #1C1C1C;
+  font-style: normal;
+  font-family: futura;
+  margin-top: 60px;
+  font-size: 20px;
+}
+
+.menubarra {
+  color: white;
+}
