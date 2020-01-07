@@ -1,6 +1,6 @@
   class UsersController < ApplicationController
-
-    def index
-      @users = User.all
-    end
+  def index
+    @full_width_layout = true
+    @users = User.all
+  end
 end
