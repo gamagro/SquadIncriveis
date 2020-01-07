@@ -23,8 +23,8 @@
 <body>
   <nav class="navbar navbar-ligh fixed-top menu">
 
-    <a class="navbar-brand navbar1">
-      <img src="<%= image_url('0.png') %> " style="width:120px; height:35px;" , class="d-inline-block">
+    <a class="navbar-brand navbar1 <%= 'logo-listar' if @logo_listar %>">
+      <img  src="<%= image_url('0.png') %> " class="logos">
     </a>
 
     <p class="navbar-text float-right menu logim">
@@ -35,7 +35,7 @@
       <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1" %>
       <% else %>
       <% end %>
-
+    </p>
   </nav>
 
   <div class="container <%= 'full-width' if @full_width_layout %>">
