@@ -1,3 +1,5 @@
+<% if current_user.adm %>
+
 <br>
 <br>
 <br>
@@ -10,8 +12,8 @@
 </head>
 
 <h1>Lista de Usuários</h1>
-
-<table class="table table-striped" id="mytable">
+<div class="table-responsive">
+<table class="table borderless" id="mytable">
   <thead>
     <th scope="col">Nome</th>
     <th scope="col">Razao Social</th>
@@ -64,6 +66,11 @@
     <% end %>
   </tbody>
 </table>
+</div>
+
+</br>
+</br>
+
 
 <script type="text/javascript">
 
@@ -77,6 +84,28 @@
         "sSearch": "Pesquisar: "
       }
     });
+    
   });
 
 </script>
+
+<% else %>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <p>
+        Opaa, você está tentandoa acessar uma área dministrativa.
+      <Br>
+        Acesso restrito para administradores.
+      </p>
+</div>
+<div>
+  <br>
+    <%= link_to "Ir para a página do Produto", :ideas, :class => "op1" %>
+
+</div>
+
+<% end %>
+

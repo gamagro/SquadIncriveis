@@ -248,3 +248,15 @@ select {
   color: rgb(132, 46, 176);
   font-family: futura;
 }
+
+.borderless td, .borderless th {
+  border: none;
+}
+
+.op1{
+  color: rgb(132, 46, 176) !important;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
