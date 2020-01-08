@@ -3,6 +3,11 @@
    height: 450px;
  }
 
+ .aviso{
+  width: 400px;
+  height: 220px;
+ }
+
  .container-senha{
   width: 500px;
   height: 250px;
@@ -44,12 +49,26 @@ img.you{
   color: white!important;
   font-family: futura;
   }
-  
-  .logim .op1{
-    color: white;
-  }
 
   .navbar1:hover{
+    background-color: rgb(132, 46, 176);
+  }
+  
+  .logim .op1{
+    color: rgb(255, 255, 255);
+  }
+
+  //logo do navbar de login e cadastro
+  .logos {
+    width:120px;
+    height:35px;
+  }
+
+  .op2 {
+    color: rgb(132, 46, 176) !important;
+  }
+
+  .op1:hover {
     background-color: rgb(132, 46, 176);
   }
 
@@ -64,7 +83,7 @@ img.you{
     color: white;
   }
 
-  .fonte-titulo-cadastro{
+  .fonte-titulo-cadastro, .p{
     color: #363636;
     font-style: normal;
     font-family: futura;
@@ -260,13 +279,77 @@ select {
   border: none;
 }
 
-.table {
+.table1 {
   font-family: futura;  
+  border: none;
+}
+
+.table-responsive {
   border: none; 
+  margin-top: 20px;
 }
 
-tr:nth-child(even) {
-  background-color: orange;
+th {
+  background-color: #ff9c2a;
 }
 
+.search {
+  font-family: futura;
+  margin: 0;
+  padding: 0;
+  color: #333 ;
+  left: 50;
+  right: 30;
+}
 
+.search1 {
+  border-radius: 25px;
+  font-weight: bold;
+  width: 90px;
+  height: 30px;
+  font-family: futura;
+  font-size: 12px;
+  background-color: #ff9c2a;
+  color: white;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #ebd4f8; // Choose your own color here
+   font-size: 14px;
+   font-family: futura;
+ }
+
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+  //  background-color: #f8ebdc; // Choose your own color here
+  font-size: 14px;
+  font-family: futura;
+ }
+
+.container.full-width {
+  max-width: 100%;
+  margin: 0;
+  
+}
+
+.lista {
+  color: #1C1C1C;
+  font-style: normal;
+  font-family: futura;
+  margin-top: 80px;
+  font-size: 30px;
+}
+
+//tabela user
+.menubarra {
+  color: white;
+  font-size: 15px;
+}
+
+//logo do listar e produtos
+.navbar1.logo-listar {
+  align-items: center;
+  position: fixed; 
+  left: 46%;
+}

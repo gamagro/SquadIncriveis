@@ -25,7 +25,6 @@
 
   </div>
 
-
   <div id="esc_nomec" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="row">
       <img src="<%= image_url('chat2.png')%>" class="cadastrar" alt="chat2">
@@ -225,6 +224,7 @@
   </div>
 
 </br>
+
 <%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %><br />
 
 </br> 
@@ -294,8 +294,6 @@ function TestaCNPJ(cnpj) {
       return false;
     return true;
   }
-
-
 
   $(document).ready(function () {
     $("#user_cep").keyup(function () {
