@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.1'
 # gem 'sqlite3', '~> 1.4'
 #
 gem 'pg'
+gem 'dotenv-rails'
 
 gem 'carrierwave'
 gem 'bootstrap-sass'
