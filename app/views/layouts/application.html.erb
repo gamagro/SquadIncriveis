@@ -14,7 +14,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+  
     integrity="sha256-Kg2zTcFO9LXOc7IwcBx1YeUBJmekycsnTsq2RuFHSZU=" crossorigin="anonymous"></script>
+    
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -30,10 +32,13 @@
     <p class="navbar-text float-right menu logim">
       <% if user_signed_in?%>
       <strong class="op1"> <%= current_user.email %></strong> |
-      <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
+
+      <% if current_user.adm && !@users %>
+        <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
+      <% end %>
+
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
       <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1" %>
-      <% else %>
       <% end %>
     </p>
   </nav>

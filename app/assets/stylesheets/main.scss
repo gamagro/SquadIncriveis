@@ -3,6 +3,11 @@
    height: 450px;
  }
 
+ .aviso{
+  width: 400px;
+  height: 220px;
+ }
+
  .container-senha{
   width: 400px;
   height: 250px;
@@ -63,10 +68,6 @@ img.you{
     height:35px;
   }
 
-  .op1 {
-    color: rgb(132, 46, 176);
-  }
-
   .op2 {
     color: rgb(132, 46, 176) !important;
   }
@@ -86,7 +87,7 @@ img.you{
     color: white;
   }
 
-  .fonte-titulo-cadastro{
+  .fonte-titulo-cadastro, .p{
     color: #363636;
     font-style: normal;
     font-family: futura;
