@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
+    @logo_listar = true
     @ideas = Idea.all
   end
 
