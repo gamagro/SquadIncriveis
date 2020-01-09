@@ -1,82 +1,109 @@
 <% if current_user.adm %>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-</head>
-
 <h2 class="lista">Lista de Usuários</h2>
 <body>
-    <p class="search" align="left">
-      <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquisar">
-    </p>
-    <div class="table-responsive" id="renderPDF">
-      <table class="table table-striped table-bordered borderless" id="mytable">
-        <thead class="menubarra">
-          <th scope="col">Nome</th>
-          <th scope="col">Razao Social</th>
-          <th scope="col">CPF</th>
-          <th scope="col">CNPJ</th>
-          <th scope="col">Email</th>
-          <th scope="col">ADM</th>
-        </thead>
-        <tbody class="table1">
-          <% @users.each do |user| %>
-          <tr>
-            <td><% if user.fullname.nil? %>
-              -
-              <% else %>
-              <%= user.fullname %>
-              <% end %>
-            </td>
-            <td><% if user.razaosocial.nil? %>
-              -
-              <% else %>
-              <%= user.razaosocial %>
-              <% end %>
-            </td>
-            <td><% if user.cpf.nil? %>
-              -
-              <% else %>
-              <%= user.cpf %>
-              <% end %>
-            </td>
-            <td><% if user.cnpj.nil? %>
-              -
-              <% else %>
-              <%= user.cnpj %>
-              <% end %>
-            </td>
-            <td><%= user.email %></td>
-            <td><% if user.adm  %>
-              ADM
-              <% else %>
-              Usuário
-              <% end %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </body>
+  <p class="search" align="left">
+    <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquisar">
+    <button id="ordenar" class ="buttons-ordenar" style="margin-left: 800px;">ORDENAR POR CADASTRO</button>
+    <select id="admuser" class="sel">
+        <option value="">Todos</option>
+        <option value="ADM">Administradores</option>
+        <option value="Usuário">Usuários</option>
+    </select>
+  </p>
+  <div class="table-responsive" id= "divTabela">
+    <table class="table table-striped table-bordered borderless" id="mytable">
+      <thead class="menubarra">
+        <th scope="col" style="display:none;">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Razao Social</th>
+        <th scope="col">CPF</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">Email</th>
+        <th scope="col">ADM</th>
+      </thead>
+      <tbody class="table1">
+        <% @users.each do |user| %>
+        <tr>
+          <td style="display:none;"><%= user.id %></td>
+          <td><% if user.fullname.nil? %>
+            -
+            <% else %>
+            <%= user.fullname %>
+            <% end %>
+          </td>
+          <td><% if user.razaosocial.nil? %>
+            -
+            <% else %>
+            <%= user.razaosocial %>
+            <% end %>
+          </td>
+          <td><% if user.cpf.nil? %>
+            -
+            <% else %>
+            <%= user.cpf %>
+            <% end %>
+          </td>
+          <td><% if user.cnpj.nil? %>
+            -
+            <% else %>
+            <%= user.cnpj %>
+            <% end %>
+          </td>
+          <td><%= user.email %></td>
+          <td><% if user.adm  %>
+            ADM
+            <% else %>
+            Usuário
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</body>
 
-  <br>
-  <%= link_to "Voltar", :ideas, :class => "op2" %>
 
+</br>
+<%= link_to "Voltar", :ideas, :class => "op2" %>
 
 <script type="text/javascript">
   $(document).ready(function () {
     var table = $('#mytable').DataTable({
-      "dom": '<"top"i>rt<"bottom"><"clear">',
+      dom: 'Bfrtip',
+      buttons: [
+        {
+            extend: 'excel',
+            text: 'Excel',
+            exportOptions: {
+                columns: [ 1, 2, 3, 4, 5, 6] 
+            }
+        }, {
+            extend: 'pdf',
+            text: 'PDF',
+            exportOptions: {
+                columns: [ 1, 2, 3, 4, 5, 6]  
+            }
+        }
+    ],
       "paging": false,
       "bInfo": false,
       "oLanguage": {
         "sEmptyTable": "Nenhum registro encontrado na tabela",
         "sZeroRecords": "Nenhum registro encontrado",
         "sSearch": "Pesquisar: "
-      }
+      },
     });
+
+    $('#ordenar').click(function(){
+      table.order([0, 'asc']).draw();     
+    });
+
+    $('#admuser').on('change', function(){
+      table.columns(6).search(this.value).draw();   
+    });
+
     $('#mySearchText').keyup(function () {
       table.search($('#mySearchText').val()).draw();
       if ($(this).val().length > 0 ){
@@ -91,11 +118,13 @@
         $(this).css("border-color", "rgb(132, 46, 176)");
       }
     })
-  });
+
+    $('#ordenar').click(function(){
+      
+    });
+});
 
 </script>
-
-
 
 <% else %>
 <br>
@@ -107,17 +136,15 @@
 <br>
 <div class="container bg-white aviso justify-content-center">
     <p>
-        <h2 class=fonte-titulo-cadastro>Você está tentandoa acessar uma área dministrativa.</h2>
+    </br>
+        <h6 class=fonte-titulo-cadastro>Você está tentandoa acessar uma área dministrativa.</h6>
       <Br>
-        <h2 class=fonte-titulo-cadastro>Acesso restrito para administradores.</h2>
+        <h6 class=fonte-titulo-cadastro>Acesso restrito para administradores.</h6>
       </p>
       <br>
       <img src="<%= image_url('X5.png')%>" class="you" alt="youser">
   <br>
   <br>
     <%= link_to "Ir para a página do Produto", :ideas, :class => "op2" %>
-
 </div>
-
 <% end %>
-
