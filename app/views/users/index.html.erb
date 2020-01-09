@@ -12,6 +12,13 @@
       <option value="Comum">Comum</option>
   </select>
 </div>
+<!-- <div class="alert alert-success" role="alert" id="a">
+    Ordem de cadastro crescente selecionada!
+</div>
+<div class="alert alert-info" role="alert" id="b">
+    Ordem de cadastro decrescente selecionada!
+</div> -->
+
   <div class="table-responsive" id= "divTabela">
       <!-- <button id="ordenar" class ="buttons-ordenar" style="margin-left: 800px;">ORDENAR POR CADASTRO</button> -->
     <table class="table table-striped table-bordered borderless" id="mytable">
@@ -86,7 +93,8 @@
             action: function(){
               x = x + 1;
               if (x % 2 != 0) {
-              table.order([0, 'asc']).draw(); 
+              table.order([0, 'asc']).draw();
+              $("#a").show();
               }else{
               table.order([0, 'desc']).draw();
               }
