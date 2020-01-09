@@ -52,15 +52,17 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="container bg-white container-login1 justify-content-center">
+  </br>
   <br>
 
   <div class="row">
     <div class="col-sm field">
 
-      <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px", :default_value => "" %>
+      <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
 
       <div class="col-sm field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
+        <%= f.email_field :email, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br", :id => "email" , :value => ""%>
+       
 
       </div>
     </div>
@@ -84,7 +86,7 @@
       <%= f.submit "ENTRAR", :class => "btn botao" ,:style => "margin-left:40px", :id => "botao"%>
     </div>
     <div class="col-sm field">
-      <input type="reset" value="CANCELAR" class="btn botao", style="margin-right:40px">
+      <input type="reset" value="CANCELAR" class="btn botao", style="margin-right:40px", id="apagar">
     </div>
   </div>
   <br>
@@ -101,6 +103,7 @@
 
 <script>
 
+  
     <% if alert %>
     $(document).ready(function () {
       $('#myModal').modal('show')
