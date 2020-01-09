@@ -5,7 +5,7 @@
 
  .aviso{
   width: 400px;
-  height: 220px;
+  height: 300px;
  }
 
  .container-senha{
@@ -179,7 +179,10 @@ select {
   border-radius: 5px;
   border-style: solid;
   border-color: rgb(166, 166, 166);
- 
+}
+
+.sel{
+  margin-left: 40px;
 }
 
 .modal-titulo{
@@ -219,6 +222,7 @@ select {
     border-radius: 25px;
     font-weight: bold;
     width: 100px;
+
     height: 40px;
     font-family: futura;
     font-size: 13px;
@@ -250,7 +254,24 @@ select {
   border-color: #ff9c2a;
 
 }
+.buttons-ordenar {
 
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 240px;
+  height: 40px;
+  font-family: futura;
+  font-size: 13px;
+  background-color: rgb(132, 46, 176) ;
+  color: white;
+  margin-bottom: 20px;
+}
+.buttons-ordenar:hover {
+  background-color: #ff9c2a;
+  border-color: #ff9c2a;
+
+}
 
 .link{
   color: rgb(132, 46, 176) !important;
