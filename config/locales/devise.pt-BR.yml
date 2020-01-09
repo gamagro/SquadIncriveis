@@ -50,7 +50,7 @@ pt-BR:
       update_needs_confirmation: "Você atualizou sua conta com sucesso, mas nós precisamos verificar seu endereço de email. Por favor, cheque sua caixa de entrada e siga o link recebido."
       updated: "Sua conta foi atualizada com sucesso."
     sessions:
-      signed_in: "Logado com sucesso."
+      signed_in: "Bem Vindo! Você está logado."
       signed_out: "Saiu com sucesso."
       already_signed_out: "Saiu com sucesso."
     unlocks:

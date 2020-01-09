@@ -1,5 +1,5 @@
 <% if flash.present? %>
-<div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+<!-- <div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -8,14 +8,28 @@
         <span aria-hidden="true">&times;</span>
       </button>
       <div class="modal-body">
-        <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>">
-          <ul>
-            <%= value %>
-          </ul>
-        </div>
-        <% end %>
+        
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      
+            <div class="modal-header">
+                <img src="<%= image_url('sorriso.png') %>" width="30" height="28" class="d-inline-block align-top displayed"
+                  alt="logo os incriveis" style="margin-left: 10px;">
+  
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <p class=“alert alert-danger”><%= notice  %></p> 
+                </div>
     </div>
   </div>
 </div>
@@ -25,15 +39,6 @@
 
 <h1 class = "fonte-titulo"> Produtos </h1>
 
-<table>
-  <thead>
-
-  </thead>
-
-  <tbody>
-
-  </tbody>
-</table>
 
 
 <br>
