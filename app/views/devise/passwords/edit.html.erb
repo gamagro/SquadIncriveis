@@ -9,14 +9,32 @@
 
 <div class="container bg-white container-mudar-senha justify-content-center">
   </br>
-  </br>
-  <div class="row">
-    <div class="col-sm field" data-placement="left" data-trigger="manual" data-toggle="popover"
-      data-content="Senha inválida" id="text-senha">
-      <%= f.label :password, "Nova senha", :class => "fonte-label", :style => "margin-right: 200px"%>
+</br>
+      <div class="row">
+          <div class="col-sm field" data-placement="left" data-trigger="manual"
+          data-toggle="popover" data-content="Senha inválida" id="text-senha">
+              <%= f.label :password, "Nova senha", :class => "fonte-label", :style => "margin-right: 200px"%>
+          
+            <div class="col-sm field">
+                <%= f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "caixa-de-texto-login borda-caixa-texto"%>
+                <small id="senhaHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
+                </br> Minúscula,
+                Caracter especial e Número</small>
+          </div>
+        </div>
+      </div>
+<br>
 
-      <div class="col-sm field">
-        <%= f.password_field :password, autofocus: true, autocomplete: "Nova Senha", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: @Youser123"%>
+      <div class="row">
+          <div class="col-sm field"  data-placement="left" data-trigger="manual"
+          data-toggle="popover" data-content="Senhas não conferem" id="text-senhaconf">
+              <%= f.label :password_confirmation, "Confirmar senha", :class => "fonte-label", :style => "margin-right: 160px"%>
+          
+            <div class="col-sm field">
+                <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", :class => "caixa-de-texto-login borda-caixa-texto"%>
+      
+          </div>
+        </div>
       </div>
     </div>
   </div>

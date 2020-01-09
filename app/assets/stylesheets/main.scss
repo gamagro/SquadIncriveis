@@ -15,7 +15,7 @@
  
  .container-mudar-senha{
   width: 400px;
-  height: 370px;
+  height: 410px;
  }
 
  .container-cad{
@@ -71,6 +71,10 @@ img.you{
 
   .op2 {
     color: rgb(132, 46, 176) !important;
+  }
+  .op2{
+    background-color: #f7f7f7; 
+    text-decoration: underline;
   }
 
   .op1:hover {
@@ -204,6 +208,45 @@ select {
     border-color: #ffaf0f;
     color: white;
   }
+
+  .buttons-excel {
+   
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    font-family: futura;
+    font-size: 13px;
+    background-color: rgb(132, 46, 176) ;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.buttons-excel:hover {
+  background-color: #ff9c2a;
+  border-color: #ff9c2a;
+ 
+}
+.buttons-pdf {
+
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+  font-family: futura;
+  font-size: 13px;
+  background-color: rgb(132, 46, 176) ;
+  color: white;
+  margin-bottom: 20px;
+}
+.buttons-pdf:hover {
+  background-color: #ff9c2a;
+  border-color: #ff9c2a;
+
+}
+
 
 .link{
   color: rgb(132, 46, 176) !important;

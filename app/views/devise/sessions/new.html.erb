@@ -18,6 +18,20 @@
       <button type="button" class="close" data-dismiss="modal">&times;</button>
       <br>
       <p class=“alert alert-danger”><%= alert %></p>
+      <!-- <img src="<%= image_url('modal.png') %>" width="50" height="50" class="d-inline-block align-top displayed"
+  alt="logo os incriveis" style= "margin-left: 200px;"> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="myModalRedefinir" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <br>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <br>
+      <p class=“alert alert-danger”><%= notice  %></p>
     </div>
   </div>
 </div>
@@ -79,6 +93,12 @@
     <% if alert %>
     $(document).ready(function () {
       $('#myModal').modal('show')
+    });
+    <% end %>
+
+    <% if notice %>
+    $(document).ready(function () {
+      $('#myModalRedefinir').modal('show')
     });
     <% end %>
 
