@@ -15,10 +15,12 @@ pt-BR:
         blank: não pode ficar em branco.
         taken: ja esta em uso.
         invalid: não é valido
-        
       models:
         user:
           attributes:
+            password: 
+              too_short: é muito curta.
+
             password_confirmation:
               confirmation: deve ser igual a senha.
   errors:
@@ -28,8 +30,7 @@ pt-BR:
       expired: "expirou, por favor solicite uma nova"
       not_found: "não encontrado"
       not_locked: "não está bloqueada"
-      too_short: é muito curta.
       not_saved:
         one: "1 erro impediu que fosse salvo(a):"
-        other: "%{count} erros no preenchimento do seu cadastro:"
+        other: "Corrija %{count} erros antes de continuar:"
 
