@@ -44,6 +44,9 @@
   </div>
 </div>
 
+<% if user_signed_in?%>
+      destroy_user_session_path
+<%end%>
 
 <%= render "devise/shared/error_messages", resource: resource %>
 
