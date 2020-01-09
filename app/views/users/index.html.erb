@@ -8,7 +8,7 @@
 <h2 class="lista">Lista de Usuários</h2>
 <body>
     <p class="search" align="left">
-      <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquise Aqui !">
+      <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquisar">
     </p>
     <div class="table-responsive" id="renderPDF">
       <table class="table table-striped table-bordered borderless" id="mytable">
@@ -79,6 +79,17 @@
     });
     $('#mySearchText').keyup(function () {
       table.search($('#mySearchText').val()).draw();
+      if ($(this).val().length > 0 ){
+        if ($('.dataTables_empty').length == 0){
+         $(this).css("border-color", "green");
+        }
+        else{
+        $(this).css("border-color", "red");
+        }
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
     })
   });
 
