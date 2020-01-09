@@ -34,7 +34,7 @@
       <strong class="op1"> <%= current_user.email %></strong> |
 
       <% if current_user.adm && !@users %>
-      <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
+        <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
       <% end %>
 
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
@@ -49,7 +49,7 @@
     <% end %>
     <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <% end %> 
     <%= yield %>
   </div>
 
