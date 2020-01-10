@@ -4,11 +4,11 @@
 <body>
   <p class="search" align="left">
     <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquisar">
-    <button id="ordenar" class ="buttons-ordenar" style="margin-left: 800px;">ORDENAR POR CADASTRO</button>
+    <button id="ordenar" class ="buttons-ordenar" style="margin-left: 750px;">ORDENAR POR CADASTRO</button>
     <select id="admuser" class="sel">
-        <option value="">Todos</option>
-        <option value="ADM">Administradores</option>
-        <option value="Usuário">Usuários</option>
+        <option value="">Todos os tipos de usuários</option>
+        <option value="Administrador">Administradores</option>
+        <option value="Comum">Comum</option>
     </select>
   </p>
   <div class="table-responsive" id= "divTabela">
@@ -20,7 +20,7 @@
         <th scope="col">CPF</th>
         <th scope="col">CNPJ</th>
         <th scope="col">Email</th>
-        <th scope="col">ADM</th>
+        <th scope="col">Tipo de usuário</th>
       </thead>
       <tbody class="table1">
         <% @users.each do |user| %>
@@ -52,9 +52,9 @@
           </td>
           <td><%= user.email %></td>
           <td><% if user.adm  %>
-            ADM
+            Administrador
             <% else %>
-            Usuário
+            Comum
             <% end %>
           </td>
         </tr>
