@@ -3,6 +3,48 @@
 
 <br>
 
+<div class="modal fade bd-example-modal-sm" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="<%= image_url('email.png') %>" width="30" height="30" class="d-inline-block align-top displayed"
+              alt="logo os incriveis" style="margin-left: 10px;">
+   
+              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Alerta!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </br>
+          <div class="modal-body">
+              <p class=“alert alert-danger”><%= notice %></p>
+            </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="<%= image_url('icon-chat.png') %>" width="40" height="35" class="d-inline-block align-top displayed"
+              alt="logo os incriveis" style="margin-left: 10px;">
+   
+              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Opaaa!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </br>
+          <div class="modal-body">
+              <p class=“alert alert-danger”><%= notice %></p>
+            </div>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
@@ -10,10 +52,10 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
         <div class="modal-header">
-            <img src="<%= image_url('alerta.png') %>" width="30" height="28" class="d-inline-block align-top displayed"
+            <img src="<%= image_url('alerta.png') %>" width="40" height="30" class="d-inline-block align-top displayed"
               alt="logo os incriveis" style="margin-left: 10px;">
-
-              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >Alerta!</h5>
+   
+              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Alerta!</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -34,7 +76,7 @@
             <div class="modal-header">
                 <img src="<%= image_url('sorriso.png') %>" width="30" height="28" class="d-inline-block align-top displayed"
                   alt="logo os incriveis" style="margin-left: 10px;">
-  
+                  <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Alerta!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -103,20 +145,23 @@
   alt="icone youse">
 
 </div>
+<body>
+    <script>
+        <% if alert %>
+        $(document).ready(function () {
+          $('#myModal').modal('show')
+        });
+        <% end %>
 
-<script>
+      <% if notice == "Se seu endereço de email existir em nosso banco de dados, você receberá um link de redefinição de senha em alguns minutos." %>
+      $(document).ready(function () {
+          $('#myModal2').modal('show')
+        });
+        <% elsif notice == "Deslogado com sucesso." %>
+        $(document).ready(function () {
+          $('#myModal3').modal('show')
+        });
+        <% end %> 
 
-  
-    <% if alert %>
-    $(document).ready(function () {
-      $('#myModal').modal('show')
-    });
-    <% end %>
-
-   <% if notice %>
-   $(document).ready(function () {
-      $('#myModalRedefinir').modal('show')
-    });
-  <% end %>
-
-</script>
+    </script>
+</body>

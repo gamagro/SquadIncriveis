@@ -97,7 +97,7 @@
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
-        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => 
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
         "exemplo@youse.com.br"%>
       </div>
       <div class="col-sm field" align="right">
@@ -354,6 +354,9 @@ function TestaCNPJ(cnpj) {
         $("#esc_cpf").show();
         $("#user_razaosocial").val('');
         $("#user_cnpj").val('');
+        $("#user_razaosocial").css("border-color","rgb(132, 46, 176)");
+        $("#user_cnpj").css("border-color","rgb(132, 46, 176)");
+        $('#text-cnpj').popover('hide')
       } else {
         $("#esc_razao").show();
         $("#esc_cnpj").show();
@@ -361,6 +364,9 @@ function TestaCNPJ(cnpj) {
         $("#esc_cpf").hide();
         $("#user_fullname").val('');
         $("#user_cpf").val('');
+        $("#user_fullname").css("border-color","rgb(132, 46, 176)");
+        $("#user_cpf").css("border-color","rgb(132, 46, 176)");
+        $('#text-cpf').popover('hide');
       }
       
       setTimeout(function() { 

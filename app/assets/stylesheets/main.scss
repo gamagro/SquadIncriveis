@@ -1,6 +1,6 @@
  .container-login1{
    width: 400px;
-   height: 450px;
+   height: 470px;
  }
 
  .aviso{
@@ -15,7 +15,7 @@
  
  .container-mudar-senha{
   width: 400px;
-  height: 410px;
+  height: 280px;
  }
 
  .container-cad{
@@ -26,6 +26,10 @@ img.cadastrar{
   width: 100;
   height: 80px;
   
+}
+
+.errors{
+  color: #ff9c2a;
 }
 
 img.you{
@@ -186,7 +190,7 @@ select {
 }
 
 .modal-titulo{
-  color: #ff9c2a;
+  color: #363636;
   font-family: futura;
 
 }
