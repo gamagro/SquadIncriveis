@@ -1,47 +1,239 @@
 <% if flash.present? %>
-<!-- <div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-        <br>
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <div class="modal-body">
-        
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
   aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      
-            <div class="modal-header">
-                <img src="<%= image_url('sorriso.png') %>" width="30" height="28" class="d-inline-block align-top displayed"
-                  alt="logo os incriveis" style="margin-left: 10px;">
-  
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                  <p class=“alert alert-danger”><%= notice  %></p> 
-                </div>
+
+      <div class="modal-header">
+        <img src="<%= image_url('sorriso.png') %>" width="30" height="28" class="d-inline-block align-top displayed"
+          alt="logo os incriveis" style="margin-left: 10px;">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class=“alert alert-danger”><%= notice  %></p>
+      </div>
     </div>
   </div>
 </div>
 <% end %>
 
-<br/>
-
-<h1 class = "fonte-titulo"> Produtos </h1>
-
-
-
-<br>
+<body>
+  <br />
+  <h1 class="fonte-titulo"> Seguro de Vida </h1>
+  <div spacing="[object Object]" class="View__StyledView-sc-1kmgy0v-0 ijHFvc">
+    <div class="Grid__Container-sc-17lvs6z-0 bJjaWi">
+      <h2 color="#a24dc2" class="Title__StyledTitle-sc-1qrywyz-0 gmcNtc">Por que escolher o Seguro de Vida Youse?</h2>
+      <div spacing="[object Object]" class="View__StyledView-sc-1kmgy0v-0 ihvdqs">
+        <p color="#535f68" class="Title__StyledTitle-sc-1qrywyz-0 dmGSvD">É um seguro de vida 100% online, que vc monta
+          do seu jeito e muda quando precisa.</p>
+      </div>
+    </div>
+    <div spacing="[object Object]" class="View__StyledView-sc-1kmgy0v-0 khfKSb">
+      <div class="Grid__Container-sc-17lvs6z-0 bJjaWi">
+        <div class="Grid__ColumnsContainer-sc-17lvs6z-1 dbzrSy">
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 gpdcGS"></div>
+          <div size="4" class="Grid__StyledColumn-sc-17lvs6z-2 hvGqBo">
+            <article direction="column" class="Layout__StyledLayout-zv1q1o-0 kbGGzF">
+              <div class=" gatsby-image-wrapper"
+                style="position:relative;overflow:hidden;display:inline-block;width:186px;height:136px"><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAMAAADTRh9nAAAAAXNSR0IArs4c6QAAAXdQTFRFR3BM/wD/qlWq////gICAmWaZ////////////AAAA////////+/L2+vH2gACA/Pv8/4D/AABV//7+gID/////o3GwAP//AAAA8PDwoouiv4C/AACAiUSVllql0JLCYUWWvpPHgkyY18bfkFOf4M/l+fn5/////////f39////n4C/eVSevIW6v4C//+/v9/b4KwBVkmWp//////7/////Y9G0h1Cio26x9/f5+/j8j1GdsHu2ZUuah1mj5eXq+Pb6S/+0qHe0qnq1j46tpW6uom+uqoO6n4y/vabKlmKjb8SxxsTQ////1M3b9vr3nV2npXSwikqauLrEn2erjVak3cPr7eLwYM+uhECXkyuXo4O3dTqKm2SofkOakYGt0tLa4ODoyMHT/Pn/trfDzp3ab0mg6OfuzbfU9fT33N3l4tHncE6n+v3+ZEyfjHe3zaLSY0Oa2bPix5DHsnq7nmGruYzAysnTp3SzuIrDom2vz7TbpYi718DgOXsU0QAAAH10Uk5TAAEDbQIFBAECAQMFOTgCrgID1QJDYQEDEQsEAikiNs6tLz/YlCm1GHEGCP1cCBDdBpg/5Tcss/f3rTl61taekyytn+bcgcT29Cf++Bf9/uBETP2UoybaRVtCJyNwrIL///////////////////////////////////////9XLE9+AAAA1UlEQVQY02NgAAMpaQZ0wMLKwCAnKsjAiCTGzsCgZ60tL8bAhyzGrmNbkG3GwMDKgqTOMDXXvdTZFMhh44AICjPo2uR5FFV7OTAoijMwcEFsYTBwyy/2jwv3dDJXEGFgAKsVYNB0KQmOYoisLExPjOfnBZkHVKnlGgCko2PCcpIThHggSjmBODAiJDbUx16fmQOsECjGZOVYXlFT5Wtnos4AEWNgYpBVTsnyDvJLS1KTZOCGuZRRRsUisyzDWEOCgQMmBjJTyZLZSBWmFyLKCqE52KACAME1Ht2ED0nwAAAAAElFTkSuQmCC"
+                  alt="Pague mês a mês"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0; transition-delay: 500ms; border-radius: 0px;">
+                <picture>
+                  <source
+                    srcset="https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1&amp;fm=webp&amp;w=186 1x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1.5&amp;fm=webp&amp;w=186 1.5x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=2&amp;fm=webp&amp;w=186 2x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=3&amp;fm=webp&amp;w=186 3x">
+                  <img
+                    srcset="https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1&amp;fm=webp&amp;w=186 1x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1.5&amp;fm=webp&amp;w=186 1.5x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=2&amp;fm=webp&amp;w=186 2x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=3&amp;fm=webp&amp;w=186 3x"
+                    src="https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&amp;fm=webp&amp;w=186"
+                    alt="Pague mês a mês" width="186" height="136" loading="lazy"
+                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1; transition: opacity 500ms ease 0s; border-radius: 0px;">
+                </picture><noscript>
+                  <picture>
+                    <source
+                      srcset="https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=1&fm=webp&w=186 1x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=1.5&fm=webp&w=186 1.5x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=2&fm=webp&w=186 2x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=3&fm=webp&w=186 3x" />
+                    <img loading="lazy" width="186" height="136"
+                      srcset="https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=1&fm=webp&w=186 1x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=1.5&fm=webp&w=186 1.5x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=2&fm=webp&w=186 2x,
+https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&dpr=3&fm=webp&w=186 3x"
+                      src="https://www.datocms-assets.com/16903/1578071457-objectspayment-monthhd4x3light-2x.png?auto=compress%2Cformat&fm=webp&w=186"
+                      alt="Pague mês a mês"
+                      style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center" />
+                  </picture>
+                </noscript>
+              </div>
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 hcdoCx">
+                <h3 color="#2f3941" class="Title__StyledTitle-sc-1qrywyz-0 hOKjeX">Pague mês a mês</h3>
+              </div>
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 ceBMqf">
+                <p class="Text__StyledText-f782i4-0 frbKcX" color="#535f68">Direto no seu cartão e sem comprometer o
+                  limite. Se precisar mudar ou cancelar o Seguro de Vida, não tem multa.</p>
+              </div>
+            </article>
+          </div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 gpdcGS"></div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 gpdcGS"></div>
+          <div size="4" class="Grid__StyledColumn-sc-17lvs6z-2 hvGqBo">
+            <article direction="column" class="Layout__StyledLayout-zv1q1o-0 kbGGzF">
+              <div class=" gatsby-image-wrapper"
+                style="position:relative;overflow:hidden;display:inline-block;width:186px;height:136px"><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAMAAADTRh9nAAAAAXNSR0IArs4c6QAAAl5QTFRFR3BM////AICAAAD/gIC/AAAAv7//////AP//VVWqAP8AVaqqqlX/gP//v4C/ZmaZqo7jVQBVYL+/////QsenN8KhSsarmZnMTUCZsY3WgICA/wD/gICqZmbMc1mmfWOxzs7bpbfRu8TZydTksb/XtbnTscLaq7rXW9Czw8bcfGSxRsWofmSydWezSsyqXc2yr4XFhWi7VkyXOi6LeXmwW1KZhmuzeWOveICyT0ORe16wcn6veU+wTc2tVsOuXdCzVk2XiWS6k5bAWEuXgmKzjG22k3K5km6+6+H0r0C/n3LBPCyIn3vJdVinNyGEqqPL/6r/vMDZdn6ukJ69kZ3BgJmzk5+9aUqktpTVbaOzpKnLTMqrdnyzpaXKZ5ixqY/MsbPRdG+qxcncZpGvyNLfPCuHMx6BiGC2sI7XiFq4k2y/ZE2jkXS5MiCCVj+ZmW+6yK7goX3G5pnM////TkOSjpm8rKvMwsbbqqnMqrLNtbnTsrbS1dXVnZzEaF6iu77XtpK2////nJvDtrbb4ebtoqfRgn63m6nQkZnJcnCvtr/VZl+oiGi/hmK8rrDTfOXJckKrjmrLhme7qq7Mxrfc0NrlNSSDkGu6aWSoupvffk+3uKLVe2SvsJfUXT2cv8HaXVObz9np2+LqnIbAal+jfVayYUenRC6MelSu0cbkrajLhG+xVtCym6TInaLIXbyxkH29kpDCjGHAe221UTmVQy6MlG/CjW69dV22dFKskGfBRTGPmnzQtKbT2c/q2cjqsaXVlpzD0NXitbjWyszsurvcdGyx3t/yys3mbGOptmjyhwAAAMp0Uk5TAAcCAQQBBAEBAwEDAwIEBQkDCAJlLnkFFGkCAQYFFGIVgIcvX9yk8ftmgljYJW/iMOz8Fv77jbnH9uxT+zj3+Pv5/bq5pKH2/BCY3fXC/f4DwbyqVgrA3Xovia78zfj9l/5C+/77+/7R++P7+P79Vf79CgP1/Pp59f3TwQbGxccHBtEH+v///////////////////////////////////////////////////////////////////////////////////////////+5gXdUAAAEiSURBVBjTLZADj4RhDITntN/u2bZt27Zt27Zt27Zt/qv73r2bTJp0+jRpChAxZAF1FYAS5Me/xKQANc0ua1AKdMdFIooBKKtqdfe5BQPGMsKgwLaORkePzXQoSqP9TaTBImhqyGCnqYXrSmRR9v2mnxlE6Kzq7WTZ2bx3dTf/8jrjLsqHkBytn+UpSxNja1k3F5l5t7kxkKPDxp/K1/Sgqe3zgsKH4qvEOAcw0dzw1V5Tsbc4uXX8+FSStu+kBwG0NX1XvxysB86P7yTlnB0NGUmADy11H8+HYQEL3nMuG6fxjtqSoNfra98TwuE742U/MOpuZyguCk6gLDk2AvCcHe7XV+IhZzNJ4Sb2GLHVVQSEwMv8+wclD1haGdAzFphs+Bd8B0++tRS4IQAAAABJRU5ErkJggg=="
+                  alt="Vc seguro e numa boa"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0; transition-delay: 500ms; border-radius: 0px;">
+                <picture>
+                  <source
+                    srcset="https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=1&amp;fm=webp&amp;w=186 1x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=1.5&amp;fm=webp&amp;w=186 1.5x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=2&amp;fm=webp&amp;w=186 2x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=3&amp;fm=webp&amp;w=186 3x">
+                  <img
+                    srcset="https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=1&amp;fm=webp&amp;w=186 1x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=1.5&amp;fm=webp&amp;w=186 1.5x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=2&amp;fm=webp&amp;w=186 2x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;dpr=3&amp;fm=webp&amp;w=186 3x"
+                    src="https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&amp;fm=webp&amp;w=186"
+                    alt="Vc seguro e numa boa" width="186" height="136" loading="lazy"
+                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1; transition: opacity 500ms ease 0s; border-radius: 0px;">
+                </picture><noscript>
+                  <picture>
+                    <source
+                      srcset="https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=1&fm=webp&w=186 1x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=1.5&fm=webp&w=186 1.5x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=2&fm=webp&w=186 2x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=3&fm=webp&w=186 3x" />
+                    <img loading="lazy" width="186" height="136"
+                      srcset="https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=1&fm=webp&w=186 1x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=1.5&fm=webp&w=186 1.5x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=2&fm=webp&w=186 2x,
+https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&dpr=3&fm=webp&w=186 3x"
+                      src="https://www.datocms-assets.com/16903/1578078285-objectsdouble-cards-successhd4x3light-1.png?auto=compress%2Cformat&fm=webp&w=186"
+                      alt="Vc seguro e numa boa"
+                      style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center" />
+                  </picture>
+                </noscript>
+              </div>
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 hcdoCx">
+                <h3 color="#2f3941" class="Title__StyledTitle-sc-1qrywyz-0 hOKjeX">Vc seguro e numa boa</h3>
+              </div>
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 ceBMqf">
+                <p class="Text__StyledText-f782i4-0 frbKcX" color="#535f68">As coberturas e assistências do Seguro de
+                  Vida online estão disponíveis 24h, no Brasil inteiro!</p>
+              </div>
+            </article>
+          </div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 gpdcGS"></div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 gpdcGS"></div>
+          <div size="4" class="Grid__StyledColumn-sc-17lvs6z-2 hvGqBo">
+            <article direction="column" class="Layout__StyledLayout-zv1q1o-0 kbGGzF">
+              <div class=" gatsby-image-wrapper"
+                style="position:relative;overflow:hidden;display:inline-block;width:186px;height:136px"><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAMAAADTRh9nAAAAAXNSR0IArs4c6QAAAftQTFRFR3BMgICAAAAAVf//////////QICAQEBAAAAAVVVVv7+/zMzMQL+AAICAAACAQL+/gACAgID/gP+A////2MThLktUCwsg7MDn////Jhc1nZapPIN61N/qR62YPzhPHAAcocrKvMHRQUZTPkFSZOnBOi9FOjZLQI+ESkVaNV1iVZiMgIC/aNy7T9OyY9u4Xtq4M5mZWqyZUMqsTtCwYtG3O05iODFHKyA7RKCQLDJFt8TNZde2TcmshNnEYdq44dPmatq6YNm1rMTHQ6SSVNSwOXRxRMWmUVFpHAAiRMmp//j/qKK+gNrEPXl2KSc+////MVlfAAAAT86u/8z/qqqq1MzbQpiJlLq81MzsRs2qTcirTceqJBo0nZ21Ts2u9eD/UM6v/9f3T9OxM05alpCuQcSktcDSkJKpo6a7paG61b/fQaiUsbDKM1xi7t7/Ix83RseoTMiqetK/MCxDXtWzXMWpeZCZlMXCP05aOC1GQVpiauPAUNW1ZtS1PDZNZde3T9a1PWdrZ9e4R62aOzRKSr6lWdCxYdS1SdKwb9W7UMqta9e5uurfZNK2kM/EUtG0h9rGs+jbhNHBUde2TcqsfHyVTMOnTserKjxNUtu5PTdRTcirQY2EXF11TMapYMOyTcutRp6QMipGUNSzLyNATs6vXVt0fqatPkhc3IiwGgAAAKl0Uk5TAAICAwMBBAQBAwQFBAICBAICAhRWPRg1CyLQmI/9khL4sjda+vq1u95g+wT9/fv7Bfv+/voNxdfahdH9+/76ef396ef6dfw/LfwkUv6v9wZTCvoFA5rO/F/5+vv51f0Z/j/9/IH+uurdy2D6mvsu+////////////////////////////////////////////////////////////////////////////1INrJMAAAD7SURBVBjTY2AAAQFOBnTAx87AIIQqzAEUYjNlYODnRYhxcjAwKJuZW8ozMPAwIYSV1CrrGpstNIFMNqiQmJxqS5Whvm5Nq7ooAwMzO1hQo7hCy7q63sjGuEFWWpKBwQBoHINUWamKTm1TW4GtSUe/s2sgAwNQsbCMQlGJnkN7V89Et6DJ08MCGBhYgWrFFcs7He16J/hMKYyKmznN14OBgQVohohVX7eLZ8HseQuSoufM8HMHKuZiYJCwd5pUGJmweOnC5JhZU71BDmDkZmDwCg2fn5qdm79obmyEP8SxLNoMDIlpy1csWZaeEo/wVjAQZ2Vm5OQxMIQIAgA+tTikRNDqSQAAAABJRU5ErkJggg=="
+                  alt="Seu Seguro de Vida na palma da mão"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0; transition-delay: 500ms; border-radius: 0px;">
+                <picture>
+                  <source
+                    srcset="https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1&amp;fm=webp&amp;w=186 1x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1.5&amp;fm=webp&amp;w=186 1.5x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=2&amp;fm=webp&amp;w=186 2x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=3&amp;fm=webp&amp;w=186 3x">
+                  <img
+                    srcset="https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1&amp;fm=webp&amp;w=186 1x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=1.5&amp;fm=webp&amp;w=186 1.5x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=2&amp;fm=webp&amp;w=186 2x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;dpr=3&amp;fm=webp&amp;w=186 3x"
+                    src="https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&amp;fm=webp&amp;w=186"
+                    alt="Seu Seguro de Vida na palma da mão" width="186" height="136" loading="lazy"
+                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1; transition: opacity 500ms ease 0s; border-radius: 0px;">
+                </picture><noscript>
+                  <picture>
+                    <source
+                      srcset="https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=1&fm=webp&w=186 1x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=1.5&fm=webp&w=186 1.5x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=2&fm=webp&w=186 2x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=3&fm=webp&w=186 3x" />
+                    <img loading="lazy" width="186" height="136"
+                      srcset="https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=1&fm=webp&w=186 1x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=1.5&fm=webp&w=186 1.5x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=2&fm=webp&w=186 2x,
+https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&dpr=3&fm=webp&w=186 3x"
+                      src="https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3light-2x.png?auto=compress%2Cformat&fm=webp&w=186"
+                      alt="Seu Seguro de Vida na palma da mão"
+                      style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center" />
+                  </picture>
+                </noscript>
+              </div>
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 hcdoCx">
+                <h3 color="#2f3941" class="Title__StyledTitle-sc-1qrywyz-0 hOKjeX">Seu Seguro de Vida na palma da mão
+                </h3>
+              </div>
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 ceBMqf">
+                <p class="Text__StyledText-f782i4-0 frbKcX" color="#535f68">As coberturas e assistências do Seguro de
+                  Vida online estão disponíveis 24h, no Brasil inteiro!</p>
+              </div>
+            </article>
+          </div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 gpdcGS"></div>
+        </div>
+      </div>
+    </div>
+    <div spacing="[object Object]" class="View__StyledView-sc-1kmgy0v-0 khfKSb">
+      <div class="Grid__Container-sc-17lvs6z-0 bJjaWi">
+        <div class="Grid__ColumnsContainer-sc-17lvs6z-1 dbzrSy">
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 jpMgfS"></div>
+          <div size="4" class="Grid__StyledColumn-sc-17lvs6z-2 hvGqBo">
+            <div class="Card-sc-8uurdt-0 gskTqQ">
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 ixkOzg">
+                <p color="#2f3941" class="Title__StyledTitle-sc-1qrywyz-0 gVRmxD">+ 150 mil</p>
+                <div class="Spacer__SpacerContainer-sc-6r2l0-0 bslfdu">
+                  <p class="Text__StyledText-f782i4-0 iaYFms" color="#535f68">clientes que contam com a gente</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 jpMgfS"></div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 jpMgfS"></div>
+          <div size="4" class="Grid__StyledColumn-sc-17lvs6z-2 hvGqBo">
+            <div class="Card-sc-8uurdt-0 gskTqQ">
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 ixkOzg">
+                <p color="#2f3941" class="Title__StyledTitle-sc-1qrywyz-0 gVRmxD">+ 19.500</p>
+                <div class="Spacer__SpacerContainer-sc-6r2l0-0 bslfdu">
+                  <p class="Text__StyledText-f782i4-0 iaYFms" color="#535f68">sinistros pagos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 jpMgfS"></div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 jpMgfS"></div>
+          <div size="4" class="Grid__StyledColumn-sc-17lvs6z-2 hvGqBo">
+            <div class="Card-sc-8uurdt-0 gskTqQ">
+              <div class="Spacer__SpacerContainer-sc-6r2l0-0 ixkOzg">
+                <p color="#2f3941" class="Title__StyledTitle-sc-1qrywyz-0 gVRmxD">+ 130</p>
+                <div class="Spacer__SpacerContainer-sc-6r2l0-0 bslfdu">
+                  <p class="Text__StyledText-f782i4-0 iaYFms" color="#535f68">assistências acionadas por dia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Grid__StyledColumn-sc-17lvs6z-2 jpMgfS"></div>
+        </div>
+      </div>
+    </div>
+    <div class="Grid__Container-sc-17lvs6z-0 bJjaWi"></div>
+  </div>
+</body>
 
 <script>
   $(document).ready(function () {

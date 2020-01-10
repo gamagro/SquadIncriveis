@@ -44,6 +44,9 @@
   </div>
 </div>
 
+<% if user_signed_in?%>
+      destroy_user_session_path
+<%end%>
 
 <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -60,8 +63,6 @@
 
       <div class="col-sm field">
         <%= f.email_field :email, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br", :id => "email" , :value => ""%>
-       
-
       </div>
     </div>
   </div>

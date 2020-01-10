@@ -427,3 +427,37 @@ th {
   position: fixed; 
   left: 46%;
 }
+
+//editar perfil css do edit.html.erb
+.editarp {
+  color: #1C1C1C;
+  font-style: normal;
+  font-family: futura;
+  margin-top: 80px;
+  font-size: 30px;
+}
+
+.canceledit {
+  color: #1C1C1C;
+  font-style: normal;
+  font-family: futura;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+
+.container-edit {
+  width: 400px;
+  height: 900px;
+}
+
+.field-f {
+  margin-top: 15px;
+}
+
+.fonte-edit {
+  color: rgb(132, 46, 176);
+  font-size: 16px;
+  font-weight: bold;
+  font-family: futura;
+}
