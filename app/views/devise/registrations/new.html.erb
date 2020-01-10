@@ -99,7 +99,7 @@
     </div>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
-        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => 
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
         "exemplo@youse.com.br"%>
       </div>
       <div class="col-sm field" align="right">
@@ -353,6 +353,9 @@ function TestaCNPJ(cnpj) {
         $("#esc_cpf").show();
         $("#user_razaosocial").val('');
         $("#user_cnpj").val('');
+        $("#user_razaosocial").css("border-color","rgb(132, 46, 176)");
+        $("#user_cnpj").css("border-color","rgb(132, 46, 176)");
+        $('#text-cnpj').popover('hide')
       } else {
         $("#esc_razao").show();
         $("#esc_cnpj").show();
@@ -360,6 +363,9 @@ function TestaCNPJ(cnpj) {
         $("#esc_cpf").hide();
         $("#user_fullname").val('');
         $("#user_cpf").val('');
+        $("#user_fullname").css("border-color","rgb(132, 46, 176)");
+        $("#user_cpf").css("border-color","rgb(132, 46, 176)");
+        $('#text-cpf').popover('hide');
       }
       
       setTimeout(function() { 
@@ -461,6 +467,7 @@ function TestaCNPJ(cnpj) {
 
     jQuery(function () {
     $("#user_email").keyup(function () {
+      if($(this).val().length > 0){
         var VAL = this.value;
 
         var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
@@ -474,6 +481,10 @@ function TestaCNPJ(cnpj) {
           $(this).css("border-color", "red");
           $('#text-email').popover('show')
         }
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
     });
 
 
@@ -557,20 +568,20 @@ function TestaCNPJ(cnpj) {
     if ($(this).val().length == 18){
     if (TestaCNPJ($(this).val())) {
           $(this).css("border-color", "green");
-          $('#text-cpf').popover('hide')
+          $('#text-cnpj').popover('hide')
         }
         else {
           $(this).css("border-color", "red");
-          $('#text-cpf').popover('show')
+          $('#text-cnpj').popover('show')
         }
     }
     else if($(this).val().length >0){
         $(this).css("border-color", "orange");
-        $('#text-cpf').popover('show')
+        $('#text-cnpj').popover('show')
       }
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
-        $('#text-cpf').popover('hide')
+        $('#text-cnpj').popover('hide')
       }
   })
 
