@@ -1,64 +1,65 @@
-<h2 class= "fonte-titulo"> Bora mudar sua senha? </h2>
+<h2 class="fonte-titulo"> Bora mudar sua senha? </h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+<%= render "devise/shared/error_messages", resource: resource %>
+<%= f.hidden_field :reset_password_token %>
 
 </br>
 
 
-  <div class="container bg-white container-mudar-senha justify-content-center">
+<div class="container bg-white container-mudar-senha justify-content-center">
   </br>
-</br>
-      <div class="row">
-          <div class="col-sm field" data-placement="left" data-trigger="manual"
-          data-toggle="popover" data-content="Senha inválida" id="text-senha">
-              <%= f.label :password, "Nova senha", :class => "fonte-label", :style => "margin-right: 200px"%>
-             
-          
-            <div class="col-sm field">
-                <%= f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "caixa-de-texto-login borda-caixa-texto"%>
-      
-          </div>
-        </div>
+  </br>
+  <div class="row">
+    <div class="col-sm field" data-placement="left" data-trigger="manual" data-toggle="popover"
+      data-content="Senha inválida" id="text-senha">
+      <%= f.label :password, "Nova senha", :class => "fonte-label", :style => "margin-right: 200px"%>
+
+      <div class="col-sm field">
+        <%= f.password_field :password, autofocus: true, autocomplete: "Nova Senha", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: @Youser123"%>
       </div>
-<br>
+    </div>
+  </div>
+  <br>
 
-      <div class="row">
-          <div class="col-sm field"  data-placement="left" data-trigger="manual"
-          data-toggle="popover" data-content="Senhas não conferem" id="text-senhaconf">
-              <%= f.label :password_confirmation, "Confirmar senha", :class => "fonte-label", :style => "margin-right: 160px"%>
-          
-            <div class="col-sm field">
-                <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", :class => "caixa-de-texto-login borda-caixa-texto"%>
-      
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-sm field" data-placement="left" data-trigger="manual" data-toggle="popover"
+      data-content="Senhas não conferem" id="text-senhaconf">
+      <%= f.label :password_confirmation, "Confirmar senha", :class => "fonte-label", :style => "margin-right: 160px"%>
+
+      <div class="col-sm field">
+        <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "Nova Senha", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: Confirme Sua Senha"%>
+
       </div>
-
-    </br>
-
+    </div>
+  </div>
+  </br>
 
   <div class="actions">
-    
+
     <%= f.submit "FINALIZAR" , :class => "btn botao"%>
   </div>
 
+  <% end %>
+  </br>
 
-<% end %>
-</br>
+  <%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %>
 
- <%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %>
+  <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta" alt="icone-senha">
 
- <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta" 
-  alt="icone-senha">
-  
 
-<script type="text/javascript">
-$(document).ready(function () {
-  jQuery(function () {
+  <script type="text/javascript">
+    
+    $(document).ready(function(){
+      $('.field_with_errors').attr('style', 'background-color: transparent;')
+      $('.field_with_errors').find('input').attr('style', 'border: 2px solid red');
+    })
 
- $("#user_password").keyup(function () {
+
+    $(document).ready(function () {
+      jQuery(function () {
+
+        $("#user_password").keyup(function () {
 
           var VAL = this.value;
           var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
@@ -114,7 +115,7 @@ $(document).ready(function () {
         })
       });
     });
-  
 
- </script>
+
+  </script>
 </div>

@@ -1,11 +1,33 @@
-
 <h2 class= "fonte-titulo"> Esqueceu sua senha? </h2>
 </br>
+
+
+<div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="<%= image_url('email.png') %>" width="40" height="30" class="d-inline-block align-top displayed"
+              alt="logo os incriveis" style="margin-left: 10px;">
+   
+              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Alerta!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </br>
+          <div class="modal-body">
+              <p class=“alert alert-danger”><%= notice %></p>
+            </div>
+    </div>
+  </div>
+</div>
+
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="container bg-white container-senha justify-content-center">
+  <div class="container bg-white container-mudar-senha justify-content-center">
   </br>
 </br>
   <div class="row">
@@ -13,23 +35,58 @@
      
       <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
     
-      <div class="col-sm field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br"%>
+      <div class="col-sm field" data-placement="left" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-esque">
+        <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br", :id => "user_esque"%>
 
     </div>
   </div>
 </div>
 
   <div class="row actions justify-content-center">
-    <%= f.submit "REDEFINIR AS INSTRUÇÕES DE SENHA", :class => "btn botao", :style => "width: 300px;"%>
+    <%= f.submit "REDEFINIR AS INSTRUÇÕES DE SENHA", :class => "btn botao", :style => "width: 300px;", :id => "botao_rede"%>
   </div>
 
 <% end %>
 </br>
-
-<%= link_to "Cadastrar-se", new_registration_path(resource_name), :class => "link"%>
+<%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %> </br> </br>
+<%= link_to "Primeiro acesso", new_registration_path(resource_name), :class => "link"%>
 
 <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta" 
   alt="icone-senha">
 
 </div>
+
+<script>
+  document.getElementById("botao_rede").disabled = true;
+ $(document).ready(function () {
+jQuery(function () {
+    $("#user_esque").keyup(function () {
+      if($(this).val().length > 0){
+        var VAL = this.value;
+
+        var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
+
+        if (email.test(VAL)) {
+        
+          $(this).css("border-color", "green");
+          $('#text-esque').popover('hide')
+          document.getElementById("botao_rede").disabled = false;
+        }
+        else {
+          $(this).css("border-color", "red");
+          $('#text-esque').popover('show')
+          document.getElementById("botao_rede").disabled = true;
+        }
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+        document.getElementById("botao_rede").disabled = true;
+        $('#text-esque').popover('hide')
+      }
+    });
+  });
+});
+
+
+
+</script>
