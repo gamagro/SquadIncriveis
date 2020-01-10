@@ -17,18 +17,20 @@ pt-BR:
         invalid: não é valido
       models:
         user:
-          attributes: 
+          attributes:
+            password: 
+              too_short: é muito curta.
+
             password_confirmation:
               confirmation: deve ser igual a senha.
   errors:
     messages:
-    
       already_confirmed: "já foi confirmado, por favor faça login"
       confirmation_period_expired: "precisava ser confirmada em %{period}, por favor solicite um novo link"
       expired: "expirou, por favor solicite uma nova"
       not_found: "não encontrado"
       not_locked: "não está bloqueada"
       not_saved:
-        one: "1 erro impediu que %{resource} fosse salvo(a):"
-        other: "%{count} erros no preenchimento do seu cadastro:"
+        one: "1 erro impediu que fosse salvo(a):"
+        other: "Corrija %{count} erros antes de continuar:"
 

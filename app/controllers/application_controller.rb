@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
   def show
     # doesn't need to assign the flash notice to the template, that's done automatically
   end
+  def after_sign_out_path_for(resource_or_scope)
+    '/users/sign_in'
+  end
   
   protected
   
@@ -27,3 +30,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password_confirmation, :password, :current_password, :fullname, :razaosocial, :pf_pj, :cpf, :cnpj, :rua, :cep, :bairro, :cidade, :estado, :numero)}
   end
 end
+    

@@ -12,6 +12,7 @@
   width: 400px;
   height: 250px;
  }
+ 
  .container-mudar-senha{
   width: 400px;
   height: 410px;
@@ -76,6 +77,10 @@ img.you{
     text-decoration: underline;
   }
 
+  .titulo-modal{
+    color: #363636;
+  }
+
   .op1:hover {
     background-color: rgb(132, 46, 176);
   }
@@ -116,6 +121,7 @@ img.you{
     font-weight: bold;
     font-family: futura;
   }
+  
   .checkbox-pequena{
     color: rgb(132, 46, 176);
     font-size: 12px;
@@ -216,6 +222,7 @@ select {
     border-radius: 25px;
     font-weight: bold;
     width: 100px;
+
     height: 40px;
     font-family: futura;
     font-size: 13px;
@@ -252,7 +259,7 @@ select {
   text-align: center;
   border-radius: 25px;
   font-weight: bold;
-  width: 140px;
+  width: 240px;
   height: 40px;
   font-family: futura;
   font-size: 13px;
@@ -266,7 +273,6 @@ select {
 
 }
 
-
 .link{
   color: rgb(132, 46, 176) !important;
   text-decoration: underline;
@@ -276,6 +282,16 @@ select {
 .link:hover{
   background-color: white;
   color: rgb(132, 46, 176);
+}
+
+.alert-warning{
+  background-color: #ffcc67 !important;
+  color: #1C1C1C;
+}
+
+.alert-info{
+  background-color: rgb(164, 83, 204) !important;
+  color: white;
 }
 
 /* ----------------------------------------------

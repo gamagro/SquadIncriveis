@@ -22,7 +22,6 @@
     <div class="col-sm field" align="right">
       <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
     </div>
-
   </div>
 
   <div id="esc_nomec" style="display:none;" class="tracking-in-expand-fwd-bottom">
@@ -57,8 +56,6 @@
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
-
-
     </div>
   </div>
 
@@ -222,6 +219,9 @@
       </div>
     </div>
   </div>
+  <div id="esc_text" style="display: none;" class="tracking-in-expand-fwd-bottom">
+    <h6 class=fonte-titulo-cadastro> Preencha todos os campos para continuarmos seu cadastro :) </h6>
+  </div>
 
 </br>
 
@@ -382,14 +382,14 @@ function TestaCNPJ(cnpj) {
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
       }
-      if ($(this).val().length > 0 && $('#user_cpf').val().length === 14) {
+      if ($(this).val().length > 0 && TestaCPF($(this).val())) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
       }
     });
     $("#user_cnpj").keyup(function () {
-      if (TestaCNPJ($(this).val()) && $('#user_razaosocial').val().length > 0) {
+      if (TestaCNPJ($(this).val()) && TestaCNPJ($(this).val())) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
@@ -447,6 +447,9 @@ function TestaCNPJ(cnpj) {
         $("#bairroHelp").show();
         $("#ruaHelp").show();
         $("#numHelp").show();
+        $("#user_razaosocial").css("border-color","rgb(132, 46, 176)");
+        $("#user_cnpj").css("border-color","rgb(132, 46, 176)");
+        $('#text-cnpj').popover('hide')
       }
       else {
         $("#cepHelp").hide();
@@ -455,6 +458,9 @@ function TestaCNPJ(cnpj) {
         $("#estHelp").show();
         $("#cidHelp").show();
         $("#bairroHelp").show();
+        $("#user_fullname").css("border-color","rgb(132, 46, 176)");
+        $("#user_cpf").css("border-color","rgb(132, 46, 176)");
+        $('#text-cpf').popover('hide');
       }
     })
 
@@ -462,6 +468,7 @@ function TestaCNPJ(cnpj) {
 
     jQuery(function () {
     $("#user_email").keyup(function () {
+      if($(this).val().length > 0){
         var VAL = this.value;
 
         var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
@@ -475,6 +482,10 @@ function TestaCNPJ(cnpj) {
           $(this).css("border-color", "red");
           $('#text-email').popover('show')
         }
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
     });
 
 
@@ -558,20 +569,20 @@ function TestaCNPJ(cnpj) {
     if ($(this).val().length == 18){
     if (TestaCNPJ($(this).val())) {
           $(this).css("border-color", "green");
-          $('#text-cpf').popover('hide')
+          $('#text-cnpj').popover('hide')
         }
         else {
           $(this).css("border-color", "red");
-          $('#text-cpf').popover('show')
+          $('#text-cnpj').popover('show')
         }
     }
     else if($(this).val().length >0){
         $(this).css("border-color", "orange");
-        $('#text-cpf').popover('show')
+        $('#text-cnpj').popover('show')
       }
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
-        $('#text-cpf').popover('hide')
+        $('#text-cnpj').popover('hide')
       }
   })
 
