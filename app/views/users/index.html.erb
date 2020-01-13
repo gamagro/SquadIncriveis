@@ -12,12 +12,6 @@
       <option value="Comum">Comum</option>
   </select>
 </div>
-<!-- <div class="alert alert-success" role="alert" id="a">
-    Ordem de cadastro crescente selecionada!
-</div>
-<div class="alert alert-info" role="alert" id="b">
-    Ordem de cadastro decrescente selecionada!
-</div> -->
 
   <div class="table-responsive" id= "divTabela">
       <!-- <button id="ordenar" class ="buttons-ordenar" style="margin-left: 800px;">ORDENAR POR CADASTRO</button> -->
@@ -94,9 +88,11 @@
               x = x + 1;
               if (x % 2 != 0) {
               table.order([0, 'asc']).draw();
+              mostraDialogo("Ordem crescente cronológica selecionada", "warning",1000);
               $("#a").show();
               }else{
               table.order([0, 'desc']).draw();
+              mostraDialogo("Ordem decrescente cronológica selecionada", "info",1000);
               }
             }
         },
@@ -104,7 +100,7 @@
             extend: 'excel',
             text: 'EXCEL',
             exportOptions: {
-                columns: [ 1, 2, 3, 4, 5, 6] 
+                  mns: [ 1, 2, 3, 4, 5, 6] 
             }
         }, {
             extend: 'pdf',
@@ -150,6 +146,36 @@
     })
 
 });
+function mostraDialogo(mensagem, tipo, tempo){
+  var dialogoId = new Date().getTime();
+    
+    // if($("#").is(":visible")){
+    //     $(this).remove();
+    // }
+    if(!tipo){
+        var tipo = "info";
+    }
+    var cssMessage = "display: block; position: fixed; top: 0; left: 35%; right: 35%; width: 30%; padding-top: 140px; z-index: 9999";
+    var cssInner = "margin: 0 auto; box-shadow: 1px 1px 5px black;";
+
+    var dialogo = "";
+    dialogo += '<div id="' + dialogoId + '" style="'+cssMessage+'">';
+    dialogo += '    <div class="alert alert-'+tipo+' alert-dismissable" style="'+cssInner+'">';
+    dialogo +=          mensagem;
+    dialogo += '    </div>';
+    dialogo += '</div>';
+
+    $("body").append(dialogo);
+    var dialogoElement = $("#" + dialogoId);
+    dialogoElement.hide();
+    dialogoElement.fadeIn(200);
+
+    setTimeout(function() {
+      dialogoElement.fadeOut(300, function() {
+        $(this).remove();
+      });
+    }, tempo);
+  }
 
 </script>
 

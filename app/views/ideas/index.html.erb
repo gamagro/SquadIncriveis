@@ -4,22 +4,42 @@
   aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-
-      <div class="modal-header">
-        <img src="<%= image_url('sorriso.png') %>" width="30" height="28" class="d-inline-block align-top displayed"
-          alt="logo os incriveis" style="margin-left: 10px;">
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p class=“alert alert-danger”><%= notice  %></p>
-      </div>
+      
+            <div class="modal-header">
+                <img src="<%= image_url('icon-chat.png') %>" width="40" height="35" class="d-inline-block align-top displayed"
+              alt="logo os incriveis" style="margin-left: 10px;">
+                  <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Alerta!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <p class=“alert alert-danger”><%= notice  %></p> 
+                </div>
     </div>
   </div>
 </div>
 <% end %>
+
+<div class="modal fade bd-example-modal-sm" id="modal4" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="<%= image_url('icon-chat.png') %>" width="40" height="35" class="d-inline-block align-top displayed"
+              alt="logo os incriveis" style="margin-left: 10px;">
+              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Yesss!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </br>
+          <div class="modal-body">
+              <p class=“alert alert-danger”><%= notice %></p>
+            </div>
+    </div>
+  </div>
+</div>
 
 <body>
   <br />
@@ -236,7 +256,13 @@ https://www.datocms-assets.com/16903/1577196680-objectscellphone-successhd4x3lig
 </body>
 
 <script>
-  $(document).ready(function () {
-    $('#modal').modal('show')
-  });
+      <% if notice == "Bem Vindo! Você está logado." %>
+      $(document).ready(function () {
+          $('#modal4').modal('show')
+        });
+        <% elsif notice != "" %>
+        $(document).ready(function () {
+         $('#modal').modal('show')
+         });
+        <% end %> 
 </script>

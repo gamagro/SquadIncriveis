@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes"%>
+        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes" , :maxlength=> "50"%>
         <small id="fullnameHelp" class="form-text text-muted">Seu nome deve conter no máximo 50 caractéres
         </br> e apenas Letras e Espaços são permitidos ;)</small>
       </br>
@@ -56,8 +56,6 @@
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
       </div>
-
-
     </div>
   </div>
 
@@ -201,7 +199,7 @@
     </br>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
-        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285"%>
+        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285" , :maxlength=> "20"%>
         <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
       </div>
       <div class="col-sm field" align="right">
@@ -390,14 +388,14 @@ function TestaCNPJ(cnpj) {
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
       }
-      if ($(this).val().length > 0 && $('#user_cpf').val().length === 14) {
+      if ($(this).val().length > 0 && TestaCPF($(this).val())) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
       }
     });
     $("#user_cnpj").keyup(function () {
-      if (TestaCNPJ($(this).val()) && $('#user_razaosocial').val().length > 0) {
+      if (TestaCNPJ($(this).val()) && TestaCNPJ($(this).val())) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
@@ -455,6 +453,9 @@ function TestaCNPJ(cnpj) {
         $("#bairroHelp").show();
         $("#ruaHelp").show();
         $("#numHelp").show();
+        $("#user_razaosocial").css("border-color","rgb(132, 46, 176)");
+        $("#user_cnpj").css("border-color","rgb(132, 46, 176)");
+        $('#text-cnpj').popover('hide')
       }
       else {
         $("#cepHelp").hide();
@@ -463,6 +464,9 @@ function TestaCNPJ(cnpj) {
         $("#estHelp").show();
         $("#cidHelp").show();
         $("#bairroHelp").show();
+        $("#user_fullname").css("border-color","rgb(132, 46, 176)");
+        $("#user_cpf").css("border-color","rgb(132, 46, 176)");
+        $('#text-cpf').popover('hide');
       }
     })
 

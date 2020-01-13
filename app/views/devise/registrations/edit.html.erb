@@ -1,5 +1,5 @@
 <br>
-<h2 class="editarp">Edite Seu Perfil</h2>
+<h2 class="fonte-titulo">Edite Seu Perfil</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
@@ -7,63 +7,86 @@
 <br>
 <br>
 <div class="container bg-white container-edit justify-content-center">
-<br>
-<div class="field-f">
-  <%= f.label :email, :class => "fonte-label", :style => "margin-right: 250px" %><br />
-  <%= f.email_field :email, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, autocomplete: "Email" %>
-</div>
+  <br>
+  <div class="field-edit">
+    <%= f.label :email, :class => "fonte-label", :style => "margin-right: 250px" %><br />
+    <%= f.email_field :email, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, autocomplete: "Email" %>
+  </div>
 
-<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-<div>Atualmente aguardando confirmação para:<%= resource.unconfirmed_email %></div>
-<% end %>
-
-<br>
-<br>
-<div class="field">
-  <%= f.label :fullname, :class => "fonte-edit", :style => "margin-right: 250px" %><br />
-  <%= f.text_field :fullname, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true %>
-</div>
-
-<br>
-<br>
-<div class="field">
-  <%= f.label :current_password, :class => "fonte-edit", :style => "margin-right: 250px" %> 
-  <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "current-password", :placeholder => "Ex: @Youser123"%>  <br>
-  <i>(Digite sua senha atual antes de mudar sua senha.)</i>
-</div>
-
-<br>
-<br>
-<div class="field">
-  <%= f.label :password, :class => "fonte-label", :style => "margin-right: 250px" %>
-  <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password" %>
-  
-  <% if @minimum_password_length %>
-  <br />
-  <em><%= @minimum_password_length %> caracteres no mínimo</em>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+  <div>Atualmente aguardando confirmação para:<%= resource.unconfirmed_email %></div>
   <% end %>
-  <br />
-  <i>(Deixe em branco caso não queira mudar.)</i>
+
+  <br>
+  <br>
+  <div class="field">
+    <%= f.label :fullname, :class => "fonte-edit", :style => "margin-right: 160px" %><br />
+    <%= f.text_field :fullname, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true %>
+  </div>
+
+  <br>
+  <br>
+  <div class="field">
+    <%= f.label :current_password, :class => "fonte-edit", :style => "margin-right: 145px" %>
+    <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "current-password"%>
+    <br>
+    <small id="fullnameHelp" class="form-text text-muted">Digite sua senha atual antes de mudar sua senha.</small>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :password, :class => "fonte-label", :style => "margin-right: 250px" %>
+    <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+
+    <small id="fullnameHelp" class="form-text text-muted">
+      <% if @minimum_password_length %>
+      <em><%= @minimum_password_length %> caracteres no mínimo</em>
+      <% end %>
+      <br />
+      Deixe em branco caso não queira mudar.
+    </small>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 110px" %> <br/>
+    <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Atualizar", :class => "atualizar" %>
+  </div>
+  <% end %>
+
+  <p>
+    <button type="button" class="cancelar" data-toggle="modal" data-target="#delete-account-modal">
+      Apagar conta
+    </button>
+  </p>
+
+  <!-- Modal -->
+<div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja apagar esta conta?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary cancelar" data-dismiss="modal">Fechar</button>
+        <%= button_to "Confirmar", registration_path(resource_name), method: :delete, :class => "cancelar" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<br>
-<div class="field">
-  <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 250px" %><br />
-  <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+  <br>
+  <%= link_to "Voltar", :ideas, :class => "op2"%>
 </div>
-
-<div class="actions">
-  <%= f.submit "Atualizar" %>
-</div>
-<% end %>
-
-
-<h3 class="canceledit"> Deseja Apagar Sua Conta ? </h3>
-
-<p>
-  <%= button_to "Apagar Conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-</p>
-
-<%= link_to "Voltar", :back %>
-</div>
-<br/>

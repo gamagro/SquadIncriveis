@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
   def show
     # doesn't need to assign the flash notice to the template, that's done automatically
   end
+  def after_sign_out_path_for(resource_or_scope)
+    '/users/sign_in'
+  end
   
   protected
   
