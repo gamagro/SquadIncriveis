@@ -96,7 +96,7 @@
       <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     <div class="row">
-      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
         "exemplo@youse.com.br"%>
       </div>
@@ -232,12 +232,25 @@
 
 <script type="text/javascript">
 
+var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
+
+var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
+
 function TestaCPF(strCPF) {
     strCPF = strCPF.replace(/[^0-9]/g, '');
     var Soma;
     var Resto;
     Soma = 0;
-    if (strCPF == "00000000000") return false;
+    if (strCPF == "00000000000"||
+      strCPF == "11111111111" ||
+      strCPF == "22222222222" ||
+      strCPF == "33333333333" ||
+      strCPF == "44444444444" ||
+      strCPF == "55555555555" ||
+      strCPF == "66666666666" ||
+      strCPF == "77777777777" ||
+      strCPF == "88888888888" ||
+      strCPF == "99999999999") return false;
     for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
     Resto = (Soma * 10) % 11;
     if ((Resto == 10) || (Resto == 11)) Resto = 0;
@@ -381,6 +394,7 @@ function TestaCNPJ(cnpj) {
         $("#esc_conf").show();
       }
     });
+
     $("#user_fullname").keyup(function () {
       if ($(this).val().length > 0){
         $(this).css("border-color", "green");
@@ -393,15 +407,26 @@ function TestaCNPJ(cnpj) {
         $("#esc_senha").show();
         $("#esc_conf").show();
       }
+      if (TestaCPF($("#user_cpf").val()) && $(this).val().length > 0) {
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+      }
+
     });
     $("#user_cnpj").keyup(function () {
-      if (TestaCNPJ($(this).val()) && TestaCNPJ($(this).val())) {
+      if (TestaCNPJ($(this).val()) && $("#user_razaosocial").val().length > 0) {
         $("#esc_email").show();
         $("#esc_senha").show();
         $("#esc_conf").show();
       }
     });
     $("#user_razaosocial").keyup(function () {
+      if (TestaCNPJ($("#user_cnpj").val()) && $(this).val().length > 0) {
+        $("#esc_email").show();
+        $("#esc_senha").show();
+        $("#esc_conf").show();
+      }
       if ($(this).val().length > 0) {
         $(this).css("border-color","green");
       }
@@ -414,17 +439,7 @@ function TestaCNPJ(cnpj) {
         $("#esc_conf").show();
       }
     });
-    $("#user_password_confirmation").keyup(function () {
-      if ($(this).val().length > 7) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
-      }
-    });
+ 
     if ($('#lanaerror_explanation').length > 0) {
       var cnpjCpf = $("#user_pf_pj").val();
       $("#esc_cep").show();
@@ -477,8 +492,6 @@ function TestaCNPJ(cnpj) {
       if($(this).val().length > 0){
         var VAL = this.value;
 
-        var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
-
         if (email.test(VAL)) {
         
           $(this).css("border-color", "green");
@@ -492,6 +505,15 @@ function TestaCNPJ(cnpj) {
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
       }
+      if ($("#user_password").val() == $("#user_password_confirmation").val() && password.test($("#user_password").val()) && email.test(VAL)) {
+        $("#esc_cep").show();
+        $("#esc_est").show();
+        $("#esc_cid").show();
+        $("#esc_bairro").show();
+        $("#esc_rua").show();
+        $("#esc_num").show();
+        $("#esc_botao").show();
+      }
     });
 
 
@@ -499,7 +521,6 @@ function TestaCNPJ(cnpj) {
     $("#user_password").keyup(function () {
         var VAL = this.value;
 
-        var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
       if($(this).val().length > 0){
         if (password.test(VAL)) {
           $(this).css("border-color", "green");
@@ -527,6 +548,16 @@ function TestaCNPJ(cnpj) {
         $('#text-senhaconf').popover('hide')
       }
       }
+
+      if ($(this).val() == $("#user_password_confirmation").val() && password.test(VAL) && email.test($("#user_email").val())) {
+        $("#esc_cep").show();
+        $("#esc_est").show();
+        $("#esc_cid").show();
+        $("#esc_bairro").show();
+        $("#esc_rua").show();
+        $("#esc_num").show();
+        $("#esc_botao").show();
+      }
     });
 
     $("#user_password_confirmation").keyup(function() {
@@ -544,6 +575,15 @@ function TestaCNPJ(cnpj) {
       }
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
+      }
+      if ($(this).val() == $("#user_password").val() && password.test($("#user_password").val()) && email.test($("#user_email").val())) {
+        $("#esc_cep").show();
+        $("#esc_est").show();
+        $("#esc_cid").show();
+        $("#esc_bairro").show();
+        $("#esc_rua").show();
+        $("#esc_num").show();
+        $("#esc_botao").show();
       }
      })
     });
