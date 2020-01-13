@@ -84,7 +84,7 @@ img.you{
   }
 
   .op1:hover {
-    background-color: rgb(132, 46, 176);
+    background-color: rgb(132, 46, 176) !important;
   }
 
   .actions1{
@@ -201,15 +201,15 @@ select {
     grid-column: left;
   }
 
-.botao{
-  border-radius: 25px;
-  font-weight: bold;
-  width: 130px;
-  height: 40px;
-  font-family: futura;
-  font-size: 13px;
-  background-color: #ff9c2a;
-  color: white;
+.botao {
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  width: 130px !important;
+  height: 40px !important;
+  font-family: futura !important;
+  font-size: 13px !important;
+  background-color: #ff9c2a !important;
+  color: white !important;
   }
 
   
@@ -276,7 +276,7 @@ select {
 
 .link{
   color: rgb(132, 46, 176) !important;
-  text-decoration: underline;
+  text-decoration: underline !important;
 
 }
 
