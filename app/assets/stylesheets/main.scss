@@ -15,7 +15,7 @@
  
  .container-mudar-senha{
   width: 400px;
-  height: 280px;
+  height: 380px;
  }
 
  .container-cad{
@@ -73,11 +73,9 @@ img.you{
     height:35px;
   }
 
-  .op2 {
-    color: rgb(132, 46, 176) !important;
-  }
   .op2{
     background-color: #f7f7f7; 
+    color: rgb(132, 46, 176) !important;
     text-decoration: underline;
   }
 
@@ -214,19 +212,20 @@ select {
   color: white;
   }
 
+  
   .botao:hover {
     background-color: #ffaf0f;
     border-color: #ffaf0f;
     color: white;
   }
 
+//listar cadastros -> users/index.html.erb
   .buttons-excel {
    
     text-align: center;
     border-radius: 25px;
     font-weight: bold;
     width: 100px;
-
     height: 40px;
     font-family: futura;
     font-size: 13px;
@@ -238,7 +237,6 @@ select {
 .buttons-excel:hover {
   background-color: #ff9c2a;
   border-color: #ff9c2a;
- 
 }
 .buttons-pdf {
 
@@ -256,7 +254,6 @@ select {
 .buttons-pdf:hover {
   background-color: #ff9c2a;
   border-color: #ff9c2a;
-
 }
 .buttons-ordenar {
 
@@ -440,4 +437,69 @@ th {
   align-items: center;
   position: fixed; 
   left: 46%;
+}
+
+//editar perfil css do edit.html.erb
+.canceledit {
+  color: #1C1C1C;
+  font-style: normal;
+  font-family: futura;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+
+.container-edit {
+  width: 400px;
+  height: 900px;
+}
+
+.field-edit {
+  margin-top: 15px;
+}
+
+.fonte-edit {
+  color: rgb(132, 46, 176);
+  font-size: 16px;
+  font-weight: bold;
+  font-family: futura;
+  white-space: nowrap;
+}
+
+.atualizar {
+   
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+  font-family: futura;
+  font-size: 13px;
+  background-color: rgb(132, 46, 176) ;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.atualizar:hover {
+background-color: #ff9c2a;
+border-color: #ff9c2a;
+}
+
+.cancelar {
+   
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+  font-family: futura;
+  font-size: 13px;
+  background-color: rgb(132, 46, 176) ;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cancelar:hover {
+background-color: #ff9c2a;
+border-color: #ff9c2a;
 }
