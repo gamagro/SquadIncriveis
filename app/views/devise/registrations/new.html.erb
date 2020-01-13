@@ -96,7 +96,7 @@
       <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     <div class="row">
-      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
         "exemplo@youse.com.br"%>
       </div>
@@ -231,6 +231,10 @@
 <% end %>
 
 <script type="text/javascript">
+
+$('.field_with_errors').find('input').attr('style', 'border: 1px solid red');
+$('.field_with_errors').attr('style', 'background-color: transparent;')
+
 
 var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
 

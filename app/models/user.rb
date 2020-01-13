@@ -5,4 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates_with ::IncriveisValidator
+
+
+  validates :cpf, uniqueness: true, if: :cpf_is_true?
+  validates :cnpj, uniqueness: true, if: :cnpj_is_true?
+
+def cpf_is_true?
+  pf_pj == "PF"
+end
+
+def cnpj_is_true?
+  pf_pj== "PJ"
+end
 end
