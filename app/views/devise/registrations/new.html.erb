@@ -8,7 +8,7 @@
 <%= render "devise/shared/error_messages", resource: resource %>
 
 <div class="container bg-green container-cad justify-content-center">
-
+  </br>
   <div class="row " id="esc_geral">
     <img src="<%= image_url('chat1.png')%>" class="cadastrar" alt="chat1">
   </div>
@@ -235,6 +235,7 @@
 
 </br> 
 <% end %>
+</div>
 
 <script type="text/javascript">
 
@@ -373,6 +374,7 @@ function TestaCNPJ(cnpj) {
 
       if ($(this).val() === "PF") {
         $("#esc_razao").hide();
+        $("#esc_text").show();
         $("#esc_cnpj").hide();
         $("#esc_nomec").show();
         $("#esc_cpf").show();
@@ -384,6 +386,7 @@ function TestaCNPJ(cnpj) {
         $('#exist-cnpj').popover('hide')
       } else {
         $("#esc_razao").show();
+        $("#esc_text").show();
         $("#esc_cnpj").show();
         $("#esc_nomec").hide();
         $("#esc_cpf").hide();
@@ -417,6 +420,7 @@ function TestaCNPJ(cnpj) {
               $("#esc_email").show();
               $("#esc_senha").show();
               $("#esc_conf").show();
+              $("#esc_text").show();
             }
           });
         }
@@ -429,21 +433,31 @@ function TestaCNPJ(cnpj) {
     });
 
     $("#user_razaosocial").keyup(function () {
-      if (TestaCNPJ($("#user_cnpj").val()) && $(this).val().length > 0) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-      }
+
+      // Se estiver algo no campo.
       if ($(this).val().length > 0) {
         $(this).css("border-color","green");
+
+        // Verificando se é um CNPJ válido
+        if (TestaCNPJ($("#user_cnpj").val())) {
+
+          //Buscando no banco.
+          $.post('/checkcnpj?cnpj='+$("#user_cnpj").val(),function(data){
+
+            // Se o cnpj existir não banco de dados.
+            if(!data.cnpj_exists){
+              $("#esc_email").show();
+              $("#esc_senha").show();
+              $("#esc_conf").show();
+              $("#esc_text").show();
+            }
+          });
+        }
       }
+
+      // Se o campo estiver vazio.
       else{
         $(this).css("border-color","rgb(132, 46, 176)");
-      }
-      if ($(this).val().length > 0 && $('#user_cnpj').val().length === 18) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
       }
     });
  
@@ -529,7 +543,8 @@ function TestaCNPJ(cnpj) {
                 $("#esc_rua").show();
                 $("#esc_num").show();
                 $("#esc_botao").show();
-      }
+                $("#esc_text").hide();
+              }
             }
           });
         }
@@ -563,21 +578,27 @@ function TestaCNPJ(cnpj) {
 
           if ($(this).val() == $("#user_password_confirmation").val()){
 
-            // Validação no banco de dados.
-            $.post('/checkemail?email='+$("#user_email").val(),function(data){
+            // Verificando formato do email.
+            if (email.test($("#user_email").val())) {
 
-              // Caso este email já exista no banco de dados.
-              if(!data.email_exists){
-                
-                $("#esc_cep").show();
-                $("#esc_est").show();
-                $("#esc_cid").show();
-                $("#esc_bairro").show();
-                $("#esc_rua").show();
-                $("#esc_num").show();
-                $("#esc_botao").show();
-              }
-            })
+              // Validação no banco de dados.
+              $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+                // Caso este email já exista no banco de dados.
+                if(!data.email_exists){
+                  
+                  // Abertura de novas informações.
+                  $("#esc_cep").show();
+                  $("#esc_est").show();
+                  $("#esc_cid").show();
+                  $("#esc_bairro").show();
+                  $("#esc_rua").show();
+                  $("#esc_num").show();
+                  $("#esc_botao").show();
+                  $("#esc_text").hide();
+                }
+              })
+            }
           }
         }
 
@@ -633,23 +654,29 @@ function TestaCNPJ(cnpj) {
           $(this).css("border-color", "green");
           $('#text-senhaconf').popover('hide');
 
+          // A senha é valida.
           if (password.test($("#user_password").val())) {
 
-            // Validação no banco de dados.
-            $.post('/checkemail?email='+$("#user_email").val(),function(data){
+            // O email é valido.
+            if (email.test($("#user_email").val())) {
+              
+              // Validação no banco de dados.
+              $.post('/checkemail?email='+$("#user_email").val(),function(data){
 
-              // Caso este email já exista no banco de dados.
-              if(!data.email_exists){
-                
-                $("#esc_cep").show();
-                $("#esc_est").show();
-                $("#esc_cid").show();
-                $("#esc_bairro").show();
-                $("#esc_rua").show();
-                $("#esc_num").show();
-                $("#esc_botao").show();
-              }
-            })
+                // Caso este email já exista no banco de dados.
+                if(!data.email_exists){
+                    
+                  $("#esc_cep").show();
+                  $("#esc_est").show();
+                  $("#esc_cid").show();
+                  $("#esc_bairro").show();
+                  $("#esc_rua").show();
+                  $("#esc_num").show();
+                  $("#esc_botao").show();
+                  $("#esc_text").hide();
+                }
+              })
+            }
           }
         }
       }
@@ -657,7 +684,7 @@ function TestaCNPJ(cnpj) {
       // Se não tiver algo no campo confirmação.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
-      }
+       }
      });
 
   $("#user_cpf").keyup(function(){
@@ -775,5 +802,4 @@ function TestaCNPJ(cnpj) {
 
 </script>
 
-</div>
 
