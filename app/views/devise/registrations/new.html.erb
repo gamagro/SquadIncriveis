@@ -241,9 +241,10 @@
 $('.field_with_errors').find('input').attr('style', 'border: 1px solid red');
 $('.field_with_errors').attr('style', 'background-color: transparent;')
 
-
+// Regex formatação senha.
 var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
 
+// Regex formatação email.
 var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
 
 function TestaCPF(strCPF) {
@@ -518,6 +519,17 @@ function TestaCNPJ(cnpj) {
               $('#exist-email').popover('hide')
               $('#text-email').popover('hide')
               $("#user_email").css("border-color", "green");
+
+              // Abertura do próximo bloco de informações.
+              if ($("#user_password").val() == $("#user_password_confirmation").val() && password.test($("#user_password").val())) {
+                $("#esc_cep").show();
+                $("#esc_est").show();
+                $("#esc_cid").show();
+                $("#esc_bairro").show();
+                $("#esc_rua").show();
+                $("#esc_num").show();
+                $("#esc_botao").show();
+      }
             }
           });
         }
@@ -536,87 +548,117 @@ function TestaCNPJ(cnpj) {
         $('#text-email').popover('hide')
         $('#exist-email').popover('hide')
       }
-
-      // Abertura do próximo bloco de informações.
-      if ($("#user_password").val() == $("#user_password_confirmation").val() && password.test($("#user_password").val()) && email.test(VAL)) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
-      }
     });
     
     $("#user_password").keyup(function () {
-        var VAL = this.value;
+      var VAL = this.value;
 
+      // Se o campo senha começar a ser preenchido.
       if($(this).val().length > 0){
+
+        // Se o campo senha estiver com a formatação correta.
         if (password.test(VAL)) {
           $(this).css("border-color", "green");
           $('#text-senha').popover('hide')
+
+          if ($(this).val() == $("#user_password_confirmation").val()){
+
+            // Validação no banco de dados.
+            $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+              // Caso este email já exista no banco de dados.
+              if(!data.email_exists){
+                
+                $("#esc_cep").show();
+                $("#esc_est").show();
+                $("#esc_cid").show();
+                $("#esc_bairro").show();
+                $("#esc_rua").show();
+                $("#esc_num").show();
+                $("#esc_botao").show();
+              }
+            })
+          }
         }
+
+        // Se o campo senha estiver com a formatação incorreta.
         else {
           $(this).css("border-color", "red");
           $('#text-senha').popover('show')
         }
       }
+
+      // Se o campo senha estiver vazio.
       else {
-      $(this).css("border-color", "rgb(132, 46, 176)");
-      if ($("#user_password_confirmation").val().length == 0){
-        $("#user_password_confirmation").css("border-color", "rgb(132, 46, 176)");
-      }
-      }
-      if ($("#user_password_confirmation").val().length > 0){
-      if ($(this).val() !== $("#user_password_confirmation").val()) {
-        $("#user_password_confirmation").css("border-color", "red");
-          $('#text-senhaconf').popover('show')
-          
-      }
-      else {
-        $("#user_password_confirmation").css("border-color", "green");
-        $('#text-senhaconf').popover('hide')
-      }
+        $(this).css("border-color", "rgb(132, 46, 176)");
+
+        // Se o camppo confirmação for vazio.
+        if ($("#user_password_confirmation").val().length == 0){
+          $("#user_password_confirmation").css("border-color", "rgb(132, 46, 176)");
+          $('#text-senhaconf').popover('hide');
+        }
       }
 
-      if ($(this).val() == $("#user_password_confirmation").val() && password.test(VAL) && email.test($("#user_email").val())) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
+      // Se o campo confirmação de senha tiver algo.
+      if ($("#user_password_confirmation").val().length > 0){
+
+        // Se houver divergência de valores.
+        if ($(this).val() !== $("#user_password_confirmation").val()) {
+          $("#user_password_confirmation").css("border-color", "red");
+            $('#text-senhaconf').popover('show')
+            
+        }
+
+        // Se não houver divergência de valroes.
+        else {
+          $("#user_password_confirmation").css("border-color", "green");
+          $('#text-senhaconf').popover('hide')
+        }
       }
     });
 
     $("#user_password_confirmation").keyup(function() {
+
+      // Se tiver algo no campo de confirmação.
       if ($(this).val().length > 0){
-      if ($(this).val() !== $("#user_password").val() ) {
-        $(this).css("border-color", "red");
-        $('#text-senhaconf').popover('show')
-       
+
+        // Se houver divergência nos campos.
+        if ($(this).val() !== $("#user_password").val() ) {
+          $(this).css("border-color", "red");
+          $('#text-senhaconf').popover('show')
+        }
+
+        // Se forem iguais.
+        else {
+          $(this).css("border-color", "green");
+          $('#text-senhaconf').popover('hide');
+
+          if (password.test($("#user_password").val())) {
+
+            // Validação no banco de dados.
+            $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+              // Caso este email já exista no banco de dados.
+              if(!data.email_exists){
+                
+                $("#esc_cep").show();
+                $("#esc_est").show();
+                $("#esc_cid").show();
+                $("#esc_bairro").show();
+                $("#esc_rua").show();
+                $("#esc_num").show();
+                $("#esc_botao").show();
+              }
+            })
+          }
+        }
       }
-      else {
-        $(this).css("border-color", "green");
-        $('#text-senhaconf').popover('hide')
-        
-       }
-      }
+
+      // Se não tiver algo no campo confirmação.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
       }
-      if ($(this).val() == $("#user_password").val() && password.test($("#user_password").val()) && email.test($("#user_email").val())) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
-      }
-     })
+     });
 
   $("#user_cpf").keyup(function(){
 
@@ -640,7 +682,6 @@ function TestaCNPJ(cnpj) {
               $($("#user_cpf")).css("border-color", "green");
               $('#text-cpf').popover('hide');
               $('#exist-cpf').popover('hide');
-              console.log('3');
 
               if ($('#user_fullname').val().length > 0) {
                 $("#esc_email").show();
@@ -656,7 +697,6 @@ function TestaCNPJ(cnpj) {
         $(this).css("border-color", "red");
         $('#text-cpf').popover('show');
         $('#exist-cpf').popover('hide');
-        console.log('4');
       }
     }
 
@@ -673,7 +713,7 @@ function TestaCNPJ(cnpj) {
       $('#text-cpf').popover('hide');
       $('#exist-cpf').popover('hide');
     }
-  })
+  });
 
   $("#user_cnpj").keyup(function(){
 
