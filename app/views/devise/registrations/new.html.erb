@@ -9,7 +9,7 @@
 
 <div class="container bg-green container-cad justify-content-center">
 
-  <div class="row " id="esc_geral">
+  <div class="row" id="esc_geral">
     <img src="<%= image_url('chat1.png')%>" class="cadastrar" alt="chat1">
   </div>
   <div class="row">
@@ -96,7 +96,7 @@
       <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     <div class="row">
-      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
         "exemplo@youse.com.br"%>
       </div>
@@ -231,6 +231,7 @@
 <% end %>
 
 <script type="text/javascript">
+
 
 function TestaCPF(strCPF) {
     strCPF = strCPF.replace(/[^0-9]/g, '');

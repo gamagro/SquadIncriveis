@@ -10,7 +10,29 @@
 
  .container-senha{
   width: 400px;
-  height: 250px;
+  height: 285px;
+ }
+ .container-roxo{
+   background-color: #602f9f;
+   width: 1440px;
+   height: 300px;
+ }
+ .container-verde{
+  background-color: #33795e;
+  width: 1440px;
+  height: 650px;
+ }
+
+ .container-vida{
+   background-color: #ff9c2a;
+   width: 1440px;
+   border-radius: 0 0 100px 100px;
+  height: 700px;
+ }
+ .container-branco{
+  background-color: white;
+  width: 1440px;
+ height: 650px;
  }
  
  .container-mudar-senha{
@@ -22,10 +44,17 @@
   width: 900px;
 }
 
+.container-youse{
+  width: 1440px;
+  height: 630px;
+  background-image: image_url('youse-produto1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 img.cadastrar{
   width: 100;
   height: 80px;
-  
 }
 
 .errors{
@@ -104,17 +133,53 @@ img.you{
     font-family: futura;
 
   }
+  .fonte-produto{
+    font-family: futura;
+    color: white;
+    text-shadow: rgb(132, 24, 185) 0.1em 0.1em 0.2em;
+    margin-top: 100px;
+    line-height: 1.5;
+   
+  }
+  .fonte-titulo-escolher{
+    font-family: futura;
+    font-weight: bold;
+    color: rgb(132, 24, 185);
+    text-shadow: #ff9c2a 0.1em 0.1em 0.2em;
 
+    line-height: 1.5;
+  }
+  .fonte-titulo-verde{
+    font-family: futura;
+    font-weight: bold;
+    color:  #ff9c2a;
+    text-shadow: rgb(132, 24, 185) 0.1em 0.1em 0.2em;
+    line-height: 1.5;
+  }
+  .fonte-tela-verde{
+    color: white;
+    font-family: futura;
+    line-height: 1.5;
+  }
+  .escolher-titulo{
+    font-family: futura;
+    font-weight: bold;
+    color: #363636;
+    line-height: 1.5;
+  }
+ 
   .fonte-titulo{
     color: #1C1C1C;
     font-style: normal;
     font-family: futura;
     margin-top: 100px;
     font-size: 40px;
+    
   }
   .fonte-h3{
   font-family: futura;
   color: #696969;
+  line-height: 1.5;
   }
 
   .fonte-label{
@@ -415,7 +480,7 @@ th {
 .container.full-width {
   max-width: 100%;
   margin: 0;
-  
+  padding-left: 0;
 }
 
 .lista {
