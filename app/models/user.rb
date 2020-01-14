@@ -10,11 +10,15 @@ class User < ApplicationRecord
   validates :cpf, uniqueness: true, if: :cpf_is_true?
   validates :cnpj, uniqueness: true, if: :cnpj_is_true?
 
-def cpf_is_true?
-  pf_pj == "PF"
-end
+  def cpf_is_true?
+    pf_pj == "PF"
+  end
 
-def cnpj_is_true?
-  pf_pj== "PJ"
-end
+  def cnpj_is_true?
+    pf_pj== "PJ"
+  end
+
+  def self.search_by(attribute, value)
+    where("#{attribute} = ?", value).first
+  end
 end
