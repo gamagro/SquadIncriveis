@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes" , :maxlength=> "50"%>
+        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes" , :maxlength=> "50", :autocomplete => "off" %>
         <small id="fullnameHelp" class="form-text text-muted">Seu nome deve conter no máximo 50 caractéres
         </br> e apenas Letras e Espaços são permitidos ;)</small>
       </br>
@@ -52,7 +52,7 @@
           </div>
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="CPF inválido" id ="text-cpf">
         </br>
-        <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00"%>
+        <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -67,7 +67,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-        <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
+        <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -85,7 +85,7 @@
           </div>
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="CPNJ inválido" id ="text-cnpj">
         </br>
-        <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
+        <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00.000.000/0000.00", :autocomplete => "off" %>
 
       </div>
       <div class="col-sm field" align="right">
@@ -104,7 +104,7 @@
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br!" id ="text-email">
         <br>
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
-        "exemplo@youse.com.br"%>
+        "exemplo@youse.com.br", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -120,7 +120,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="Senha inválida" id ="text-senha">
         </br>
-        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Ex: @Youser123"%>
+        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Ex: @Youser123", :autocomplete => "off" %>
         <small id="senhaHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
           </br> Minúscula,
           Caracter especial e Número</small>
@@ -138,7 +138,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;"data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="Senhas não conferem" id ="text-senhaconf">
         </br>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
           <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -155,7 +155,7 @@
 
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="O  CEP não é válido" id ="text-cep">
         </br>
-        <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
+        <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000", :autocomplete => "off" %>
         <small id="cepHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
       </div>
       <div class="col-sm field" align="right">
@@ -168,7 +168,7 @@
   <div id="esc_est" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
       </br>
-      <%= f.select :estado, states, autofocus: true %>
+      <%= f.select :estado, states, autofocus: true, :autocomplete => "off"  %>
       <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
     </div>
   </div>
@@ -176,7 +176,7 @@
   <div id="esc_cid" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
       </br>
-    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Cidade"%>
+    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Cidade", :autocomplete => "off" %>
     <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
   </div>
   </div>
@@ -184,7 +184,7 @@
 
   <div id="esc_bairro" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Estado"%>
+    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Estado", :autocomplete => "off" %>
     <small id="bairroHelp" class="form-text text-muted" >*Campo não obrigatório</small>
   </div>
   </div>
@@ -192,7 +192,7 @@
 
   <div id="esc_rua" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Logradouro"%>
+    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Logradouro", :autocomplete => "off" %>
     <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
   </div>
   </div>
@@ -205,7 +205,7 @@
     </br>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
-        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285" , :maxlength=> "20"%>
+        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285" , :maxlength=> "20", :autocomplete => "off" %>
         <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
       </div>
       <div class="col-sm field" align="right">
@@ -221,12 +221,12 @@
     </br>
     <div class="row">
       <div class="col-sm field justify-content-center">
-        <%= f.submit "FINALIZAR", :class => "btn botao"%>
+        <%= f.submit "FINALIZAR", :class => "btn botao", :onSubmit => "return submit()";%>
       </div>
     </div>
   </div>
   <div id="esc_text" style="display: none;" class="tracking-in-expand-fwd-bottom">
-    <h6 class=fonte-titulo-cadastro> Preencha todos os campos para continuarmos seu cadastro :) </h6>
+    <h6 class=fonte-titulo-cadastro> Preencha todos os campos corretamente para continuarmos seu cadastro ;D   </h6>
   </div>
 
 </br>
@@ -798,6 +798,17 @@ function TestaCNPJ(cnpj) {
       $('#exist-cnpj').popover('hide');
     }
   })
+
+  function submit(){
+            if($(".popover-body").length == 0){
+                return true;
+                console.log('eae323')
+           }
+           else{
+               console.log('eae')
+               return false;
+           }
+    }
 });
 
 </script>
