@@ -180,12 +180,11 @@ img.you{
   }
  
   .fonte-titulo{
-    color: #1C1C1C;
+    color:#696969;
     font-style: normal;
     font-family: futura;
     margin-top: 100px;
     font-size: 40px;
-    
   }
   .fonte-h3{
   font-family: futura;
@@ -710,4 +709,26 @@ border-color: #ff9c2a;
 .cancelar:hover {
 background-color: #ff9c2a;
 border-color: #ff9c2a;
+}
+
+.bg-light-yellow{
+  border: double;
+  
+	border-width: 2px;
+	border-radius: 50px;
+	border-color: #563d7c;
+  background-color: rgb(250, 241, 221);
+  
+  width: 315px;
+  display: inline-block;
+  height: 50px;
+  padding-top: 15px;
+  font-size: 17px;
+
+  &:focus,
+  &:hover,
+  &:visited {
+    color: #842eb0;
+    text-decoration: none;
+  }
 }

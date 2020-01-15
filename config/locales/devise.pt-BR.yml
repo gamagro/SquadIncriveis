@@ -10,7 +10,7 @@ pt-BR:
       send_instructions: "Você receberá um email com instruções para confirmar sua conta em alguns minutos."
       send_paranoid_instructions: "Se seu endereço de email existir em nosso banco de dados, você receberá um email com instruções para confirmar sua conta em alguns minutos."
     failure:
-      already_authenticated: "Bem Vindo! Você está logado."
+      already_authenticated: "Aeeehh! Temos um incrível online."
       inactive: "Sua conta ainda não foi ativada."
       invalid: "Senha inválida."
       not_found_in_database: "Senha Inválida."
@@ -43,14 +43,14 @@ pt-BR:
       updated_not_active: "Sua senha foi atualizada com sucesso."
     registrations:
       destroyed: "Tchau! Sua conta foi cancelada com êxito. Esperamos ver você de novo em breve!"
-      signed_up: "Bem-vindo! Você se registrou com êxito."
+      signed_up: "Parabéns, agora você é um incrível."
       signed_up_but_inactive: "Você se registrou com êxito. Entretanto, precisa confirmar sua conta antes de fazer login."
       signed_up_but_locked: "Você se registrou com sucesso. Entretando, sua conta está bloqueada, e não foi possível fazer login."
       signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para seu endereço de email. Por favor, siga o link para ativar sua conta."
       update_needs_confirmation: "Você atualizou sua conta com sucesso, mas nós precisamos verificar seu endereço de email. Por favor, cheque sua caixa de entrada e siga o link recebido."
       updated: "Sua conta foi atualizada com sucesso."
     sessions:
-      signed_in: "Bem Vindo! Você está logado."
+      signed_in: "Aeeehh! Temos um incrível online."
       signed_out: "Deslogado com sucesso."
       already_signed_out: "Deslogado com sucesso."
     unlocks:
