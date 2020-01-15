@@ -32,7 +32,7 @@
  }
 
  .container-incrivel{
-    background-color: image_url('youse-produto.jpg');
+    background-image: image_url('zeze1.gif');
     background-repeat: no-repeat;
   background-size: cover;
     width: 1440px;
@@ -300,6 +300,21 @@ select {
   font-size: 13px;
   background-color: #ff9c2a;
   color: white;
+  }
+  .botao-incrivel{
+    border-radius: 25px;
+    font-weight: bold;
+    width: 130px;
+    height: 40px;
+    font-family: futura;
+    font-size: 13px;
+    background-color: rgb(132, 24, 185);
+    color: white;
+  }
+  .botao-incrivel:hover{
+    background-color: rgba(132, 46, 176, 0.5);
+    border-color: rgba(132, 46, 176, 0.5);
+    color: white;
   }
 
   
@@ -636,7 +651,6 @@ th {
   max-width: 100%;
   margin: 0;
   padding-left: 0;
-
 }
 
 

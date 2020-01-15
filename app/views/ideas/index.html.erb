@@ -121,21 +121,21 @@
       </div>
 
       <div class="row" style="margin: 5px;">
-          <div class="col-xl" style= "margin-top: 50px;">
+          <div class="col" style= "margin-top: 50px;">
               <img src="<%= image_url('bem1.png') %>" width="186" height="136" style="margin-left: 10px;">
               <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Sua família numa boa
                 </p>
               <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> O seguro de vida é importante pra ter a certeza <br> de que sua família sempre vai ter com quem contar.
              </p>
           </div>
-          <div class="col-xl" style= "margin-top: 50px;">
+          <div class="col" style= "margin-top: 50px;">
               <img src="<%= image_url('bem2.png') %>" width="130" height="136" style="margin-left: 10px;">
               <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> É pra todas as horas, tá?
                 </p>
               <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> Você pode ter uma ajuda extra pra se cuidar em <br> situações como diagnóstico de câncer, por exemplo.
              </p>
           </div>
-          <div class="col-xl" style= "margin-top: 50px;">
+          <div class="col" style= "margin-top: 50px;">
               <img src="<%= image_url('bem3.png') %>" width="130" height="136" style="margin-left: 10px;">
               <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Seu amiguinho sempre bem
                 </p>
@@ -155,7 +155,7 @@
 
   <div class="container-verde">
   <div class="row">
-      <div class="col-sm" style="margin-top: 100px;">
+      <div class="col" style="margin-top: 100px;">
 
           <p class="fonte-titulo-verde" style="font-size: 300%; margin-left: 100px;" align="left" > Acionar o Seguro Vida Youse é tão fácil <br> quanto contratar
           </p>
@@ -171,7 +171,7 @@
              </a>
              
       </div>
-      <div class="col-sm" style="margin-top: 100px;">
+      <div class="col" style="margin-top: 100px;">
         <img src="<%= image_url('vida-app.png') %>" width="448" height="390" style="margin-left: 10px;" class="text-shadow-pop-bottom">
       </div>
     </div>
@@ -266,6 +266,7 @@ $(document).ready(function(){
   $("#linkincrivel").click(function(e){
     $('.collapse').collapse()
   });
+  $(this).scrollTop(0);
 })
       <% if notice == "Bem Vindo! Você está logado." %>
     $(document).ready(function () {
