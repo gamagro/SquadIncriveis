@@ -1,5 +1,6 @@
 <br>
-<h2 class="fonte-titulo">Edite Seu Perfil</h2>
+<h2 class="fonte-titulo">Você pode atualizar a sua conta aqui
+</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
@@ -31,73 +32,243 @@
 
 <br>
 <br>
-<div class="container bg-white container-edit justify-content-center">
-  <br>
-  <div class="field-edit">
-    <%= f.label :email, :class => "fonte-label", :style => "margin-right: 250px" %><br />
-    <%= f.email_field :email, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, autocomplete: "Email" %>
+<!-- cpf para física -->
+<% if current_user.pf_pj == "PF" %>
+<p>
+  <div class="container" style="max-width: 500px; margin-top: 10px;">
+    <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_0" role="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      Dados Pessoais
+    </a>
+</p>
+<div class="collapse" id="collapseExample_0">
+  <div class="card card-body">
+
+    <div class="field">
+      <%= f.label :fullname, :class => "fonte-edit", :style => "margin-right: 30px" %><br />
+      <%= f.text_field :fullname, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, :placeholder => "Seu nome", :maxlength => "50" %>
+    </div>
+    <div id="esc_cpf">
+      <div class="row">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 20px;" data-placement="top"
+          data-trigger="manual" data-toggle="popover" data-content="CPF inválido" id="text-cpf">
+          </br>
+          <%= f.label :cpf, :class => "fonte-edit", :style => "margin-right: 30px" %><br />
+          <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00", :disabled => "disabled"%>
+          <small id="estadHelp" class="form-text text-muted">*Este campo não pode ser alterado</small>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+</div>
+</div>
+</div></br>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-  <div>Atualmente aguardando confirmação para:<%= resource.unconfirmed_email %></div>
-  <% end %>
+<% else %>
 
-  <br>
-  <br>
-  <div class="field">
-    <%= f.label :fullname, :class => "fonte-edit", :style => "margin-right: 160px" %><br />
-    <%= f.text_field :fullname, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true %>
+<!--  cnpj para juridica -->
+<!-- collapse Dados Pessoais -->
+<p>
+  <div class="container" style="max-width: 500px; margin-top: 10px;">
+    
+      <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample" type="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        Dados Pessoais
+      </a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div id="esc_razao">
+      <div class="row">
+        <div class="col-sm field .col-12 .col-md-8">
+          </br>
+          <%= f.label :razaosocial, :class => "fonte-label", :style => "margin-left: 30px" %><br />
+          <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
+        </div>
+      </div>
+    </div>
+
+    <div id="esc_cnpj">
+      <div class="row">
+        <div class="col-sm field .col-12 .col-md-8">
+          </br>
+          <%= f.label :cnpj, :class => "fonte-label", :style => "margin-left: 10px" %><br />
+          <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00.000.000/0000.00", :disabled => "disabled"%>
+          <small id="estadHelp" class="form-text text-muted">*Este campo não pode ser alterado</small>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+</div>
 
-  <br>
-  <br>
-  <div class="field">
-    <%= f.label :current_password, :class => "fonte-edit", :style => "margin-right: 145px" %>
-    <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "current-password"%>
-    <br>
-    <small id="fullnameHelp" class="form-text text-muted">Digite sua senha atual antes de mudar sua senha.</small>
-  </div>
+</br></br>
 
-  <br>
-  <div class="field">
-    <%= f.label :password, :class => "fonte-label", :style => "margin-right: 250px" %>
-    <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+<% end %>
 
-    <small id="fullnameHelp" class="form-text text-muted">
-      <% if @minimum_password_length %>
-      <em><%= @minimum_password_length %> caracteres no mínimo</em>
-      <% end %>
-      <br />
-      Deixe em branco caso não queira mudar.
-    </small>
-  </div>
-
-  <br>
-  <div class="field">
-    <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 110px" %> <br/>
-    <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
-  </div>
-
-  <br>
-  <br>
-
-  <div class="actions">
-    <%= f.submit "Atualizar", :class => "atualizar" %>
-  </div>
-  <% end %>
-
-  <p>
-    <button type="button" class="cancelar" data-toggle="modal" data-target="#delete-account-modal">
-      Apagar conta
-    </button>
+<div>
+  <div class="container" style="max-width: 500px; margin-top: 10px;">
+  <a class="bg-light-yellow" style="max-width: 600px;" data-toggle="collapse" href="#collapseExample_2" role="button"
+    aria-expanded="false" aria-controls="collapseExample">
+    Endereço
+  </a>
+  </br>
   </p>
+  <div class="collapse" id="collapseExample_2">
+    <div class="card card-body">
+      <div id="esc_cep">
+        <div class="row">
+          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;" data-placement="top"
+            data-trigger="manual" data-toggle="popover" data-content="O  CEP não é válido" id="text-cep">
+            </br>
+            <%= f.label :cep, :class => "fonte-label", :style => "margin-right: 250px" %><br />
+            <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "00000-000"%>
+            <% if current_user.pf_pj == "PF"%>
+            <small id="cepHelp" class="form-text text-muted">*Campo não obrigatório</small>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
-  <!-- Modal -->
-<div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div id="esc_est">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 20px;">
+          </br>
+          <%= f.label :Estado, :class => "fonte-label", :style => "margin-right: 250px" %>
+          <%= f.select :estado, states, autofocus: true %>
+          <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
+        </div>
+      </div>
+
+      <div id="esc_cid">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+          </br>
+          <%= f.label :Cidade, :class => "fonte-label", :style => "margin-right: 250px" %>
+          <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Cidade"%>
+          <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
+        </div>
+      </div>
+      </br>
+
+      <div id="esc_bairro">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+          <%= f.label :Bairro, :class => "fonte-label", :style => "margin-right: 250px" %>
+          <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Estado"%>
+          <small id="bairroHelp" class="form-text text-muted">*Campo não obrigatório</small>
+        </div>
+      </div>
+      </br>
+
+      <div id="esc_rua">
+        <div class="row">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+          <%= f.label :Rua, :class => "fonte-label", :style => "margin-right: 250px" %>
+          <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Logradouro"%>
+          <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
+        </div>
+      </div>
+      </div>
+      </br>
+
+      <div id="esc_num">
+        <div class="row">
+          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+            <%= f.label :Numero, :class => "fonte-label",:style => "margin-right: 250px" %>
+            <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: 4285", :maxlength => "20" %>
+            <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</br>
+<!-- Collapse de e-mail -->
+<p>
+  <div class="container" style="max-width: 500px; margin-top: 10px;">
+  <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_3" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
+    E-mail
+  </a>
+
+</p>
+<div class="collapse" id="collapseExample_3">
+  <div class="card card-body">
+    <div class="field-edit">
+      <%= f.label :email, :class => "fonte-label", :style => "margin-right: 250px" %><br />
+      <%= f.email_field :email, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, autocomplete: "Email", :placeholder => "youse@youse.com.br" %>
+    </div>
+  </div>
+  </div>
+</div>
+</br>
+
+<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+<div>Atualmente aguardando confirmação para:<%= resource.unconfirmed_email %></div>
+<% end %>
+<p>
+  <div class="container" style="max-width: 500px; margin-top: 10px;">
+  <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_4" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
+    Senha
+  </a>
+</p>
+<div class="collapse" id="collapseExample_4">
+  <div class="card card-body">
+    <div class="field">
+      <%= f.label :password, :class => "fonte-label", :style => "margin-right: 250px" %>
+      <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+
+      <small id="fullnameHelp" class="form-text text-muted">
+        <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> caracteres no mínimo</em>
+        <% end %>
+        <br />
+        Deixe em branco caso não queira mudar.
+      </small>
+    </div>
+
+    <br>
+    <div class="field">
+      <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 110px" %> <br />
+      <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+<br>
+<div class="field">
+  <%= f.label :Confirme_Sua_Senha_Atual, :class => "fonte-edit", :style => "margin-right: 30px" %>
+  <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", :autocomplete => "Confirme_Sua_Senha_Atual", id:"123" %>
+  <br>
+  <!-- An element to toggle between password visibility -->
+  <input type="checkbox" class="check-box-edit" onclick="myFunction()"> Mostrar senha
+  
+</div></br>
+
+
+<div class="actions">
+  <%= f.submit "Atualizar", :class => "atualizar" %>
+</div>
+<% end %>
+
+<p>
+  <button type="button" class="cancelar" data-toggle="modal" data-target="#delete-account-modal">
+    Apagar conta
+  </button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -118,9 +289,19 @@
 
     <script type="text/javascript">
 
+    // Botão "Mostrar senha".
+    function myFunction() {
+    var x = document.getElementById("123");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
 $(document).ready(function () {
-      $("#linkvoltar").click(function(e) {
-        $('#myModal7').modal('show')
-      });
+  $("#linkvoltar").click(function(e) {
+    $('#myModal7').modal('show')
+  });
 })
     </script>
