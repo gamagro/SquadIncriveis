@@ -46,11 +46,11 @@
 <!-- collapse Dados Pessoais -->
 <p>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
-    
-      <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample" type="button" aria-expanded="false"
-        aria-controls="collapseExample">
-        Dados Pessoais
-      </a>
+
+    <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample" type="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      Dados Pessoais
+    </a>
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
@@ -84,71 +84,72 @@
 
 <div>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
-  <a class="bg-light-yellow" style="max-width: 600px;" data-toggle="collapse" href="#collapseExample_2" role="button"
-    aria-expanded="false" aria-controls="collapseExample">
-    Endereço
-  </a>
-  </br>
-  </p>
-  <div class="collapse" id="collapseExample_2">
-    <div class="card card-body">
-      <div id="esc_cep">
-        <div class="row">
-          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;" data-placement="top"
-            data-trigger="manual" data-toggle="popover" data-content="O  CEP não é válido" id="text-cep">
-            </br>
-            <%= f.label :cep, :class => "fonte-label", :style => "margin-right: 250px" %><br />
-            <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "00000-000"%>
-            <small id="cepHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+    <a class="bg-light-yellow" style="max-width: 600px;" data-toggle="collapse" href="#collapseExample_2" role="button"
+      aria-expanded="false" aria-controls="collapseExample">
+      Endereço
+    </a>
+    </br>
+    </p>
+    <div class="collapse" id="collapseExample_2">
+      <div class="card card-body">
+        <div id="esc_cep">
+          <div class="row">
+            <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;" data-placement="top"
+              data-trigger="manual" data-toggle="popover" data-content="O  CEP não é válido" id="text-cep">
+              </br>
+              <%= f.label :cep, :class => "fonte-label", :style => "margin-right: 250px" %><br />
+              <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "00000-000"%>
+              <small id="cepHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="esc_est">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 20px;">
-          </br>
-          <%= f.label :Estado, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.select :estado, states, autofocus: true %>
-          <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
+        <div id="esc_est">
+          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 20px;">
+            </br>
+            <%= f.label :Estado, :class => "fonte-label", :style => "margin-right: 250px" %>
+            <%= f.select :estado, states, autofocus: true %>
+            <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
+          </div>
         </div>
-      </div>
 
-      <div id="esc_cid">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-          </br>
-          <%= f.label :Cidade, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Cidade"%>
-          <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
-        </div>
-      </div>
-      </br>
-
-      <div id="esc_bairro">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-          <%= f.label :Bairro, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Estado"%>
-          <small id="bairroHelp" class="form-text text-muted">*Campo não obrigatório</small>
-        </div>
-      </div>
-      </br>
-
-      <div id="esc_rua">
-        <div class="row">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-          <%= f.label :Rua, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Logradouro"%>
-          <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
-        </div>
-      </div>
-      </div>
-      </br>
-
-      <div id="esc_num">
-        <div class="row">
+        <div id="esc_cid">
           <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-            <%= f.label :Numero, :class => "fonte-label",:style => "margin-right: 250px" %>
-            <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: 4285", :maxlength => "20" %>
-            <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
+            </br>
+            <%= f.label :Cidade, :class => "fonte-label", :style => "margin-right: 250px" %>
+            <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Cidade"%>
+            <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
+          </div>
+        </div>
+        </br>
+
+        <div id="esc_bairro">
+          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+            <%= f.label :Bairro, :class => "fonte-label", :style => "margin-right: 250px" %>
+            <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Estado"%>
+            <small id="bairroHelp" class="form-text text-muted">*Campo não obrigatório</small>
+          </div>
+        </div>
+        </br>
+
+        <div id="esc_rua">
+          <div class="row">
+            <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+              <%= f.label :Rua, :class => "fonte-label", :style => "margin-right: 250px" %>
+              <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Logradouro"%>
+              <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
+            </div>
+          </div>
+        </div>
+        </br>
+
+        <div id="esc_num">
+          <div class="row">
+            <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+              <%= f.label :Numero, :class => "fonte-label",:style => "margin-right: 250px" %>
+              <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: 4285", :maxlength => "20" %>
+              <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
+            </div>
           </div>
         </div>
       </div>
@@ -156,15 +157,14 @@
   </div>
 </div>
 </div>
-</div>
 </br>
 <!-- Collapse de e-mail -->
 <p>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
-  <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_3" role="button" aria-expanded="false"
-    aria-controls="collapseExample">
-    E-mail
-  </a>
+    <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_3" role="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      E-mail
+    </a>
 
 </p>
 <div class="collapse" id="collapseExample_3">
@@ -174,7 +174,7 @@
       <%= f.email_field :email, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, autocomplete: "Email", :placeholder => "youse@youse.com.br" %>
     </div>
   </div>
-  </div>
+</div>
 </div>
 </br>
 
@@ -183,17 +183,19 @@
 <% end %>
 <p>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
-  <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_4" role="button" aria-expanded="false"
-    aria-controls="collapseExample">
-    Senha
-  </a>
+    <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_4" role="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      Senha
+    </a>
 </p>
 <div class="collapse" id="collapseExample_4">
   <div class="card card-body">
     <div class="field">
       <%= f.label :password, :class => "fonte-label", :style => "margin-right: 250px" %>
-      <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
-
+      <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123", id: "senha123" %>
+      <a id="olhoquetudove_2" style="cursor:pointer">
+        <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+      </a>
       <small id="fullnameHelp" class="form-text text-muted">
         <% if @minimum_password_length %>
         <em><%= @minimum_password_length %> caracteres no mínimo</em>
@@ -206,58 +208,96 @@
     <br>
     <div class="field">
       <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 110px" %> <br />
-      <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+      <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123", id: "confirmar123" %>
+      <a id="olhoquetudove_1" style="cursor:pointer">
+        <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+      </a>
     </div>
   </div>
 </div>
 </div>
 
-<br>
-<br>
-<div class="field">
-  <%= f.label :Confirme_Sua_Senha_Atual, :class => "fonte-edit", :style => "margin-right: 30px" %>
-  <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "Confirme_Sua_Senha_Atual", id: "123" %>
-  <br>
-  <!-- An element to toggle between password visibility -->
-  <input type="checkbox" onclick="myFunction()">Mostrar senha
-</div></br>
-
-
-<div class="actions">
-  <%= f.submit "Atualizar", :class => "atualizar" %>
-</div>
-<% end %>
-
-<p>
-  <button type="button" class="cancelar" data-toggle="modal" data-target="#delete-account-modal">
-    Apagar conta
-  </button>
-</p>
-  <%= link_to "Voltar", :ideas, :class => "op1"%> 
-<!-- Modal -->
-<div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-sm" id="modalAtualizar" tabindex="-1" role="dialog"
+  aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <img src="<%= image_url('alerta.png') %>" width="30" height="30" class="d-inline-block align-top displayed"
+          alt="logo os incriveis" style="margin-left: 10px;">
+        <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;"> Eita! </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Tem certeza que deseja apagar esta conta?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary cancelar" data-dismiss="modal">Fechar</button>
-        <%= button_to "Confirmar", registration_path(resource_name), method: :delete, :class => "cancelar" %>
+        Tem certeza que deseja atualizar sua conta?
+        <br>
+        <br>
+        <div>
+          <button id="btnAtualizar2" class="cancelar">Confirmar</button>
+        </div>
+        <br>
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal fade bd-example-modal-sm" id="delete-account-modal" tabindex="-1" role="dialog"
+  aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<%= image_url('alerta.png') %>" width="30" height="30" class="d-inline-block align-top displayed"
+          alt="logo os incriveis" style="margin-left: 10px;">
+        <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;"> Cuidadooo! </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja apagar sua conta?
+        <br>
+        <br>
+        <div>
+          <%= button_to "SIM", registration_path(resource_name), method: :delete, :class => "cancelar" %>
+          <button data-dismiss="modal" class="cancelar">NÃO</button>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
 <br>
+<br>
+<div class="container" style="max-width: 500px; margin-top: 10px;">
+  <div class="card card-body confirmar">
+    <div class="field">
+      <%= f.label :Confirme_Sua_Senha_Atual, :class => "fonte-edit", :style => "margin-right: 30px" %>
+      <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "Confirme_Sua_Senha_Atual", id: "123" %>
+      <a id="olhoquetudove" style="cursor:pointer">
+        <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+      </a>
+      </br></br>
+      <% end %>
+      <button id="btnAtualizar" class="cancelar">Atualizar</button>
+    </div>
+  </div>
+</div>
+</br>
+</br>
+<p>
+  <button type="button" class="cancelar" data-toggle="modal" data-target="#delete-account-modal">
+    Apagar conta
+  </button>
+</p>
+
+</div>
 
 
+<%= link_to "Voltar", :ideas, :class => "op1" %>
+
+<br>
 
 <script>
 
@@ -265,16 +305,6 @@
   var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
   // Valida Formato de E-mail
   var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
-
-  // Mostrar a senha
-  function myFunction() {
-    var x = document.getElementById("123");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
 
   function TestaCPF(strCPF) {
     strCPF = strCPF.replace(/[^0-9]/g, '');
@@ -347,6 +377,14 @@
       return false;
     return true;
   }
+  // modal para atualizar 
+  $("#btnAtualizar").click(function () {
+    $("#modalAtualizar").modal({ show: true });
+  })
+
+  $("#btnAtualizar2").click(function () {
+    document.getElementById("edit_user").submit();
+  })
 
   $(document).ready(function () {
     $("#user_cep").keyup(function () {
@@ -628,48 +666,77 @@
       })
     });
 
-  });
-
-  $("#user_cpf").keyup(function () {
-    if ($(this).val().length == 14) {
-      if (TestaCPF($(this).val())) {
-        $(this).css("border-color", "green");
-        $('#text-cpf').popover('hide')
+    $("#user_cpf").keyup(function () {
+      if ($(this).val().length == 14) {
+        if (TestaCPF($(this).val())) {
+          $(this).css("border-color", "green");
+          $('#text-cpf').popover('hide')
+        }
+        else {
+          $(this).css("border-color", "red");
+          $('#text-cpf').popover('show')
+        }
       }
-      else {
-        $(this).css("border-color", "red");
+      else if ($(this).val().length > 0) {
+        $(this).css("border-color", "orange");
         $('#text-cpf').popover('show')
       }
-    }
-    else if ($(this).val().length > 0) {
-      $(this).css("border-color", "orange");
-      $('#text-cpf').popover('show')
-    }
-    else {
-      $(this).css("border-color", "rgb(132, 46, 176)");
-      $('#text-cpf').popover('hide')
-    }
-  })
-
-  $("#user_cnpj").keyup(function () {
-    if ($(this).val().length == 18) {
-      if (TestaCNPJ($(this).val())) {
-        $(this).css("border-color", "green");
-        $('#text-cnpj').popover('hide')
-      }
       else {
-        $(this).css("border-color", "red");
+        $(this).css("border-color", "rgb(132, 46, 176)");
+        $('#text-cpf').popover('hide')
+      }
+    })
+
+    $("#user_cnpj").keyup(function () {
+      if ($(this).val().length == 18) {
+        if (TestaCNPJ($(this).val())) {
+          $(this).css("border-color", "green");
+          $('#text-cnpj').popover('hide')
+        }
+        else {
+          $(this).css("border-color", "red");
+          $('#text-cnpj').popover('show')
+        }
+      }
+      else if ($(this).val().length > 0) {
+        $(this).css("border-color", "orange");
         $('#text-cnpj').popover('show')
       }
-    }
-    else if ($(this).val().length > 0) {
-      $(this).css("border-color", "orange");
-      $('#text-cnpj').popover('show')
-    }
-    else {
-      $(this).css("border-color", "rgb(132, 46, 176)");
-      $('#text-cnpj').popover('hide')
-    }
-  })
+      else {
+        $(this).css("border-color", "rgb(132, 46, 176)");
+        $('#text-cnpj').popover('hide')
+      }
+    })
+
+    // Função para mostrar a senha 
+
+    $("#olhoquetudove").click(function () {
+      var x = document.getElementById("123");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    })
+
+    $("#olhoquetudove_1").click(function () {
+      var x = document.getElementById("confirmar123");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    })
+
+    $("#olhoquetudove_2").click(function () {
+      var x = document.getElementById("senha123");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    })
+
+  });
 
 </script>
