@@ -48,7 +48,7 @@
       <img src="<%= image_url('chat3.png')%>" class="cadastrar" alt="chat3">
     </div>
     <div class="row">
-      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-img=" <img src="https://www.cleverfiles.com/howto/wp-content/uploads/2016/08/mini.jpg" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="CPF inválido" id ="text-cpf" >
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="CPF inválido" id ="text-cpf" >
         </br>
         <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00"%>
       </div>
@@ -232,7 +232,7 @@
 
 </div>
 
-
+<script>
 
 function TestaCPF(strCPF) {
     strCPF = strCPF.replace(/[^0-9]/g, '');

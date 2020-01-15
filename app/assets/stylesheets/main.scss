@@ -30,6 +30,16 @@
    border-radius: 0 0 100px 100px;
   height: 700px;
  }
+
+ .container-incrivel{
+    background-color: image_url('youse-produto.jpg');
+    background-repeat: no-repeat;
+  background-size: cover;
+    width: 1440px;
+    border-radius: 0 0 100px 100px;
+   height: 700px;
+  
+ }
  .container-branco{
   background-color: white;
   width: 1440px;
@@ -136,6 +146,11 @@ img.you{
     font-size: 13px;
     background-color: #ff9c2a;
     color: white;
+  }
+  .fonte-titulo{
+    color: #363636 !important;
+    font-style: normal;
+    font-family: futura;
   }
 
   .fonte-titulo-cadastro, .p{
