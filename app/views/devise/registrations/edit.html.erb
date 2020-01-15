@@ -248,7 +248,9 @@
 <br>
 <div class="field">
   <%= f.label :Confirme_Sua_Senha_Atual, :class => "fonte-edit", :style => "margin-right: 30px" %>
+  <div class="col-sm field .col-12 .col-md-8"data-placement="left" data-trigger= "manual" data-toggle="popover" data-content="Formato inválido de senha!" id ="text-current">
   <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", :autocomplete => "Confirme_Sua_Senha_Atual", id:"123" %>
+  </div>
   <br>
   <!-- An element to toggle between password visibility -->
   <input type="checkbox" class="check-box-edit" onclick="myFunction()"> Mostrar senha
@@ -258,7 +260,8 @@
 
 
 <div class="actions">
-  <%= f.submit "Atualizar", :class => "atualizar" %>
+  <%= f.submit "Atualizar", :class => "atualizar btn", :id => "botao_redes" %>
+  <small id="smallatualizar" class="form-text text-muted">*Botão desbloqueado ao preenche <br>o campo 'senha atual'.</small>
 </div>
 <% end %>
 
@@ -295,6 +298,8 @@
     </div>
 
 <script type="text/javascript">
+
+  document.getElementById("botao_redes").disabled = true;
 
   // Botão "Mostrar senha".
   function myFunction() {
@@ -606,5 +611,35 @@ $(document).ready(function () {
           popover_senha_conf = 0;
         }
       })
+
+      $("#123").keyup(function() {
+
+        // Se tiver algo no campo de confirmação.
+        if ($(this).val().length > 0){
+
+            //Se tiver no formato certo.
+            if (password.test($("#123").val())) {
+              $(this).css("border-color", "green");
+              $('#text-current').popover('hide')
+              document.getElementById("botao_redes").disabled = false;
+              $('#smallatualizar').hide();
+            }
+            else{
+              $(this).css("border-color", "red");
+              $('#text-current').popover('show')
+              document.getElementById("botao_redes").disabled = true;
+              $('#smallatualizar').show();
+            }
+        }
+
+        //Se o campo tiver vazio.
+        else{
+          $(this).css("border-color", "rgb(132, 46, 176)");
+          $('#text-current').popover('hide')
+          document.getElementById("botao_redes").disabled = true;
+          $('#smallatualizar').show();
+        }
+      })
+
 })
     </script>
