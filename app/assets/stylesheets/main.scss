@@ -109,6 +109,7 @@ img.you{
   
   .logim .op1{
     color: rgb(255, 255, 255);
+    width: 10px;
   }
 
   //logo do navbar de login e cadastro
@@ -216,6 +217,13 @@ img.you{
   border-color: rgb(132, 46, 176);
   }
 
+  .borda-caixa{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: rgb(132, 46, 176);
+
+  }
+
   .caixa-de-texto-login{
   height: 45px;
   width: 300px;
@@ -292,8 +300,8 @@ select {
 
   
   .botao:hover {
-    background-color: #ffaf0f;
-    border-color: #ffaf0f;
+    background-color: rgb(132, 46, 176);
+    border-color: rgb(132, 46, 176);
     color: white;
   }
 
@@ -676,25 +684,6 @@ th {
   white-space: nowrap;
 }
 
-.atualizar {
-   
-  text-align: center;
-  border-radius: 25px;
-  font-weight: bold;
-  width: 100px;
-  height: 40px;
-  font-family: futura;
-  font-size: 13px;
-  background-color: rgb(132, 46, 176) ;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.atualizar:hover {
-background-color: #ff9c2a;
-border-color: #ff9c2a;
-}
-
 .cancelar {
    
   text-align: center;
@@ -734,4 +723,26 @@ border-color: #ff9c2a;
     color: #842eb0;
     text-decoration: none;
   }
+}
+
+.confirmar {
+  border: double;
+  border-width: 2px;
+	border-radius: 50px;
+	border-color: #563d7c;
+  background-color: rgb(250, 241, 221);
+
+  width: 400px;
+  display: inline-block;
+  height: 185px;
+  padding-top: 15px;
+  font-size: 17px;
+
+  &:focus,
+  &:hover,
+  &:visited {
+    color: #842eb0;
+    text-decoration: none;
+  }
+
 }
