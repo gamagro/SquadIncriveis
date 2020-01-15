@@ -110,50 +110,50 @@
 <div>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
   <a class="bg-light-yellow" style="max-width: 600px;" data-toggle="collapse" href="#collapseExample_2" role="button"
-    aria-expanded="false" aria-controls="collapseExample">
+    aria-expanded="false" aria-controls="collapseExample" id="Endereco">
     Endereço
   </a>
   </br>
   </p>
-  <div class="collapse" id="collapseExample_2">
+  <div class="collapse endereco" id="collapseExample_2">
     <div class="card card-body">
-      <div id="esc_cep">
+      <div id="esc_cep" class="testeendereco">
         <div class="row">
-          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;" data-placement="top"
-            data-trigger="manual" data-toggle="popover" data-content="O  CEP não é válido" id="text-cep">
             </br>
-            <%= f.label :cep, :class => "fonte-label", :style => "margin-right: 250px" %><br />
-            <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "00000-000"%>
+            <div class="col-sm field .col-12 .col-md-8"data-placement="left" data-trigger= "manual" data-toggle="popover" data-content="O  CEP não é válido" id ="text-cep">
+            <%= f.label :cep, :class => "fonte-label", :style => "text-aligh: center" %><br />
+            <%= f.text_field :cep, autofocus: true, :style => "text-aligh: center", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "00000-000", :style => "text-aligh: center"%>
             <% if current_user.pf_pj == "PF"%>
             <small id="cepHelp" class="form-text text-muted">*Campo não obrigatório</small>
             <% end %>
           </div>
+          </div>
         </div>
-      </div>
 
       <div id="esc_est">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 20px;">
-          </br>
-          <%= f.label :Estado, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.select :estado, states, autofocus: true %>
+        </br>
+        <br>
+        <div class="col-sm field .col-12 .col-md-8">
+          <%= f.label :Estado, :class => "fonte-label", :style => "text-aligh: center" %>
+          <%= f.select :estado, states, autofocus: true, :style => "text-aligh: center"%>
           <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
         </div>
       </div>
 
       <div id="esc_cid">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
+        <div class="col-sm field .col-12 .col-md-8">
           </br>
-          <%= f.label :Cidade, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Cidade"%>
+          <%= f.label :Cidade, :class => "fonte-label", :style => "text-aligh: center" %>
+          <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Cidade", :style => "text-aligh: center"%>
           <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
         </div>
       </div>
       </br>
 
       <div id="esc_bairro">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-          <%= f.label :Bairro, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Estado"%>
+        <div class="col-sm field .col-12 .col-md-8">
+          <%= f.label :Bairro, :class => "fonte-label", :style => "text-aligh: center" %>
+          <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Estado", :style => "text-aligh: center"%>
           <small id="bairroHelp" class="form-text text-muted">*Campo não obrigatório</small>
         </div>
       </div>
@@ -161,9 +161,9 @@
 
       <div id="esc_rua">
         <div class="row">
-        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-          <%= f.label :Rua, :class => "fonte-label", :style => "margin-right: 250px" %>
-          <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Logradouro"%>
+        <div class="col-sm field .col-12 .col-md-8">
+          <%= f.label :Rua, :class => "fonte-label", :style => "text-aligh: center" %>
+          <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Logradouro", :style => "text-aligh: center"%>
           <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
         </div>
       </div>
@@ -172,9 +172,9 @@
 
       <div id="esc_num">
         <div class="row">
-          <div class="col-sm field .col-12 .col-md-8" style="margin-left: 30px;">
-            <%= f.label :Numero, :class => "fonte-label",:style => "margin-right: 250px" %>
-            <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: 4285", :maxlength => "20" %>
+          <div class="col-sm field .col-12 .col-md-8">
+            <%= f.label :Numero, :class => "fonte-label",:style => "text-aligh: center" %>
+            <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: 4285", :maxlength => "20", :style => "text-aligh: center" %>
             <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
           </div>
         </div>
@@ -189,7 +189,7 @@
 <p>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
   <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_3" role="button" aria-expanded="false"
-    aria-controls="collapseExample">
+    aria-controls="collapseExample" id="Email">
     E-mail
   </a>
 
@@ -197,9 +197,12 @@
 <div class="collapse" id="collapseExample_3">
   <div class="card card-body">
     <div class="field-edit">
-      <%= f.label :email, :class => "fonte-label", :style => "margin-right: 250px" %><br />
+        <div class="col-sm field .col-12 .col-md-8"data-placement="left" data-trigger= "manual" data-toggle="popover" data-content="O Email não é válido" id ="text-email">
+        <div class="col-sm field .col-12 .col-md-8"data-placement="left" data-trigger= "manual" data-toggle="popover" data-content="Este Email já consta em nosso banco de dados, Tente outro!" id ="exist-email">
+      <%= f.label :email, :class => "fonte-label", :style => "text-aligh: center" %><br />
       <%= f.email_field :email, :class => "caixa-de-texto-login borda-caixa-texto", autofocus: true, autocomplete: "Email", :placeholder => "youse@youse.com.br" %>
     </div>
+  </div>
   </div>
   </div>
 </div>
@@ -211,29 +214,31 @@
 <p>
   <div class="container" style="max-width: 500px; margin-top: 10px;">
   <a class="bg-light-yellow" data-toggle="collapse" href="#collapseExample_4" role="button" aria-expanded="false"
-    aria-controls="collapseExample">
+    aria-controls="collapseExample" id="senha">
     Senha
   </a>
 </p>
 <div class="collapse" id="collapseExample_4">
   <div class="card card-body">
     <div class="field">
-      <%= f.label :password, :class => "fonte-label", :style => "margin-right: 250px" %>
+        <div class="col-sm field .col-12 .col-md-8"data-placement="left" data-trigger= "manual" data-toggle="popover" data-content="Senha inválida" id ="text-senha">
+       <%= f.label :password, :class => "fonte-label", :style => "text-aligh: center" %>
       <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
-
-      <small id="fullnameHelp" class="form-text text-muted">
-        <% if @minimum_password_length %>
-        <em><%= @minimum_password_length %> caracteres no mínimo</em>
-        <% end %>
+          </div>
+          <small id="senhaHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
+            </br> Minúscula,
+            Caracter especial e Número</small>
         <br />
-        Deixe em branco caso não queira mudar.
-      </small>
     </div>
 
     <br>
     <div class="field">
-      <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 110px" %> <br />
-      <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123"%>
+        <div class="col-sm field .col-12 .col-md-8"data-placement="left" data-trigger= "manual" data-toggle="popover" data-content="Senhas não conferem." id ="text-senhaconf">
+      <%= f.label :password_confirmation, :class => "fonte-edit", :style => "margin-right: 110px", :style => "text-aligh: center" %>
+      <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123", :style => "text-aligh: center"%>
+        </div>
+        <br>
+            Deixe em branco caso Nào queira alterar sua senha!
     </div>
   </div>
 </div>
@@ -248,7 +253,8 @@
   <!-- An element to toggle between password visibility -->
   <input type="checkbox" class="check-box-edit" onclick="myFunction()"> Mostrar senha
   
-</div></br>
+</div>
+</br>
 
 
 <div class="actions">
@@ -287,10 +293,12 @@
   <a class="link back-link" style="cursor:pointer" id ="linkvoltar" >voltar</a>
     </div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-    // Botão "Mostrar senha".
-    function myFunction() {
+  // Botão "Mostrar senha".
+  function myFunction() {
+
+    // Atribuindo valor de id a uma variável.
     var x = document.getElementById("123");
     if (x.type === "password") {
       x.type = "text";
@@ -300,8 +308,302 @@
   }
 
 $(document).ready(function () {
+  console.log('eae')
+  $('.field_with_errors').attr('style', 'background-color: transparent;');
+  $('.field_with_errors').find('input').attr('style', 'border: 1px solid red; text-aligh: center;');
+})
+
+$(document).ready(function () {
+
+  //Atriutos popovers.
+  var popover_email= 0;
+  var popover_cep = 0;
+  var popover_senha = 0;
+  var popover_senha_conf = 0;
+
+  // Valoreis iniciais.
+  var nome_antes = $("#user_fullname").val();
+  var cep_antes = $("#user_cep").val();
+  var email_antes = $("#user_email").val();
+
+  // Regex formatação email.
+  var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
+
+  // Regex formatação senha.
+  var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
+
+  // Máscaras.  
+  $('#user_cep').mask('00000-000');
+
+  // Exibição do modal ao clicar no link para voltar.
   $("#linkvoltar").click(function(e) {
     $('#myModal7').modal('show')
   });
+
+  $("#Endereco").click(function(e) {
+    $('#text-cep').popover('hide') 
+  });
+
+  $("#Email").click(function(e) {
+    $('#text-email').popover('hide')
+    $('#exist-email').popover('hide') 
+  });
+
+  $("#senha").click(function(e) {
+    $('#text-senha').popover('hide')
+    $('#text-senhaconf').popover('hide') 
+  });
+  
+  $('#collapseExample_3').on('shown.bs.collapse', function () {
+    if(popover_email == 1){
+      $('#text-email').popover('show')
+    }
+    else if (popover_email == 2){
+      $('#exist-email').popover('show')
+    }
+    else{
+      $('#text-email').popover('hide')
+      $('#exist-email').popover('hide')
+    }
+  })
+
+  $('#collapseExample_2').on('shown.bs.collapse', function () {
+    if(popover_cep == 1){
+      $('#text-cep').popover('show')
+    }
+    else{
+      $('#text-cep').popover('hide')
+    }
+  })
+
+  $('#collapseExample_4').on('shown.bs.collapse', function () {
+    if(popover_senha == 1){
+      $('#text-senha').popover('show')
+    }
+    else{
+      $('#text-senha').popover('hide')
+    }
+
+    if(popover_senha_conf == 1){
+      $('#text-senhaconf').popover('show')
+    }
+    else{
+      $('#text-senhaconf').popover('hide')
+    }
+  })
+
+  $("#user_fullname").keyup(function(){
+
+    this.value = this.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g,'');
+
+    // Se tiver algo escrito.
+    if ($(this).val().length > 0){  
+
+      // Se for diferente do anterior.
+      if($(this).val() !== nome_antes){
+        $(this).css("border-color", "green");
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
+    }
+
+    // Se Não tiver algo escrito.
+    else{
+      $(this).css("border-color", "rgb(132, 46, 176)");
+    }
+  })
+
+  $("#user_cep").keyup(function () {
+      if ($(this).val().length == 9) {
+        $.ajax({
+          url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+          dataType: 'json',
+          success: function (resposta) {
+            $("#user_rua").val(resposta.logradouro);
+            $("#complemento").val(resposta.complemento);
+            $("#user_bairro").val(resposta.bairro);
+            $("#user_cidade").val(resposta.localidade);
+            $("#user_estado").val(resposta.uf);
+            if (resposta.erro !== true ){
+
+              if($("#user_cep").val() !== cep_antes) {
+                $("#user_cep").css("border-color", "green");
+                $('#text-cep').popover('hide')
+                popover_cep = 0;
+              }
+              else{
+                $("#user_cep").css("border-color", "rgb(132, 46, 176)");
+                $('#text-cep').popover('hide')
+                popover_cep = 0;
+              }
+            }
+            else {
+              $("#user_cep").css("border-color", "red"); 
+              $('#text-cep').popover('show')
+              popover_cep = 1;
+            }
+          }
+        });
+      }
+      else if ($(this).val().length > 0){
+        $("#user_cep").css("border-color", "orange");
+        $("#user_rua").val("");
+            $("#complemento").val("");
+            $("#user_bairro").val("");
+            $("#user_cidade").val("");
+            $("#user_estado").val("");
+            $('#text-cep').popover('show') 
+            popover_cep = 1;
+      }
+      else{
+            $("#user_cep").css("border-color", "rgb(132, 46, 176)");
+            $("#user_rua").val("");
+            $("#complemento").val("");
+            $("#user_bairro").val("");
+            $("#user_cidade").val("");
+            $("#user_estado").val("");
+            $('#text-cep').popover('hide')
+            popover_cep = 0;
+      }
+  })
+
+  $("#user_email").keyup(function () {
+      // Atribuindo o valor do email a uma variável.
+      var VAL = this.value;
+
+      // Se já houver algo digitado.
+      if($(this).val().length > 0){
+
+        // Está no formato adequado.
+        if (email.test(VAL)) {
+
+          if ( $("#user_email").val() !== email_antes){
+
+            // Validação no banco de dados.
+            $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+              // Caso este email já exista no banco de dados.
+              if(data.email_exists){
+                $('#text-email').popover('hide')
+                $('#exist-email').popover('show')
+                $("#user_email").css("border-color", "red");
+                popover_email = 2;
+              }
+
+              //Caso este email ainda não exista no banco de dados.
+              else{
+                $('#exist-email').popover('hide')
+                $('#text-email').popover('hide')
+                $("#user_email").css("border-color", "green");
+                popover_email = 0;
+              }
+            });
+          }
+          else{
+            $($("#user_email")).css("border-color", "rgb(132, 46, 176)");
+            $('#text-email').popover('hide')
+            $('#exist-email').popover('hide')
+            popover_email = 0;
+          }
+        }
+
+        // Não está no formato adequado.
+        else {
+          $($("#user_email")).css("border-color", "red");
+          $('#text-email').popover('show')
+          $('#exist-email').popover('hide')
+          popover_email = 1;
+        }
+      }
+
+      // Se não houver nada digitado.
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+        $('#text-email').popover('hide')
+        $('#exist-email').popover('hide')
+        popover_email = 0;
+      }
+    });
+
+    $("#user_password").keyup(function () {
+      var VAL = this.value;
+
+      // Se o campo senha começar a ser preenchido.
+      if($(this).val().length > 0){
+
+        // Se o campo senha estiver com a formatação correta.
+        if (password.test(VAL)) {
+          $(this).css("border-color", "green");
+          $('#text-senha').popover('hide')
+          popover_senha = 0;
+        }
+
+        // Se o campo senha estiver com a formatação incorreta.
+        else {
+          $(this).css("border-color", "red");
+          $('#text-senha').popover('show')
+          popover_senha = 1;
+        }
+      }
+
+      // Se o campo senha estiver vazio.
+      else {
+        $(this).css("border-color", "rgb(132, 46, 176)");
+
+        // Se o camppo confirmação for vazio.
+        if ($("#user_password_confirmation").val().length == 0){
+          $("#user_password_confirmation").css("border-color", "rgb(132, 46, 176)");
+          $('#text-senhaconf').popover('hide');
+          popover_senha_conf = 0;
+        }
+      }
+
+      // Se o campo confirmação de senha tiver algo.
+      if ($("#user_password_confirmation").val().length > 0){
+
+        // Se houver divergência de valores.
+        if ($(this).val() !== $("#user_password_confirmation").val()) {
+          $("#user_password_confirmation").css("border-color", "red");
+            $('#text-senhaconf').popover('show')
+            popover_senha_conf = 1;
+        }
+
+        // Se não houver divergência de valroes.
+        else {
+            $("#user_password_confirmation").css("border-color", "green");
+            $('#text-senhaconf').popover('hide')
+            popover_senha_conf = 0;
+          }
+        }
+      });
+
+      $("#user_password_confirmation").keyup(function() {
+
+        // Se tiver algo no campo de confirmação.
+        if ($(this).val().length > 0){
+
+          // Se houver divergência nos campos.
+          if ($(this).val() !== $("#user_password").val() ) {
+            $(this).css("border-color", "red");
+            $('#text-senhaconf').popover('show')
+            popover_senha_conf = 1
+          }
+
+          // Se forem iguais.
+          else {
+            $(this).css("border-color", "green");
+            $('#text-senhaconf').popover('hide');
+            popover_senha_conf - 0;
+          }
+        }
+
+        // Se não tiver algo no campo confirmação.
+        else{
+          $(this).css("border-color", "rgb(132, 46, 176)");
+          $('#text-senhaconf').popover('hide');
+          popover_senha_conf = 0;
+        }
+      })
 })
     </script>
