@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_full_width_layout
 
   # GET /ideas
   # GET /ideas.json
@@ -72,4 +73,8 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:name, :description, :picture)
     end
+
+    def set_full_width_layout
+      @full_width_layout = true
+    end 
 end

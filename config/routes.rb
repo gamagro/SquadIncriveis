@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'incrivel/index'
   get 'users/index'
   devise_for :users
   #resources :users
@@ -11,4 +12,6 @@ Rails.application.routes.draw do
   resources :ideas
 
   root to: redirect('/ideas')
+
+  get 'idea/index'
 end

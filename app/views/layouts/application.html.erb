@@ -29,24 +29,27 @@
 </head>
 
 <body>
+  
   <nav class="navbar navbar-ligh fixed-top menu">
-
+   
     <a class="navbar-brand navbar1 <%= 'logo-listar' if @logo_listar %>">
       <img src="<%= image_url('0.png') %> " class="logos">
     </a>
 
     <p class="navbar-text float-right menu logim">
-      <% if user_signed_in?%>
-      <strong class="op1"> <%= current_user.email %></strong> |
-
-      <% if current_user.adm && !@users %>
-      <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
-      <% end %>
-
+      <% if request.fullpath != "/users/edit" &&  user_signed_in? %> 
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%>
+      <% end %> 
+
+      <% if user_signed_in? %>
+      <strong class="op1"> <%= current_user.email %></strong> |
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%> |
       <% end %>
+
+    
+
     </p>
+ 
   </nav>
 
   <div class="container <%= 'full-width' if @full_width_layout %>">
