@@ -37,13 +37,17 @@
     </a>
 
     <p class="navbar-text float-right menu logim">
+
+      <% if user_signed_in? %>
+      <strong class="op1"> <%= current_user.email %></strong> |
+      <% end %> 
+      
       <% if request.fullpath != "/users/edit" &&  user_signed_in? %> 
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
       <% end %> 
 
       <% if user_signed_in? %>
-      <strong class="op1"> <%= current_user.email %></strong> |
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%> |
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%>
       <% end %>
 
     

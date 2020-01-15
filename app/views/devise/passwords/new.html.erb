@@ -8,22 +8,24 @@
 
   <div class="container bg-white container-senha justify-content-center">
   </br>
-</br>
+
   <div class="row">
     <div class="col-sm field">
-     
       <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
-    
-      <div class="col-sm field" data-placement="left" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-esque">
+      <div class="col-sm field" data-placement="left" data-trigger= "manual"  data-toggle="popover" data-content="Não temos cadastro com este email por aqui!" id ="exist-esque">
+      </div>
+      <div class="col-sm field" data-placement="left" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser no formato @youse.com.br" id ="text-esque">
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "exemplo@youse.com.br", :id => "user_esque"%>
-
+        <%# <small id="fullnameHelp" class="form-text text-muted">Lembre-se: Aceitamos apenas emails
+        </br> com o formato "...@youse.com.br" ;)</small> %>
+      </div>
     </div>
   </div>
-</div>
 
   <div class="row actions justify-content-center">
-    <%= f.submit "REDEFINIR AS INSTRUÇÕES DE SENHA", :class => "btn botao", :style => "width: 300px;", :id => "botao_rede"%>
+    <%= f.submit "REDEFINIR AS INSTRUÇÕES DE SENHA", :class => "btn botao", :style => "width: 300px; !important", :id => "botao_rede"%>
   </div>
+  <% end %>
 
 <% end %>
 </br>
@@ -31,42 +33,67 @@
 <%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %> 
 
 
-<img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta" 
-  alt="icone-senha">
+  <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta" alt="icone-senha" zindex="-3  ">
 
 </div>
 
 <script>
+  // Desabilitando botão por padrão.
   document.getElementById("botao_rede").disabled = true;
- $(document).ready(function () {
-jQuery(function () {
+
+  $(document).ready(function () {
     $("#user_esque").keyup(function () {
+
+      // Se houver algo escrito.
       if($(this).val().length > 0){
+
+        // Atribuindo valor a uma variável.
         var VAL = this.value;
 
+        // Atribuindo um Regex para o email.
         var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
 
+        // Email válido.
         if (email.test(VAL)) {
-        
-          $(this).css("border-color", "green");
-          $('#text-esque').popover('hide')
-          document.getElementById("botao_rede").disabled = false;
+
+          // Checkando se contém o email no banco de dados.
+          $.post('/checkemail?email='+$("#user_esque").val(),function(data){
+
+            // Caso este email não exista no banco de dados.
+            if(!data.email_exists){
+              $('#exist-esque').popover('show');
+              $('#text-esque').popover('hide');
+              $($("#user_esque")).css("border-color", "red");
+              document.getElementById("botao_rede").disabled = true;
+            }
+
+            // Caso este email exista no banco de dados.
+            else{
+              $($("#user_esque")).css("border-color", "green");
+              $('#exist-esque').popover('hide');
+              $('#text-esque').popover('hide');
+              document.getElementById("botao_rede").disabled = false;
+            }
+          })
         }
+
+        // Email não válido
         else {
-          $(this).css("border-color", "red");
+          $($("#user_esque")).css("border-color", "red");
           $('#text-esque').popover('show')
+          $('#exist-esque').popover('hide')
           document.getElementById("botao_rede").disabled = true;
         }
       }
+
+      // Campo em branco.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
         document.getElementById("botao_rede").disabled = true;
         $('#text-esque').popover('hide')
+        $('#exist-esque').popover('hide')
       }
     });
   });
-});
-
-
 
 </script>

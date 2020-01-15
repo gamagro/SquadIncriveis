@@ -13,5 +13,10 @@ Rails.application.routes.draw do
 
   root to: redirect('/ideas')
 
-  get 'idea/index'
+devise_scope :user do
+  post '/checkemail', to: 'users#emailcheck'
+  post '/checkcpf', to: 'users#cpfcheck'
+  post '/checkcnpj', to: 'users#cnpjcheck'
+end
+
 end

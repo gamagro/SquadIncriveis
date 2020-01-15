@@ -51,6 +51,9 @@ div.actions {
   padding: 2px;
   background-color: #e00000;
   display: table; 
+  display: block;
+  clear: both;
+  text-align: center;
 }
 
 #error_explanation {
