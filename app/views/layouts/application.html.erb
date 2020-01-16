@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />     
 
@@ -28,35 +30,35 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body data-page='<%= pagejs %>'>
   
   <nav class="navbar navbar-ligh fixed-top menu">
-   
-    <a class="navbar-brand navbar1 <%= 'logo-listar' if @logo_listar %>">
-      <img src="<%= image_url('0.png') %> " class="logos">
-    </a>
+    <div>
+      <a class="navbar-brand navbar1 <%= 'logo-listar' if centralized_logo(pagejs) %>">
+        <img src="<%= image_url('0.png') %> " class="logos">
+      </a>
 
-    <p class="navbar-text float-right menu logim">
+        <p class="navbar-text float-right menu logim">
 
-      <% if user_signed_in? %>
-      <strong class="op1"> <%= current_user.email %></strong> |
-      <% end %> 
+        <% if user_signed_in? %>
+        <strong class="op1"> <%= current_user.email %></strong> |
+        <% end %> 
+        
+        <% if request.fullpath != "/users/edit" &&  user_signed_in? %> 
+        <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
+        <% end %> 
+
+        <% if user_signed_in? %>
+        <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%>
+        <% end %>
+
       
-      <% if request.fullpath != "/users/edit" &&  user_signed_in? %> 
-      <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
-      <% end %> 
 
-      <% if user_signed_in? %>
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%>
-      <% end %>
-
-    
-
-    </p>
- 
+      </p>
+    </div>
   </nav>
 
-  <div class="container <%= 'full-width' if @full_width_layout %>">
+  <div class="container <%= 'full-width' if full_width_container(pagejs) %>">
     <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -65,11 +67,6 @@
     <% end %>
     <%= yield %>
   </div>
-
-  <footer>
-
-  </footer>
-
 </body>
 
 </html>

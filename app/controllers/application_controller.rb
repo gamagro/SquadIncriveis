@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
   def inactive_message
     account_active? ? super : :account_inactive
   end
+
+  def index
+  end
   
   def create
     # save post
