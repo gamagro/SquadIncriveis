@@ -75,9 +75,11 @@
 <%= link_to "Voltar", :ideas, :class => "op2" %>
 
 <script type="text/javascript">
+
   $(document).ready(function () {
     var x = 0;
     var table = $('#mytable').DataTable({
+      responsive: true,
       dom: 'Bfrtip',
       buttons: [
       {

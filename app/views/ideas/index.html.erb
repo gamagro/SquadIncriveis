@@ -60,7 +60,9 @@
           seguros online da Caixa Seguradora. </p>
 
       </div>
-  
+      <div class= "row" style="margin-top: 150px;">
+      </div>
+   
   </div>
 
   <div class="container-vida justify-content-center">
@@ -69,13 +71,15 @@
     <div class="row">
       <div class="col" style="margin-top: 50px;">
 
-        <p class="fonte-produto" style="margin-left: 100px;  font-size: 450%;"> Seguro Vida pra ousar mais </p>
+        <p class="fonte-produto" style="margin-left: 100px;  font-size: 450%;"> A vida vale a pena ser ousada ;)</p>
         <p class="fonte-produto" style="margin-left: 140px;  font-size: 200%;"> Seguro de vida é pra se sentir seguro de
-          viver e curtir o que tem de melhor por aí ;) </p>
+          viver e curtir o que tem de melhor por aí </p>
       </div>
       <div class="col" style="margin-top: 130px;">
         <img src="<%= image_url('vida.png') %>" width="448" height="390" style="margin-left: 10px;">
       </div>
+    </div>
+    <div class= "row" style="margin-top: 150px;">
     </div>
   </div>
   
@@ -121,21 +125,21 @@
       </div>
 
       <div class="row" style="margin: 5px;">
-          <div class="col" style= "margin-top: 50px;">
+          <div class="col-sm-12 col-md-4" style= "margin-top: 50px;">
               <img src="<%= image_url('bem1.png') %>" width="186" height="136" style="margin-left: 10px;">
               <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Sua família numa boa
                 </p>
               <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> O seguro de vida é importante pra ter a certeza <br> de que sua família sempre vai ter com quem contar.
              </p>
           </div>
-          <div class="col" style= "margin-top: 50px;">
+          <div class="col-sm-12 col-md-4" style= "margin-top: 50px;">
               <img src="<%= image_url('bem2.png') %>" width="130" height="136" style="margin-left: 10px;">
               <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> É pra todas as horas, tá?
                 </p>
               <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> Você pode ter uma ajuda extra pra se cuidar em <br> situações como diagnóstico de câncer, por exemplo.
              </p>
           </div>
-          <div class="col" style= "margin-top: 50px;">
+          <div class="col-sm-12 col-md-4" style= "margin-top: 50px;">
               <img src="<%= image_url('bem3.png') %>" width="130" height="136" style="margin-left: 10px;">
               <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Seu amiguinho sempre bem
                 </p>
@@ -148,9 +152,13 @@
         <br>
         <a href="https://qa.youse.io/life/order/a3b1f667-34f8-432e-8269-33382e487f51">
         <div class="row">
-            <button class="btn botao" style="margin-left: 680px; width:150px;"  id="botao-cotar"> COTAR AGORA</button>
+          <div class="col" align="center">
+            <button class="btn botao" style=" width:150px;" id="botao-cotar"> COTAR AGORA</button>
+        </div>
         </div>
       </a>
+      <div class= "row" style="margin-top: 100px;">
+      </div>
   </div>
 
   <div class="container-verde">
@@ -164,7 +172,7 @@
              Tudo fácil e prático. </p>
             <br>
              <a href="https://play.google.com/store/apps/details?id=br.com.youse">
-             <img src="<%= image_url('google1.png') %>" style="height:40px;width:auto;" >
+             <img src="<%= image_url('google1.png') %>" style="height:40px;width:auto;">
              </a>
              <a href="https://apps.apple.com/br/app/youse-seguro-tipo-vc/id1371689994">
              <img src="<%= image_url('ios.png') %>" style="height:40px;width:auto">
@@ -175,15 +183,17 @@
         <img src="<%= image_url('vida-app.png') %>" width="448" height="390" style="margin-left: 10px;" class="text-shadow-pop-bottom">
       </div>
     </div>
+    <div class= "row" style="margin-top: 150px;">
+    </div>
   </div>
 
 
   <p class="escolher-titulo" style="font-size: 350%; margin-top: 100px;"> Vc acha que os super-herois precisam <br> de seguro de vida?
     </p>
     <p class="fonte-h3" style="font-size: 180%; margin-top: 30px;"> Clique no botão e descubra :o </p><br><br>
-    <div class="row">
+    <div class="row justify-content-center">
       <a href="/incrivel/index">
-        <img src="<%= image_url('caixa.png') %>" width="239" height="190" style="margin-left: 650px;" class="text-shadow-pop-bottom">
+        <img src="<%= image_url('caixa.png') %>" width="239" height="190"  class="text-shadow-pop-bottom">
     </div>
   </a>
 
@@ -229,10 +239,12 @@
        
     </div>
       </div>
+      <div class= "row" style="margin-top: 50px;">
+      </div>
     </div>
 
  
-<p>
+<div>
   <a id="linkincrivel" style="cursor:pointer" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       <img src="<%= image_url('simb.png') %>" width="100" height="85" class="d-inline-block align-top text-pop-up-top alerta"
       style="top: 90%;">
@@ -257,7 +269,7 @@
       </div>
         </div>
       </div>
-    </p>
+    </div>
 </body>
 
 <script>
