@@ -42,7 +42,8 @@
       <strong class="op1"> <%= current_user.email %></strong> |
       <% end %> 
       
-      <% if request.fullpath != "/users/edit" &&  user_signed_in? %> 
+      <% if request.fullpath != "/users/edit" && request.fullpath != "/users" && user_signed_in? %> 
+
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
       <% end %> 
 
@@ -60,6 +61,7 @@
     <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
+    
     <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
     <% end %>
