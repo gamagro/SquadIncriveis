@@ -14,36 +14,31 @@
  }
  .container-roxo{
    background-color: #602f9f;
-   width: 1440px;
-   height: 250px;
+
  }
  
  .container-verde{
   background-color: #33795e;
-  width: 1440px;
-  height: 650px;
+ 
  }
 
  .container-vida{
    background-color: #ff9c2a;
-   width: 1440px;
+  
    border-radius: 0 0 100px 100px;
-  height: 700px;
+  
  }
 
  .container-incrivel{
     background-image: image_url('zeze1.gif');
     background-repeat: no-repeat;
-  background-size: cover;
-    width: 1440px;
+    background-size: cover;
     border-radius: 0 0 100px 100px;
-   height: 700px;
   
  }
  .container-branco{
   background-color: white;
-  width: 1440px;
- height: 720px;
+
 
  }
  
@@ -61,8 +56,7 @@
 }
 
 .container-youse{
-  width: 1440px;
-  height: 630px;
+  
   background-image: image_url('youse-produto1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -86,6 +80,10 @@ img.you{
     display: block;
     margin-left: auto;
     margin-right: auto
+  }
+
+  .respon{
+    z-index: -3;
   }
   .alerta1{
     position: fixed;
@@ -381,7 +379,16 @@ select {
   border-color: #ff9c2a;
 
 }
-
+.link-incrivel{
+  background-color: #ff9c2a;
+  color: rgb(132, 46, 176) !important;
+  text-decoration: underline;
+}
+  .link-incrivel:hover{
+    background-color: #ff9c2a;
+  color: rgb(132, 24, 185);
+  text-decoration: underline;
+  }
 .link{
   color: rgb(132, 46, 176) !important;
   text-decoration: underline !important;
@@ -651,11 +658,11 @@ th {
  }
 
 .container.full-width {
-  max-width: 100%;
+  max-width: 1000%;
   margin: 0;
   padding-left: 0;
+  padding-right: 0;
 }
-
 
 .lista {
   color: #1C1C1C;
