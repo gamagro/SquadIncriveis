@@ -2,11 +2,9 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:emailcheck, :cpfcheck, :cnpjcheck]
 
   def index
-    @full_width_layout = true
-    @logo_listar = true
     @users = User.all
   end
-
+  
   def delete
     @user.destroy
     respond_to do |format|
