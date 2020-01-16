@@ -339,10 +339,7 @@
       <div class="modal-body">
         Tem certeza que deseja atualizar sua conta?
         <br>
-        <br>
-        Seus novos dados serão:
-        <br>
-
+        
         <br>
         <div>
           <button id="btnAtualizar2" class="cancelar">Confirmar</button>
@@ -352,9 +349,12 @@
   </div>
 </div>
 
+<a class="link back-link" style="cursor:pointer" id="linkvoltar">Ir para a página do produto</a>
 <br>
-<a class="link back-link" style="cursor:pointer" id="linkvoltar">voltar</a>
+<br>
 </div>
+
+    <img src="<%= image_url('icon-senha.png') %>" width="300px" style="top: 50%;"class="d-inline-block align-top alerta respon" alt="icone-senha">
 
 <script type="text/javascript">
 
@@ -569,6 +569,7 @@
 
               //Caso este email ainda não exista no banco de dados.
               else {
+                console.log('eae')
                 $('#exist-email').popover('hide')
                 $('#text-email').popover('hide')
                 $("#user_email").css("border-color", "green");
@@ -627,6 +628,7 @@
       else {
         $(this).css("border-color", "rgb(132, 46, 176)");
         $('#text-senha').popover('hide')
+        popover_senha = 0;
 
         // Se o camppo confirmação for vazio.
         if ($("#user_password_confirmation").val().length == 0) {
