@@ -1,16 +1,10 @@
 <h2 class= "fonte-titulo"> Esqueceu sua senha? </h2>
 </br>
-
-
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="container bg-white container-mudar-senha justify-content-center">
-
   </br> 
   </br>
-
   <div class="row">
     <div class="col-sm field">
       <%= f.label :email, values = "Email", :class => "fonte-label", :style => "margin-right: 250px"%>
@@ -23,46 +17,32 @@
       </div>
     </div>
   </div>
-
   <div class="row actions justify-content-center">
     <%= f.submit "REDEFINIR AS INSTRUÇÕES DE SENHA", :class => "btn botao", :style => "width: 300px; !important", :id => "botao_rede"%>
   </div>
   <% end %>
-
   </br>
-
   <%= link_to "Primeiro acesso", new_registration_path(resource_name), :class => "link"%>
   </br> 
   </br>
-
   <%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %>
-
-  <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta" alt="icone-senha" zindex="-3  ">
-
+  <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta respon" alt="icone-senha" zindex="-3  ">
 </div>
-
 <script>
   // Desabilitando botão por padrão.
   document.getElementById("botao_rede").disabled = true;
-
   $(document).ready(function () {
     $("#user_esque").keyup(function () {
-
       // Se houver algo escrito.
       if($(this).val().length > 0){
-
         // Atribuindo valor a uma variável.
         var VAL = this.value;
-
         // Atribuindo um Regex para o email.
         var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
-
         // Email válido.
         if (email.test(VAL)) {
-
           // Checkando se contém o email no banco de dados.
           $.post('/checkemail?email='+$("#user_esque").val(),function(data){
-
             // Caso este email não exista no banco de dados.
             if(!data.email_exists){
               $('#exist-esque').popover('show');
@@ -70,7 +50,6 @@
               $($("#user_esque")).css("border-color", "red");
               document.getElementById("botao_rede").disabled = true;
             }
-
             // Caso este email exista no banco de dados.
             else{
               $($("#user_esque")).css("border-color", "green");
@@ -80,7 +59,6 @@
             }
           })
         }
-
         // Email não válido
         else {
           $($("#user_esque")).css("border-color", "red");
@@ -89,7 +67,6 @@
           document.getElementById("botao_rede").disabled = true;
         }
       }
-
       // Campo em branco.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
@@ -99,5 +76,4 @@
       }
     });
   });
-
 </script>

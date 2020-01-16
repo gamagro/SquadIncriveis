@@ -81,6 +81,10 @@ img.you{
     margin-left: auto;
     margin-right: auto
   }
+
+  .respon{
+    z-index: -3;
+  }
   .alerta1{
     position: fixed;
     top: 25%;
@@ -415,6 +419,7 @@ select {
 
 .alert-info{
   color: white;
+  background-color:rgb(132, 46, 176);
 }
 // animacoes:
 .text-shadow-pop-bottom {

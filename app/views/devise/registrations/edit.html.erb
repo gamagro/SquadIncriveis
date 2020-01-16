@@ -349,8 +349,12 @@
   </div>
 </div>
 
-<a class="link back-link" style="cursor:pointer" id="linkvoltar">voltar</a>
+<a class="link back-link" style="cursor:pointer" id="linkvoltar">Ir para a página do produto</a>
+<br>
+<br>
 </div>
+
+    <img src="<%= image_url('icon-senha.png') %>" width="300px" style="top: 50%;"class="d-inline-block align-top alerta respon" alt="icone-senha">
 
 <script type="text/javascript">
 
@@ -623,6 +627,7 @@
       else {
         $(this).css("border-color", "rgb(132, 46, 176)");
         $('#text-senha').popover('hide')
+        popover_senha = 0;
 
         // Se o camppo confirmação for vazio.
         if ($("#user_password_confirmation").val().length == 0) {
