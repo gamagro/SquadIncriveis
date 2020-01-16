@@ -60,13 +60,13 @@
         <% end %>
 
         <% if user_signed_in? %>
-        <% if current_user.adm && request.fullpath == "/users/edit" %>
-        <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
-        <% end %>
+          <% if current_user.adm && request.fullpath == "/users/edit" %>
+            <%= link_to 'Lista de Usuários', users_index_path, :class => "op1" %> |
+          <% end %>
         <% end %>
 
         <% if user_signed_in? %>
-        <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%>
+          <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => "op1"%>
         <% end %>
 
       </p>
