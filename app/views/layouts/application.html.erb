@@ -43,6 +43,7 @@
       <% end %> 
       
       <% if request.fullpath != "/users/edit" && request.fullpath != "/users" && user_signed_in? %> 
+
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => "op1" %> |
       <% end %> 
 
