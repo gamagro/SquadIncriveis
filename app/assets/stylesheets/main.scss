@@ -232,6 +232,10 @@ img.you{
   border-color: rgb(132, 46, 176);
   }
 
+  .campo-novo{
+    background-color: rgb(250, 241, 221);
+  }
+
   .borda-caixa{
     outline: 0;
     border-width: 0 0 1px;
@@ -780,9 +784,10 @@ border-color: #ff9c2a;
 	border-color: #563d7c;
   background-color: rgb(250, 241, 221);
 
+
   width: 400px;
   display: inline-block;
-  height: 185px;
+  height: 265px;
   padding-top: 15px;
   font-size: 17px;
 
