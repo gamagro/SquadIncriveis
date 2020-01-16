@@ -217,6 +217,23 @@
 </div>
 </div>
 
+  <!-- Botão do atualizar a página do editar -->
+<div class="container" style="max-width: 500px; margin-top: 10px;">
+  <div class="card card-body confirmar">
+    <div class="field">
+      <%= f.label :Confirme_Sua_Senha_Atual, :class => "fonte-edit", :style => "margin-right: 30px" %>
+      <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "Confirme_Sua_Senha_Atual", id: "123" %>
+      <a id="olhoquetudove" style="cursor:pointer">
+        <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+      </a>
+      </br></br>
+      <button id="btnAtualizar" class="cancelar">Atualizar</button>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+
 <div class="modal fade bd-example-modal-sm" id="modalAtualizar" tabindex="-1" role="dialog"
   aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog modal-sm">
@@ -269,21 +286,6 @@
 </div>
 
 <br>
-<br>
-<div class="container" style="max-width: 500px; margin-top: 10px;">
-  <div class="card card-body confirmar">
-    <div class="field">
-      <%= f.label :Confirme_Sua_Senha_Atual, :class => "fonte-edit", :style => "margin-right: 30px" %>
-      <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "Confirme_Sua_Senha_Atual", id: "123" %>
-      <a id="olhoquetudove" style="cursor:pointer">
-        <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
-      </a>
-      </br></br>
-      <% end %>
-      <button id="btnAtualizar" class="cancelar">Atualizar</button>
-    </div>
-  </div>
-</div>
 </br>
 </br>
 <p>
@@ -378,12 +380,14 @@
     return true;
   }
   // modal para atualizar 
-  $("#btnAtualizar").click(function () {
+  $("#btnAtualizar").click(function (event) {
+    event.preventDefault();
     $("#modalAtualizar").modal({ show: true });
   })
 
   $("#btnAtualizar2").click(function () {
     console.log('funciona');
+    document.getElementById("edit_user").submit();
   })
 
   $(document).ready(function () {
