@@ -745,7 +745,7 @@ border-color: #ff9c2a;
   height: 40px;
   font-family: futura;
   font-size: 13px;
-  background-color: rgb(132, 46, 176) ;
+  background-color: rgb(132, 46, 176);
   color: white;
   margin-bottom: 20px;
 }
@@ -768,11 +768,13 @@ border-color: #ff9c2a;
   height: 50px;
   padding-top: 15px;
   font-size: 17px;
+  font-family: futura;
+  color: rgb(132, 46, 176);
 
   &:focus,
   &:hover,
   &:visited {
-    color: #842eb0;
+    color: #ff9c2a;
     text-decoration: none;
   }
 }

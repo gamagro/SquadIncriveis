@@ -5,30 +5,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="modal fade bd-example-modal-sm" id="delete-account-modal" tabindex="-1" role="dialog"
-  aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <img src="<%= image_url('alerta.png') %>" width="30" height="30" class="d-inline-block align-top displayed"
-          alt="logo os incriveis" style="margin-left: 10px;">
-        <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;"> Cuidadooo! </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Tem certeza que deseja apagar sua conta?
-        <br>
-        <br>
-        <div>
-          <%= button_to "SIM", registration_path(resource_name), method: :delete, :class => "cancelar" %>
-          <button data-dismiss="modal" class="cancelar">NÃO</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="modal fade bd-example-modal-sm" id="myModal7" tabindex="-1" role="dialog"
   aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static">
@@ -256,7 +233,7 @@
         <%= f.password_field :password, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123", id: "user_password" %>
       </div>
       <a id="olhoquetudove_2" class="olho" style="cursor:pointer">
-          <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+          <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" class="olho"%>
       </a>
       <br />
     </div>
@@ -269,7 +246,7 @@
         <%= f.password_field :password_confirmation, :class => "caixa-de-texto-login borda-caixa-texto", autocomplete: "new-password", :placeholder => "Ex: @Youser123", :style => "text-aligh: center", id: "user_password_confirmation" %>
       </div>
       <a id="olhoquetudove_1" class="olho"style="cursor:pointer">
-          <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+          <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" class="olho"%>
         </a>
         <br>
       </br>
@@ -296,7 +273,7 @@
       <%= f.password_field :current_password, :class => "caixa-de-texto-login borda-caixa-texto campo-novo", :autocomplete => "Confirme_Sua_Senha_Atual", id:"123" %>
       </div>
       <a id="olhoquetudove" class="olho" style="cursor:pointer">
-          <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" style="margin-left: 10px;" %>
+          <img src="<%= image_url('remove_eye.png') %>" width="20" height="20" class="olho" %>
         </a>
       <div class="col-sm field .col-12 .col-md-8" data-placement="left" data-trigger="manual" data-toggle="popover"
         data-content="Formato inválido de senha!" id="text-current">
@@ -311,6 +288,31 @@
     <br>
     <br>
     <% end %>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="delete-account-modal" tabindex="-1" role="dialog"
+  aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<%= image_url('alerta.png') %>" width="30" height="30" class="d-inline-block align-top displayed"
+          alt="logo os incriveis" style="margin-left: 10px;">
+        <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;"> Cuidadooo! </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja apagar sua conta?
+        <br>
+        <br>
+        <div>
+          <%= button_to "SIM", registration_path(resource_name), method: :delete, :class => "cancelar" %>
+          <button data-dismiss="modal" class="cancelar">NÃO</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -481,7 +483,6 @@
     
 
     $("#btnAtualizar2").click(function () {
-      
       document.getElementById("edit_user").submit();
     })
 
