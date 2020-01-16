@@ -18,7 +18,7 @@
                     </div>
         <div class="row" style="margin-top: 160px">
           <div class="col" align="center">
-                <a id="linkseta" style="cursor:pointer">
+                <a id="linkseta scroll" style="cursor:pointer" href="#referencia">
            <img src="<%= image_url('seta.png') %>" width="80" height="80" class="text-shadow-pop-bottom">
         </a>
       </div>
@@ -28,7 +28,7 @@
     <div id="incrivel">
     <p class="fonte-produto" style="font-size: 400%; margin-top: 100px;"> E acredite, eles precisam da Youse <br> para muitos outros serviços... </p>
 
-    <div class="row" style="margin-top: 100px;">
+    <div class="row" style="margin-top: 100px;" id="referencia">
         <div class="col" align="center">
            <img src="<%= image_url('residenciagif.gif') %>" width="400" height="170,1" >
            <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> A pia entupiu?
@@ -100,12 +100,12 @@
 </div>
     <script>
     
-    $(document).ready(function(){
-        $("#linkseta").click(function(e){
-            window.scrollTo(0, 1000);
-        });
-        $(this).scrollTop(0);
-      })
+    jQuery(document).ready(function($){
+    $(".scroll").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
+    })
+  })
       </script>
 
 </body>
