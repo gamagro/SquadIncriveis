@@ -10,6 +10,7 @@ pt-BR:
         cnpj: CNPJ
         razaosocial: Razão Social
         cep: CEP
+        current_password: Senha atual
     errors:
       messages:
         blank: não pode ficar em branco.

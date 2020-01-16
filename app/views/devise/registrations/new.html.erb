@@ -8,7 +8,7 @@
 <%= render "devise/shared/error_messages", resource: resource %>
 
 <div class="container bg-green container-cad justify-content-center">
-
+  </br>
   <div class="row " id="esc_geral">
     <img src="<%= image_url('chat1.png')%>" class="cadastrar" alt="chat1">
   </div>
@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes", :maxlength => "50" %>
+        <%= f.text_field :fullname, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youser da Silva Moraes" , :maxlength=> "50", :autocomplete => "off" %>
         <small id="fullnameHelp" class="form-text text-muted">Seu nome deve conter no máximo 50 caractéres
         </br> e apenas Letras e Espaços são permitidos ;)</small>
       </br>
@@ -48,10 +48,11 @@
       <img src="<%= image_url('chat3.png')%>" class="cadastrar" alt="chat3">
     </div>
     <div class="row">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="Este CPF já consta em nosso banco de dados, tente outro!" id ="exist-cpf">
+          </div>
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="CPF inválido" id ="text-cpf">
         </br>
-
-        <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00"%>
+        <%= f.text_field :cpf, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "000.000.000-00", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -66,7 +67,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;">
         </br>
-        <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A"%>
+        <%= f.text_field :razaosocial, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: Youse Seguradora S.A", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -80,9 +81,11 @@
       <img src="<%= image_url('chat5.png')%>" class="cadastrar" alt="chat3">
     </div>
     <div class="row">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="Este CNPJ já consta em nosso banco de dados, tente outro!" id ="exist-cnpj">
+          </div>
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="CPNJ inválido" id ="text-cnpj">
         </br>
-        <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00.000.000/0000.00"%>
+        <%= f.text_field :cnpj, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00.000.000/0000.00", :autocomplete => "off" %>
 
       </div>
       <div class="col-sm field" align="right">
@@ -96,9 +99,12 @@
       <img src="<%= image_url('chat6.png')%>" class="cadastrar" alt="chat8" align="left">
     </div>
     <div class="row">
-      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br" id ="text-email">
+        <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="Este email já consta em nosso banco de dados, tente outro!" id ="exist-email">
+        </div>
+      <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual"  data-toggle="popover" data-content="O email deve ser @youse.com.br!" id ="text-email">
+        <br>
         <%= f.email_field :email, autofocus: true, autocomplete: "Email", :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder  => 
-        "exemplo@youse.com.br"%>
+        "exemplo@youse.com.br", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
         <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -114,7 +120,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="Senha inválida" id ="text-senha">
         </br>
-        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Ex: @Youser123"%>
+        <%= f.password_field :password, autocomplete: "Senha", :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Ex: @Youser123", :autocomplete => "off" %>
         <small id="senhaHelp" class="form-text text-muted">A senha deve conter 8 Caracteres: Letra Maiúscula e
           </br> Minúscula,
           Caracter especial e Número</small>
@@ -132,7 +138,7 @@
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;"data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="Senhas não conferem" id ="text-senhaconf">
         </br>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha"%>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class => "caixa-de-texto-cad borda-caixa-texto" , :placeholder => "Confirme sua senha", :autocomplete => "off" %>
       </div>
       <div class="col-sm field" align="right">
           <img src="<%= image_url('youse-chat.png')%>" class="you" alt="youser">
@@ -149,7 +155,7 @@
 
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 450px;" data-placement="top" data-trigger= "manual" data-toggle="popover" data-content="O  CEP não é válido" id ="text-cep">
         </br>
-        <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000"%>
+        <%= f.text_field :cep, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "00000-000", :autocomplete => "off" %>
         <small id="cepHelp" class="form-text text-muted" style="display:none;">*Campo não obrigatório</small>
       </div>
       <div class="col-sm field" align="right">
@@ -162,7 +168,7 @@
   <div id="esc_est" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 230px;">
       </br>
-      <%= f.select :estado, states, autofocus: true %>
+      <%= f.select :estado, states, autofocus: true, :autocomplete => "off"%>
       <small id="estadHelp" class="form-text text-muted">*Campo não obrigatório</small>
     </div>
   </div>
@@ -170,7 +176,7 @@
   <div id="esc_cid" style="display:none;" class="tracking-in-expand-fwd-bottom">
     <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
       </br>
-    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Cidade"%>
+    <%= f.text_field :cidade, autofocus: true , :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Cidade", :autocomplete => "off" %>
     <small id="cidHelp" class="form-text text-muted">*Campo não obrigatório</small>
   </div>
   </div>
@@ -178,7 +184,7 @@
 
   <div id="esc_bairro" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Estado"%>
+    <%= f.text_field :bairro, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Estado", :autocomplete => "off" %>
     <small id="bairroHelp" class="form-text text-muted" >*Campo não obrigatório</small>
   </div>
   </div>
@@ -186,7 +192,7 @@
 
   <div id="esc_rua" style="display:none;" class="tracking-in-expand-fwd-bottom">
   <div class="col-sm field .col-12 .col-md-8" style="margin-left: 170px;">
-    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Logradouro"%>
+    <%= f.text_field :rua, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Logradouro", :autocomplete => "off" %>
     <small id="ruaHelp" class="form-text text-muted">*Campo não obrigatório</small>
   </div>
   </div>
@@ -199,7 +205,7 @@
     </br>
     <div class="row">
       <div class="col-sm field .col-12 .col-md-8" style="margin-left: 460px;">
-        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285", :maxlength => "20" %>
+        <%= f.text_field :numero, autofocus: true, :class => "caixa-de-texto-cad borda-caixa-texto", :placeholder => "Ex: 4285" , :maxlength=> "20", :autocomplete => "off" %>
         <small id="numHelp" class="form-text text-muted">*Campo não obrigatório</small>
       </div>
       <div class="col-sm field" align="right">
@@ -215,12 +221,12 @@
     </br>
     <div class="row">
       <div class="col-sm field justify-content-center">
-        <%= f.submit "FINALIZAR", :class => "btn botao"%>
+        <%= f.submit "FINALIZAR", :class => "btn botao", :onSubmit => "return submit()";%>
       </div>
     </div>
   </div>
   <div id="esc_text" style="display: none;" class="tracking-in-expand-fwd-bottom">
-    <h6 class=fonte-titulo-cadastro> Preencha todos os campos para continuarmos seu cadastro :) </h6>
+    <h6 class=fonte-titulo-cadastro> Preencha todos os campos corretamente para continuarmos seu cadastro ;D   </h6>
   </div>
 
 </br>
@@ -229,11 +235,17 @@
 
 </br> 
 <% end %>
+</div>
 
 <script type="text/javascript">
 
+$('.field_with_errors').find('input').attr('style', 'border: 1px solid red');
+$('.field_with_errors').attr('style', 'background-color: transparent;')
+
+// Regex formatação senha.
 var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
 
+// Regex formatação email.
 var email = new RegExp('^[a-z0-9](\.?[a-z0-9])+@youse.com.br$');
 
 function TestaCPF(strCPF) {
@@ -362,6 +374,7 @@ function TestaCNPJ(cnpj) {
 
       if ($(this).val() === "PF") {
         $("#esc_razao").hide();
+        $("#esc_text").show();
         $("#esc_cnpj").hide();
         $("#esc_nomec").show();
         $("#esc_cpf").show();
@@ -370,8 +383,10 @@ function TestaCNPJ(cnpj) {
         $("#user_razaosocial").css("border-color","rgb(132, 46, 176)");
         $("#user_cnpj").css("border-color","rgb(132, 46, 176)");
         $('#text-cnpj').popover('hide')
+        $('#exist-cnpj').popover('hide')
       } else {
         $("#esc_razao").show();
+        $("#esc_text").show();
         $("#esc_cnpj").show();
         $("#esc_nomec").hide();
         $("#esc_cpf").hide();
@@ -380,63 +395,69 @@ function TestaCNPJ(cnpj) {
         $("#user_fullname").css("border-color","rgb(132, 46, 176)");
         $("#user_cpf").css("border-color","rgb(132, 46, 176)");
         $('#text-cpf').popover('hide');
+        $('#exist-cpf').popover('hide')
       }
       
       setTimeout(function() { 
         $('.back-link').show();
       }, 1000);
     });
-    
-    $("#user_cpf").keyup(function () {
-      if (TestaCPF($(this).val()) && $('#user_fullname').val().length > 0) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-      }
-    });
 
     $("#user_fullname").keyup(function () {
+
+      // Se este campo já for preenchido.
       if ($(this).val().length > 0){
         $(this).css("border-color", "green");
+
+        //Verificando CPF.
+        if (TestaCPF($("#user_cpf").val())){
+
+          // Buscando no banco de dados.
+          $.post('/checkcpf?cpf='+$("#user_cpf").val(),function(data){
+
+            // Se o cpf não existir não banco de dados.
+            if(!data.cpf_exists){
+              $("#esc_email").show();
+              $("#esc_senha").show();
+              $("#esc_conf").show();
+              $("#esc_text").show();
+            }
+          });
+        }
       }
+
+      // Se este campo não for preenchido.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
       }
-      if ($(this).val().length > 0 && TestaCPF($(this).val())) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-      }
-      if (TestaCPF($("#user_cpf").val()) && $(this).val().length > 0) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-      }
+    });
 
-    });
-    $("#user_cnpj").keyup(function () {
-      if (TestaCNPJ($(this).val()) && $("#user_razaosocial").val().length > 0) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-      }
-    });
     $("#user_razaosocial").keyup(function () {
-      if (TestaCNPJ($("#user_cnpj").val()) && $(this).val().length > 0) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
-      }
+
+      // Se estiver algo no campo.
       if ($(this).val().length > 0) {
         $(this).css("border-color","green");
+
+        // Verificando se é um CNPJ válido
+        if (TestaCNPJ($("#user_cnpj").val())) {
+
+          //Buscando no banco.
+          $.post('/checkcnpj?cnpj='+$("#user_cnpj").val(),function(data){
+
+            // Se o cnpj existir não banco de dados.
+            if(!data.cnpj_exists){
+              $("#esc_email").show();
+              $("#esc_senha").show();
+              $("#esc_conf").show();
+              $("#esc_text").show();
+            }
+          });
+        }
       }
+
+      // Se o campo estiver vazio.
       else{
         $(this).css("border-color","rgb(132, 46, 176)");
-      }
-      if ($(this).val().length > 0 && $('#user_cnpj').val().length === 18) {
-        $("#esc_email").show();
-        $("#esc_senha").show();
-        $("#esc_conf").show();
       }
     });
  
@@ -487,152 +508,309 @@ function TestaCNPJ(cnpj) {
 
     $(this).scrollTop(0);
 
-    jQuery(function () {
     $("#user_email").keyup(function () {
-      if($(this).val().length > 0){
-        var VAL = this.value;
+      // Atribuindo o valor do email a uma variável.
+      var VAL = this.value;
 
+      // Se já houver algo digitado.
+      if($(this).val().length > 0){
+
+        // Está no formato adequado.
         if (email.test(VAL)) {
-        
-          $(this).css("border-color", "green");
-          $('#text-email').popover('hide')
+
+          // Validação no banco de dados.
+          $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+            // Caso este email já exista no banco de dados.
+            if(data.email_exists){
+              $('#text-email').popover('hide')
+              $('#exist-email').popover('show')
+              $("#user_email").css("border-color", "red");
+            }
+
+            //Caso este email ainda não exista no banco de dados.
+             else{
+              $('#exist-email').popover('hide')
+              $('#text-email').popover('hide')
+              $("#user_email").css("border-color", "green");
+
+              // Abertura do próximo bloco de informações.
+              if ($("#user_password").val() == $("#user_password_confirmation").val() && password.test($("#user_password").val())) {
+                $("#esc_cep").show();
+                $("#esc_est").show();
+                $("#esc_cid").show();
+                $("#esc_bairro").show();
+                $("#esc_rua").show();
+                $("#esc_num").show();
+                $("#esc_botao").show();
+                $("#esc_text").hide();
+              }
+            }
+          });
         }
+
+        // Não está no formato adequado.
         else {
           $(this).css("border-color", "red");
           $('#text-email').popover('show')
+          $('#exist-email').popover('hide')
         }
       }
+
+      // Se não houver nada digitado.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
-      }
-      if ($("#user_password").val() == $("#user_password_confirmation").val() && password.test($("#user_password").val()) && email.test(VAL)) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
+        $('#text-email').popover('hide')
+        $('#exist-email').popover('hide')
       }
     });
-
-
     
     $("#user_password").keyup(function () {
-        var VAL = this.value;
+      var VAL = this.value;
 
+      // Se o campo senha começar a ser preenchido.
       if($(this).val().length > 0){
+
+        // Se o campo senha estiver com a formatação correta.
         if (password.test(VAL)) {
           $(this).css("border-color", "green");
           $('#text-senha').popover('hide')
+
+          if ($(this).val() == $("#user_password_confirmation").val()){
+
+            // Verificando formato do email.
+            if (email.test($("#user_email").val())) {
+
+              // Validação no banco de dados.
+              $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+                // Caso este email já exista no banco de dados.
+                if(!data.email_exists){
+                  
+                  // Abertura de novas informações.
+                  $("#esc_cep").show();
+                  $("#esc_est").show();
+                  $("#esc_cid").show();
+                  $("#esc_bairro").show();
+                  $("#esc_rua").show();
+                  $("#esc_num").show();
+                  $("#esc_botao").show();
+                  $("#esc_text").hide();
+                }
+              })
+            }
+          }
         }
+
+        // Se o campo senha estiver com a formatação incorreta.
         else {
           $(this).css("border-color", "red");
           $('#text-senha').popover('show')
         }
       }
+
+      // Se o campo senha estiver vazio.
       else {
-      $(this).css("border-color", "rgb(132, 46, 176)");
-      if ($("#user_password_confirmation").val().length == 0){
-        $("#user_password_confirmation").css("border-color", "rgb(132, 46, 176)");
-      }
-      }
-      if ($("#user_password_confirmation").val().length > 0){
-      if ($(this).val() !== $("#user_password_confirmation").val()) {
-        $("#user_password_confirmation").css("border-color", "red");
-          $('#text-senhaconf').popover('show')
-          
-      }
-      else {
-        $("#user_password_confirmation").css("border-color", "green");
-        $('#text-senhaconf').popover('hide')
-      }
+        $(this).css("border-color", "rgb(132, 46, 176)");
+
+        // Se o camppo confirmação for vazio.
+        if ($("#user_password_confirmation").val().length == 0){
+          $("#user_password_confirmation").css("border-color", "rgb(132, 46, 176)");
+          $('#text-senhaconf').popover('hide');
+        }
       }
 
-      if ($(this).val() == $("#user_password_confirmation").val() && password.test(VAL) && email.test($("#user_email").val())) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
+      // Se o campo confirmação de senha tiver algo.
+      if ($("#user_password_confirmation").val().length > 0){
+
+        // Se houver divergência de valores.
+        if ($(this).val() !== $("#user_password_confirmation").val()) {
+          $("#user_password_confirmation").css("border-color", "red");
+            $('#text-senhaconf').popover('show')
+            
+        }
+
+        // Se não houver divergência de valroes.
+        else {
+          $("#user_password_confirmation").css("border-color", "green");
+          $('#text-senhaconf').popover('hide')
+        }
       }
     });
 
     $("#user_password_confirmation").keyup(function() {
+
+      // Se tiver algo no campo de confirmação.
       if ($(this).val().length > 0){
-      if ($(this).val() !== $("#user_password").val() ) {
-        $(this).css("border-color", "red");
-        $('#text-senhaconf').popover('show')
-       
+
+        // Se houver divergência nos campos.
+        if ($(this).val() !== $("#user_password").val() ) {
+          $(this).css("border-color", "red");
+          $('#text-senhaconf').popover('show')
+        }
+
+        // Se forem iguais.
+        else {
+          $(this).css("border-color", "green");
+          $('#text-senhaconf').popover('hide');
+
+          // A senha é valida.
+          if (password.test($("#user_password").val())) {
+
+            // O email é valido.
+            if (email.test($("#user_email").val())) {
+              
+              // Validação no banco de dados.
+              $.post('/checkemail?email='+$("#user_email").val(),function(data){
+
+                // Caso este email já exista no banco de dados.
+                if(!data.email_exists){
+                    
+                  $("#esc_cep").show();
+                  $("#esc_est").show();
+                  $("#esc_cid").show();
+                  $("#esc_bairro").show();
+                  $("#esc_rua").show();
+                  $("#esc_num").show();
+                  $("#esc_botao").show();
+                  $("#esc_text").hide();
+                }
+              })
+            }
+          }
+        }
       }
-      else {
-        $(this).css("border-color", "green");
-        $('#text-senhaconf').popover('hide')
-        
-       }
-      }
+
+      // Se não tiver algo no campo confirmação.
       else{
         $(this).css("border-color", "rgb(132, 46, 176)");
-      }
-      if ($(this).val() == $("#user_password").val() && password.test($("#user_password").val()) && email.test($("#user_email").val())) {
-        $("#esc_cep").show();
-        $("#esc_est").show();
-        $("#esc_cid").show();
-        $("#esc_bairro").show();
-        $("#esc_rua").show();
-        $("#esc_num").show();
-        $("#esc_botao").show();
-      }
-     })
-    });
-
-  });
+       }
+     });
 
   $("#user_cpf").keyup(function(){
+
+    // Se o campo cpf for preenchido por completo.
     if ($(this).val().length == 14){
-    if (TestaCPF($(this).val())) {
-          $(this).css("border-color", "green");
-          $('#text-cpf').popover('hide')
-        }
-        else {
-          $(this).css("border-color", "red");
-          $('#text-cpf').popover('show')
-        }
-    }
-    else if($(this).val().length >0){
-        $(this).css("border-color", "orange");
-        $('#text-cpf').popover('show')
+
+      // Se o CPF for válido.
+      if (TestaCPF($(this).val())){
+
+        // Buscando no banco de dados.
+        $.post('/checkcpf?cpf='+$("#user_cpf").val(),function(data){
+
+            // Se o cpf existir no banco de dados.
+            if(data.cpf_exists){
+              $($("#user_cpf")).css("border-color", "red");
+              $('#text-cpf').popover('hide');
+              $('#exist-cpf').popover('show');
+            }
+            // Se o cpf não existir no banco de dados.
+            else{
+              $($("#user_cpf")).css("border-color", "green");
+              $('#text-cpf').popover('hide');
+              $('#exist-cpf').popover('hide');
+
+              if ($('#user_fullname').val().length > 0) {
+                $("#esc_email").show();
+                $("#esc_senha").show();
+                $("#esc_conf").show();
+              }
+            }
+        });
       }
+
+      // Se o CPF Não for válido
       else{
-        $(this).css("border-color", "rgb(132, 46, 176)");
-        $('#text-cpf').popover('hide')
+        $(this).css("border-color", "red");
+        $('#text-cpf').popover('show');
+        $('#exist-cpf').popover('hide');
       }
-  })
+    }
+
+    // Se o campo cpf for preenchido parcialmente.
+    else if($(this).val().length >0){
+      $(this).css("border-color", "orange");
+      $('#text-cpf').popover('show');
+      $('#exist-cpf').popover('hide');
+    }
+
+    // Se o campo cpf estiver vazio
+    else{
+      $(this).css("border-color", "rgb(132, 46, 176)");
+      $('#text-cpf').popover('hide');
+      $('#exist-cpf').popover('hide');
+    }
+  });
 
   $("#user_cnpj").keyup(function(){
+
+    // Se o campo CNPJ for preenchido por completo.
     if ($(this).val().length == 18){
-    if (TestaCNPJ($(this).val())) {
-          $(this).css("border-color", "green");
-          $('#text-cnpj').popover('hide')
-        }
-        else {
-          $(this).css("border-color", "red");
-          $('#text-cnpj').popover('show')
-        }
+
+      // Se for um CNPJ válido.
+      if (TestaCNPJ($(this).val())) {
+        $.post('/checkcnpj?cnpj='+$("#user_cnpj").val(),function(data){
+
+          // Se o cnpj existir no banco de dados.
+          if(data.cnpj_exists){
+            $($("#user_cnpj")).css("border-color", "red");
+            $('#text-cnpj').popover('hide');
+            $('#exist-cnpj').popover('show');
+          }
+
+          // Se o cnpj não existir no banco de dados.
+          else{
+            $($("#user_cnpj")).css("border-color", "green");
+            $('#text-cnpj').popover('hide');
+            $('#exist-cnpj').popover('hide');
+
+            // Abertura do próximo bloco de informações.
+            if ($("#user_razaosocial").val().length > 0) {
+              $("#esc_email").show();
+              $("#esc_senha").show();
+              $("#esc_conf").show();
+            }
+          }
+        });
+      $(this).css("border-color", "green");
+      $('#text-cnpj').popover('hide')
+      }
+
+      // Se não for um CNPJ válido.
+      else {
+        $(this).css("border-color", "red");
+        $('#text-cnpj').popover('show');
+        $('#exist-cnpj').popover('hide');
+      }
     }
+
+    // Se o campo CNPJ for preenchido parcialmente.
     else if($(this).val().length >0){
-        $(this).css("border-color", "orange");
-        $('#text-cnpj').popover('show')
-      }
-      else{
-        $(this).css("border-color", "rgb(132, 46, 176)");
-        $('#text-cnpj').popover('hide')
-      }
+      $(this).css("border-color", "orange");
+      $('#text-cnpj').popover('show');
+      $('#exist-cnpj').popover('hide');
+    }
+
+    // Se o campo CNPJ não estiver preenchido.
+    else{
+      $(this).css("border-color", "rgb(132, 46, 176)");
+      $('#text-cnpj').popover('hide');
+      $('#exist-cnpj').popover('hide');
+    }
   })
+
+  function submit(){
+            if($(".popover-body").length == 0){
+                return true;
+                console.log('eae323')
+           }
+           else{
+               console.log('eae')
+               return false;
+           }
+    }
+});
 
 </script>
 
-</div>
 

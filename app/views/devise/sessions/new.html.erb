@@ -88,6 +88,27 @@
   </div>
 </div>
 
+<div class="modal fade bd-example-modal-sm" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="<%= image_url('alerta.png') %>" width="40" height="30" class="d-inline-block align-top displayed"
+              alt="logo os incriveis" style="margin-left: 10px;">
+   
+              <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;" >  Que pena! </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </br>
+          <div class="modal-body">
+              <p class=“alert alert-danger”><%= notice %></p>
+            </div>
+    </div>
+  </div>
+</div>
+
 <% if user_signed_in?%>
       destroy_user_session_path
 <%end%>
@@ -158,6 +179,10 @@
         <% elsif notice == "Deslogado com sucesso." %>
         $(document).ready(function () {
           $('#myModal3').modal('show')
+        });
+        <% elsif notice == "Sua conta foi cancelada com sucesso!" %>
+        $(document).ready(function () {
+          $('#myModal4').modal('show')
         });
         <% end %> 
 
