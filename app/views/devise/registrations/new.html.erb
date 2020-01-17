@@ -221,7 +221,7 @@
     </br>
     <div class="row">
       <div class="col-sm field justify-content-center">
-        <%= f.submit "FINALIZAR", :class => "btn botao", :onSubmit => "return submit()";%>
+        <%= f.submit "FINALIZAR", :class => "btn botao"%>
       </div>
     </div>
   </div>
@@ -481,6 +481,7 @@ function TestaCNPJ(cnpj) {
  
     if ($('#lanaerror_explanation').length > 0) {
       var cnpjCpf = $("#user_pf_pj").val();
+      
       $("#esc_cep").show();
       $("#esc_est").show();
       $("#esc_cid").show();
@@ -499,6 +500,7 @@ function TestaCNPJ(cnpj) {
         $("#esc_cnpj").show();
       }
     }
+
     $("#user_pf_pj").change(function () {
       if ($(this).val() === 'PF') {
         $("#cepHelp").show();
@@ -817,16 +819,6 @@ function TestaCNPJ(cnpj) {
     }
   })
 
-  function submit(){
-            if($(".popover-body").length == 0){
-                return true;
-                console.log('eae323')
-           }
-           else{
-               console.log('eae')
-               return false;
-           }
-    }
 });
 
 </script>

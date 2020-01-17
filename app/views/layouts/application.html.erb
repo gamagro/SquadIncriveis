@@ -36,6 +36,10 @@
 
 <body data-page='<%= pagejs %>'>
 
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg %>
+    <% end %>
+
   <nav class="navbar navbar-ligh fixed-top menu">
     <div>
       <a class="navbar-brand navbar1 <%= 'logo-listar' if centralized_logo(pagejs) %>" href="/ideas">
@@ -83,6 +87,10 @@
     <% end %>
     <%= yield %>
   </div>
+
+  <script>
+    $('#errors-modal').modal('show');
+  </script>
 </body>
 
 </html>
