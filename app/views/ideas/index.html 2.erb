@@ -1,0 +1,292 @@
+<% if flash.present? %>
+
+
+<div class="modal fade bd-example-modal-sm" id="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<%= image_url('icon-chat.png') %>" width="40" height="35" class="d-inline-block align-top displayed"
+          alt="logo os incriveis" style="margin-left: 10px;">
+        <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;"> Alerta!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class=“alert alert-danger”><%= notice  %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<div class="modal fade bd-example-modal-sm" id="modal4" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<%= image_url('icon-chat.png') %>" width="40" height="35" class="d-inline-block align-top displayed"
+          alt="logo os incriveis" style="margin-left: 10px;">
+        <h5 class="modal-title titulo-modal" id="exampleModalLabel" style="margin-right: 15px;"> Yesss!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      </br>
+      <div class="modal-body">
+        <p class=“alert alert-danger”><%= notice %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  html {
+    overflow-x: hidden;
+  }
+</style>
+
+<body>
+
+
+  <div class="container-youse justify-content-center">
+
+    <div class="row">
+      <p class="fonte-produto focus-in-expand" style="margin-left: 100px;  font-size: 500%; margin-top: 200px"> Bem vindo a Youse </p>
+    </div>
+      <div class="row">
+        <p class="fonte-produto tracking-in-expand-fwd-bottom" style="margin-left: 110px;  font-size: 250%; margin-top: 30px"> Youse é uma plataforma de vendas de <br>
+          seguros online da Caixa Seguradora. </p>
+
+      </div>
+      <div class= "row" style="margin-top: 150px;">
+      </div>
+   
+  </div>
+
+  <div class="container-vida justify-content-center">
+
+
+    <div class="row">
+      <div class="col" style="margin-top: 50px;">
+
+        <p class="fonte-produto" style="margin-left: 100px;  font-size: 450%;"> Seguro Vida pra ousar mais </p>
+        <p class="fonte-produto" style="margin-left: 140px;  font-size: 200%;"> Seguro de vida é pra se sentir seguro de
+          viver e curtir o que tem de melhor por aí ;) </p>
+      </div>
+      <div class="col" style="margin-top: 130px;">
+        <img src="<%= image_url('vida.png') %>" width="448" height="390" style="margin-left: 10px;">
+      </div>
+    </div>
+    <div class= "row" style="margin-top: 150px;">
+    </div>
+  </div>
+  
+  <p class="fonte-titulo-escolher" style="font-size: 350%; margin-top: 100px;"> Por que escolher o Seguro de Vida Youse?
+  </p>
+  <p class="fonte-h3" style="font-size: 180%; margin-top: 30px;"> É um seguro de vida 100% online, que vc monta do
+    seu jeito e muda quando precisa. </p>
+
+
+  <div class="row" style="margin: 10px;">
+    <div class="col" style= "margin-top: 50px;">
+        <img src="<%= image_url('escolher1.png') %>" width="186" height="136" style="margin-left: 10px;">
+        <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Pague mês a mês
+          </p>
+        <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> Direto no seu cartão e sem comprometer o limite. <br> Se precisar mudar ou cancelar o Seguro de Vida, <br> não tem multa.
+       </p>
+    </div>
+    <div class="col" style= "margin-top: 50px;">
+        <img src="<%= image_url('escolher2.png') %>" width="186" height="136" style="margin-left: 10px;">
+        <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Vc seguro e numa boa
+          </p>
+        <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> As coberturas e assistências do Seguro de Vida online <br> estão disponíveis 24h, no Brasil inteiro!
+       </p>
+    </div>
+    <div class="col" style= "margin-top: 50px;">
+        <img src="<%= image_url('escolher3.png') %>" width="186" height="136" style="margin-left: 10px;">
+        <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Seu seguro de vida <br> na palma da mão
+          </p>
+        <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> Você pode acionar suas coberturas e assistências do seguro <br> de vida online através do app da Youse, não é demais? :)
+       </p>
+    </div>
+  </div>
+<br>
+<br>
+
+  <div class="container-branco">
+    <div class="row">
+      <p class="escolher-titulo" style="font-size: 350%; margin-top: 100px; margin-left: 270px;" > Seguro de vida é pra vc usar sempre
+        </p>
+      </div>
+      <div class="row">
+        <p class="fonte-h3" style="font-size: 180%; margin-top: 20px; margin-left: 270px;  "> A gente quer que você se sinta seguro pra viver mais e fazer as suas próprias escolhas. </p>
+      </div>
+
+      <div class="row" style="margin: 5px;">
+          <div class="col-sm-12 col-md-4" style= "margin-top: 50px;">
+              <img src="<%= image_url('bem1.png') %>" width="186" height="136" style="margin-left: 10px;">
+              <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Sua família numa boa
+                </p>
+              <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> O seguro de vida é importante pra ter a certeza <br> de que sua família sempre vai ter com quem contar.
+             </p>
+          </div>
+          <div class="col-sm-12 col-md-4" style= "margin-top: 50px;">
+              <img src="<%= image_url('bem2.png') %>" width="130" height="136" style="margin-left: 10px;">
+              <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> É pra todas as horas, tá?
+                </p>
+              <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> Você pode ter uma ajuda extra pra se cuidar em <br> situações como diagnóstico de câncer, por exemplo.
+             </p>
+          </div>
+          <div class="col-sm-12 col-md-4" style= "margin-top: 50px;">
+              <img src="<%= image_url('bem3.png') %>" width="130" height="136" style="margin-left: 10px;">
+              <p class="escolher-titulo" style="font-size: 170%; margin-top: 20px;"> Seu amiguinho sempre bem
+                </p>
+              <p class="fonte-h3" style="font-size: 120%; margin-top: 20px;"> Se pintar qualquer emergência com o seu pet, <br> seja ele cão ou gato, ligue pra gente.
+             </p>
+          </div>
+  
+        </div>
+        <br>
+        <br>
+        <a href="https://qa.youse.io/life/order/a3b1f667-34f8-432e-8269-33382e487f51">
+        <div class="row">
+          <div class="col" align="center">
+            <button class="btn botao" style=" width:150px;" id="botao-cotar"> COTAR AGORA</button>
+        </div>
+        </div>
+      </a>
+      <div class= "row" style="margin-top: 100px;">
+      </div>
+  </div>
+
+  <div class="container-verde">
+  <div class="row">
+      <div class="col" style="margin-top: 100px;">
+
+          <p class="fonte-titulo-verde" style="font-size: 300%; margin-left: 100px;" align="left" > Acionar o Seguro Vida Youse é tão fácil <br> quanto contratar
+          </p>
+          <p class="fonte-tela-verde" style="font-size: 140%; margin-left: 100px; margin-top: 40px;" align="left"> Você pode falar com a gente direto pelo aplicativo (se preferir, também dá pelo telefone ou redes sociais). 
+             É só contar porque está acionando o seguro de vida e a gente já te fala todas as informações e detalhes necessários.
+             Tudo fácil e prático. </p>
+            <br>
+             <a href="https://play.google.com/store/apps/details?id=br.com.youse">
+             <img src="<%= image_url('google1.png') %>" style="height:40px;width:auto;">
+             </a>
+             <a href="https://apps.apple.com/br/app/youse-seguro-tipo-vc/id1371689994">
+             <img src="<%= image_url('ios.png') %>" style="height:40px;width:auto">
+             </a>
+             
+      </div>
+      <div class="col" style="margin-top: 100px;">
+        <img src="<%= image_url('vida-app.png') %>" width="448" height="390" style="margin-left: 10px;" class="text-shadow-pop-bottom">
+      </div>
+    </div>
+    <div class= "row" style="margin-top: 150px;">
+    </div>
+  </div>
+
+
+  <p class="escolher-titulo" style="font-size: 350%; margin-top: 100px;"> Vc acha que os super-herois precisam <br> de seguro de vida?
+    </p>
+    <p class="fonte-h3" style="font-size: 180%; margin-top: 30px;"> Clique no botão e descubra :o </p><br><br>
+    <div class="row justify-content-center">
+      <a href="/incrivel/index">
+        <img src="<%= image_url('caixa.png') %>" width="239" height="190"  class="text-shadow-pop-bottom">
+    </div>
+  </a>
+
+  <div class="container-roxo" style="margin-top: 90px;">
+    <div class="row">
+      <div class="col-2" style= "margin-top: 40px; margin-left: 70px;" align="right" >
+          <p class="fonte-produto" style="font-size: 100%; margin-top: 20px;"> CENTRAL DE SERVIÇOS <br> 
+            Assistência 24h, Sinistro e Vistoria
+            </p>
+          <p class="fonte-titulo-verde" style="font-size: 160%; margin-top: 20px;"> 3003 5770 <br>
+         </p>
+         <p class="fonte-produto" style="font-size: 90%; margin-top: 20px; opacity: .7;">
+          Capitais e regiões metropolitanas
+         </p>
+      </div>
+      <div class="col-3" style= "margin-top: 40px;" align="left">
+          
+          <p class="fonte-titulo-verde" style="font-size: 160%; margin-top: 78px; " > 0800 730 9901 <br>
+         </p>
+         <p class="fonte-produto" style="font-size: 90%; margin-top: 20px; opacity: .7; ">
+          Demais localidades
+         </p>
+      </div>
+      
+        <div class="col-3" style= "margin-top: 40px;" align="left" >
+          <p class="fonte-produto" style="font-size: 100%; margin-top: 15px;"> VENDAS <br> 
+            Contratar seguros
+            </p>
+          <p class="fonte-titulo-verde" style="font-size: 160%; margin-top: 25px;"> 0800 730 9902 <br>
+         </p>
+         <p class="fonte-produto" style="font-size: 90%; margin-top: 20px; opacity: .7;">
+          Contrate pelo telefone de seg a sáb, das 9h às 21h.
+         </p>
+      </div>
+      <div class="col-2" style= "margin-top: 40px;" align="left" >
+        
+        <p class="fonte-produto" style="font-size: 100%; margin-top: 15px;"> SITE YOUSE <br> Clique no link para saber mais :)
+          </p>
+          <a href="https://www.youse.com.br/">
+        <p class="fonte-titulo-verde" style="font-size: 160%; margin-top: 20px; text-decoration: underline;"> Youse.com.br <br>
+       </p>
+       <a>
+       
+    </div>
+      </div>
+      <div class= "row" style="margin-top: 50px;">
+      </div>
+    </div>
+
+ 
+<div>
+  <a id="linkincrivel" style="cursor:pointer" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <img src="<%= image_url('simb.png') %>" width="100" height="85" class="d-inline-block align-top text-pop-up-top alerta"
+      style="top: 90%;">
+    </a>
+    <div class="collapse alerta1" id="collapseExample">
+        <div class="card card-body collapse-colors">
+         <p class="fonte-produto" style="font-size: 20px; margin-top: 5px;"> Desenvolvido por: </p>
+        </br>
+        <div class="row">
+        <div class= "col">
+            <img src="<%= image_url('gabi.jpg') %>" width="100" height="85" ><br>
+            <img src="<%= image_url('kauan.jpg') %>" width="100" height="85"> <br>
+            <img src="<%= image_url('vini.jpg') %>" width="100" height="85"><br>
+            <img src="<%= image_url('magrao.jpg') %>" width="100" height="85"><br>
+       </div>
+       <div class="col">
+         <p class="fonte-produto" style="font-size: 17px; margin-top: 30px;"> Gabriela</p> 
+         <p class="fonte-produto" style="font-size: 17px; margin-top: 60px;"> Kauan</p>
+         <p class="fonte-produto" style="font-size: 17px; margin-top: 60px;"> Vinicius</p> 
+         <p class="fonte-produto" style="font-size: 17px; margin-top: 60px;"> Gabriel</p>
+       </div>
+      </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<script>
+
+$(document).ready(function(){
+  $("#linkincrivel").click(function(e){
+    $('.collapse').collapse()
+  });
+  $(this).scrollTop(0);
+})
+      <% if notice == "Bem Vindo! Você está logado." %>
+    $(document).ready(function () {
+      $('#modal4').modal('show')
+    });
+        <% elsif notice %>
+    $(document).ready(function () {
+      $('#modal').modal('show')
+    });
+        <% end %> 
+</script>

@@ -1,0 +1,120 @@
+<h2 class="fonte-titulo"> Bora mudar sua senha? </h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+<%= f.hidden_field :reset_password_token %>
+
+</br>
+
+
+<div class="container bg-white container-mudar-senha justify-content-center">
+  </br>
+  </br>
+  <div class="row">
+    <div class="col-sm field" data-placement="left" data-trigger="manual" data-toggle="popover"
+      data-content="Senha inválida" id="text-senha">
+      <%= f.label :password, "Nova senha", :class => "fonte-label", :style => "margin-right: 200px"%>
+
+      <div class="col-sm field">
+        <%= f.password_field :password, autofocus: true, autocomplete: "Nova Senha", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: @Youser123"%>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm field" data-placement="left" data-trigger="manual" data-toggle="popover"
+      data-content="Senhas não conferem" id="text-senhaconf">
+      <%= f.label :password_confirmation, "Confirmar senha", :class => "fonte-label", :style => "margin-right: 160px"%>
+
+      <div class="col-sm field">
+        <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "Nova Senha", :class => "caixa-de-texto-login borda-caixa-texto", :placeholder => "Ex: Confirme Sua Senha"%>
+
+      </div>
+    </div>
+  </div>
+  </br>
+
+  <div class="actions">
+
+    <%= f.submit "FINALIZAR" , :class => "btn botao"%>
+  </div>
+
+  <% end %>
+  </br>
+
+  <%= link_to "Voltar", new_session_path(resource_name), class: "link back-link" %>
+
+  <img src="<%= image_url('icon.png') %>" class="d-inline-block align-top alerta respon" alt="icone-senha">
+
+
+  <script type="text/javascript">
+    
+    $(document).ready(function(){
+      $('.field_with_errors').attr('style', 'background-color: transparent;')
+      $('.field_with_errors').find('input').attr('style', 'border: 1px solid red');
+    })
+
+    $(document).ready(function () {
+      jQuery(function () {
+
+        $("#user_password").keyup(function () {
+
+          var VAL = this.value;
+          var password = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*');
+
+          if ($(this).val().length > 0) {
+            if (password.test(VAL)) {
+              $(this).css("border-color", "green");
+              $('#text-senha').popover('hide')
+            }
+            else {
+              $(this).css("border-color", "red");
+              $('#text-senha').popover('show')
+            }
+          }
+          else {
+            $(this).css("border-color", "rgb(132, 46, 176)");
+            $('#text-senha').popover('hide')
+            if ($("#user_password_confirmation").val().length == 0) {
+              $("#user_password_confirmation").css("border-color", "rgb(132, 46, 176)");
+            }
+          }
+
+          if ($("#user_password_confirmation").val().length > 0) {
+            if ($(this).val() !== $("#user_password_confirmation").val()) {
+              $("#user_password_confirmation").css("border-color", "red");
+              $('#text-senhaconf').popover('show')
+
+            }
+            else {
+              $("#user_password_confirmation").css("border-color", "green");
+              $('#text-senhaconf').popover('hide')
+            }
+          }
+        });
+
+        $("#user_password_confirmation").keyup(function () {
+          if ($(this).val().length > 0) {
+            if ($(this).val() !== $("#user_password").val()) {
+              $(this).css("border-color", "red");
+              $('#text-senhaconf').popover('show')
+
+            }
+            else {
+              $(this).css("border-color", "green");
+              $('#text-senhaconf').popover('hide')
+
+            }
+          }
+          else {
+            $(this).css("border-color", "rgb(132, 46, 176)");
+            $('#text-senhaconf').popover('hide')
+          }
+        })
+      });
+    });
+
+
+  </script>
+</div>

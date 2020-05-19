@@ -1,0 +1,203 @@
+<% if current_user.adm %>
+
+<h2 class="lista">Lista de Usuários</h2>
+<body>
+  <p class="search" align="left">
+    <input class="caixa-de-texto-cad borda-caixa-texto" type="text" id="mySearchText" placeholder="Pesquisar">
+  </p>
+<div align="right">
+  <select id="admuser" class="sel" align= "left">
+      <option value="">Todos os Tipos de Usuários</option>
+      <option value="Administrador">Administradores</option>
+      <option value="Comum">Comum</option>
+  </select>
+</div>
+
+  <div class="table-responsive" id= "divTabela">
+      <!-- <button id="ordenar" class ="buttons-ordenar" style="margin-left: 800px;">ORDENAR POR CADASTRO</button> -->
+    <table class="table table-striped table-bordered borderless" id="mytable">
+      
+      <thead class="menubarra">
+        
+        <th scope="col" style="display:none;">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Razao Social</th>
+        <th scope="col">CPF</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tipo de usuário</th>
+      </thead>
+      
+      <tbody class="table1">
+        <% @users.each do |user| %>
+        <tr>
+          <td style="display:none;"><%= user.id %></td>
+          <td><% if user.fullname.nil? %>
+            -
+            <% else %>
+            <%= user.fullname %>
+            <% end %>
+          </td>
+          <td><% if user.razaosocial.nil? %>
+            -
+            <% else %>
+            <%= user.razaosocial %>
+            <% end %>
+          </td>
+          <td><% if user.cpf.nil? %>
+            -
+            <% else %>
+            <%= user.cpf %>
+            <% end %>
+          </td>
+          <td><% if user.cnpj.nil? %>
+            -
+            <% else %>
+            <%= user.cnpj %>
+            <% end %>
+          </td>
+          <td><%= user.email %></td>
+          <td><% if user.adm  %>
+            Administrador
+            <% else %>
+            Comum
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+
+</br>
+<%= link_to "Voltar", :ideas, :class => "op2" %>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    var x = 0;
+    var table = $('#mytable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+      {
+            className: "buttons-ordenar",
+            text: 'ORDENAR POR CADASTRO',
+            align: "left",
+            action: function(){
+              x = x + 1;
+              if (x % 2 != 0) {
+              table.order([0, 'asc']).draw();
+              mostraDialogo("Ordem crescente cronológica selecionada", "warning",1000);
+              $("#a").show();
+              }else{
+              table.order([0, 'desc']).draw();
+              mostraDialogo("Ordem decrescente cronológica selecionada", "info",1000);
+              }
+            }
+        },
+        {
+            extend: 'excel',
+            text: 'EXCEL',
+            exportOptions: {
+                  mns: [ 1, 2, 3, 4, 5, 6] 
+            }
+        }, {
+            extend: 'pdf',
+            text: 'PDF',
+            exportOptions: {
+                columns: [ 1, 2, 3, 4, 5, 6]  
+            }
+        },
+    ],
+    select: {
+
+    },
+      "paging": false,
+      "bInfo": false,
+      "oLanguage": {
+        "sEmptyTable": "Nenhum registro encontrado na tabela",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "Pesquisar: "
+      },
+    });
+
+    $('#ordenar').click(function(){
+      table.order([0, 'asc']).draw();     
+    });
+
+    $('#admuser').on('change', function(){
+      table.columns(6).search(this.value).draw();   
+    });
+
+    $('#mySearchText').keyup(function () {
+      table.search($('#mySearchText').val()).draw();
+      if ($(this).val().length > 0 ){
+        if ($('.dataTables_empty').length == 0){
+         $(this).css("border-color", "green");
+        }
+        else{
+        $(this).css("border-color", "red");
+        }
+      }
+      else{
+        $(this).css("border-color", "rgb(132, 46, 176)");
+      }
+    })
+
+});
+function mostraDialogo(mensagem, tipo, tempo){
+  var dialogoId = new Date().getTime();
+    
+    // if($("#").is(":visible")){
+    //     $(this).remove();
+    // }
+    if(!tipo){
+        var tipo = "info";
+    }
+    var cssMessage = "display: block; position: fixed; top: 0; left: 35%; right: 35%; width: 30%; padding-top: 140px; z-index: 9999";
+    var cssInner = "margin: 0 auto; box-shadow: 1px 1px 5px black;";
+
+    var dialogo = "";
+    dialogo += '<div id="' + dialogoId + '" style="'+cssMessage+'">';
+    dialogo += '    <div class="alert alert-'+tipo+' alert-dismissable" style="'+cssInner+'">';
+    dialogo +=          mensagem;
+    dialogo += '    </div>';
+    dialogo += '</div>';
+
+    $("body").append(dialogo);
+    var dialogoElement = $("#" + dialogoId);
+    dialogoElement.hide();
+    dialogoElement.fadeIn(200);
+
+    setTimeout(function() {
+      dialogoElement.fadeOut(300, function() {
+        $(this).remove();
+      });
+    }, tempo);
+  }
+
+</script>
+
+<% else %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container bg-white aviso justify-content-center">
+    <p>
+    </br>
+        <h6 class=fonte-titulo-cadastro>Você está tentandoa acessar uma área dministrativa.</h6>
+      <Br>
+        <h6 class=fonte-titulo-cadastro>Acesso restrito para administradores.</h6>
+      </p>
+      <br>
+      <img src="<%= image_url('X5.png')%>" class="you" alt="youser">
+  <br>
+  <br>
+    <%= link_to "Ir para a página do Produto", :ideas, :class => "op2" %>
+</div>
+<% end %>
